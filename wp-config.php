@@ -87,3 +87,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Инициализирует переменные WordPress и подключает файлы. */
 require_once( ABSPATH . 'wp-settings.php' );
+
+
+define('WPLANG', 'ru_RU');
