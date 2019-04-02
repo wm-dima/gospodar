@@ -78,15 +78,7 @@
 						</a>
 					</div>
 					<div class="search-catalog__inside-search">
-						<form action="">
-							<input type="text" class="search-field" placeholder="Введите запрос для поиска">
-							<div class="select">
-								<select name="" id="select">
-									<option value="">Все категории</option>
-								</select>
-							</div>		
-							<input type="button" value="Искать">
-						</form>
+						<?php get_template_part('template-parts/search', 'form'); ?>
 					</div>
 				</div>
 			</div>

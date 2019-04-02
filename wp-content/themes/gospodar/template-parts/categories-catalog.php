@@ -10,7 +10,7 @@
 			<?php 
 			$args = array(
 			'taxonomy' => 'product_cat',
-			'hide_empty' => false,
+			'hide_empty' => true,
 			'parent'   => 0
 			);
 			$product_cat = get_terms( $args );

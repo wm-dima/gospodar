@@ -206,3 +206,15 @@ function themename_custom_logo_setup() {
     add_theme_support( 'custom-logo', $defaults );
 }
 add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
+
+
+function only_search_for_full_phrase( $query ) {
+    if ( $query->is_search() && $query->is_main_query() ) {
+        $query->set( 'sentence', true );
+	    if (!$query->query['product_cat']) {
+	    	unset($query->query['product_cat']);
+	    	unset($_GET['product_cat']);
+	    }
+    }
+}
+add_action( 'pre_get_posts', 'only_search_for_full_phrase' );
