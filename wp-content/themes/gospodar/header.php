@@ -4,7 +4,6 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link href="<?php echo get_template_directory_uri(); ?>/assets/css/app.css" rel="stylesheet">
 	<title><?php the_title(); ?></title>
 	<?php wp_head(); ?>
 </head>
@@ -13,7 +12,7 @@
 		<div class="wrapper">
 			<div class="header-inside">
 				<div class="header-inside__logo">
-					<a href=""><img src="assets/images/logo.png" alt=""></a>
+					<a href=""><img src="<?php echo get_template_directory_uri() ?>/assets/images/logo.png" alt=""></a>
 				</div>
 				<div class="header-inside__contacts">
 					<div class="header-inside__contacts-img"></div>

@@ -3,7 +3,7 @@
 			<div class="footer-inside">
 				<div class="footer-inside__left">
 					<a href="">
-						<img src="assets/images/logo-footer.png" alt="">
+						<img src="<?php echo get_template_directory_uri() ?>/assets/images/logo-footer.png" alt="">
 					</a>
 					<p class="footer-inside__left-right_reserved">
 						Оптовый магазин товаров для дома
@@ -32,7 +32,7 @@
 						</p>
 						<div class="footer-inside__right-contacts__watch-map">
 							<a href="">
-								<img src="assets/images/watchMap.png" alt="">
+								<img src="<?php echo get_template_directory_uri() ?>/assets/images/watchMap.png" alt="">
 								<span>Посмотреть на карте</span> 
 							</a>
 						</div>
@@ -40,8 +40,8 @@
 				</div>
 			</div>
 		</div>
+		<?php wp_footer(); ?>
 	</footer>
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script> -->
 	<!-- <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> -->
-<!-- <script type="text/javascript" src="js/app.js"></script></body> -->
 </html>

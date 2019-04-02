@@ -20,7 +20,7 @@ Template Name: index
 								<li>
 									<a href="">
 										Бытовая техника
-										<img src="assets/images/right-arrow.svg" alt="" class="catalog-arrow" width="7px">
+										<img src="<?php echo get_template_directory_uri() ?>/assets/images/right-arrow.svg" alt="" class="catalog-arrow" width="7px">
 									</a>
 									<div class="catalog-additional">
 										<ul>
@@ -40,7 +40,7 @@ Template Name: index
 								<li>
 									<a href="">
 										Товары для дома
-										<img src="assets/images/right-arrow.svg" alt="" class="catalog-arrow" width="7px">
+										<img src="<?php echo get_template_directory_uri() ?>/assets/images/right-arrow.svg" alt="" class="catalog-arrow" width="7px">
 									</a>
 									<div class="catalog-additional">
 										<ul>
@@ -59,7 +59,7 @@ Template Name: index
 								</li>
 								<li>
 									<a href="">Сантехника и огород
-										<img src="assets/images/right-arrow.svg" alt="" class="catalog-arrow" width="7px"></a>
+										<img src="<?php echo get_template_directory_uri() ?>/assets/images/right-arrow.svg" alt="" class="catalog-arrow" width="7px"></a>
 									<div class="catalog-additional">
 										<ul>
 											<li><a href="">Сантехника и огород 1</a></li>
@@ -77,7 +77,7 @@ Template Name: index
 								</li>
 								<li>
 									<a href="">Спорт и увлечения
-											<img src="assets/images/right-arrow.svg" alt="" class="catalog-arrow" width="7px">
+											<img src="<?php echo get_template_directory_uri() ?>/assets/images/right-arrow.svg" alt="" class="catalog-arrow" width="7px">
 									</a>
 									<div class="catalog-additional">
 										<ul>
@@ -96,7 +96,7 @@ Template Name: index
 								</li>
 								<li>
 									<a href="">Десткие товары
-											<img src="assets/images/right-arrow.svg" alt="" class="catalog-arrow" width="7px">
+											<img src="<?php echo get_template_directory_uri() ?>/assets/images/right-arrow.svg" alt="" class="catalog-arrow" width="7px">
 									</a>
 									<div class="catalog-additional">
 										<ul>
@@ -115,7 +115,7 @@ Template Name: index
 								</li>
 								<li>
 									<a href="">Канцтовары и книги
-											<img src="assets/images/right-arrow.svg" alt="" class="catalog-arrow" width="7px">
+											<img src="<?php echo get_template_directory_uri() ?>/assets/images/right-arrow.svg" alt="" class="catalog-arrow" width="7px">
 									</a>
 									<div class="catalog-additional">
 										<ul>
@@ -134,7 +134,7 @@ Template Name: index
 								</li>
 								<li>
 									<a href="">Инструменты
-											<img src="assets/images/right-arrow.svg" alt="" class="catalog-arrow" width="7px">
+											<img src="<?php echo get_template_directory_uri() ?>/assets/images/right-arrow.svg" alt="" class="catalog-arrow" width="7px">
 									</a>
 									<div class="catalog-additional">
 										<ul>
@@ -153,7 +153,7 @@ Template Name: index
 								</li>
 								<li>
 									<a href="">Бытовая техника
-											<img src="assets/images/right-arrow.svg" alt="" class="catalog-arrow" width="7px">
+											<img src="<?php echo get_template_directory_uri() ?>/assets/images/right-arrow.svg" alt="" class="catalog-arrow" width="7px">
 									</a>
 									<div class="catalog-additional">
 										<ul>
@@ -172,7 +172,7 @@ Template Name: index
 								</li>
 								<li>
 									<a href="">Товары для дома
-											<img src="assets/images/right-arrow.svg" alt="" class="catalog-arrow" width="7px">
+											<img src="<?php echo get_template_directory_uri() ?>/assets/images/right-arrow.svg" alt="" class="catalog-arrow" width="7px">
 									</a>
 									<div class="catalog-additional">
 										<ul>
@@ -191,7 +191,7 @@ Template Name: index
 								</li>
 								<li>
 									<a href="">Сантехника и огород
-											<img src="assets/images/right-arrow.svg" alt="" class="catalog-arrow" width="7px">
+											<img src="<?php echo get_template_directory_uri() ?>/assets/images/right-arrow.svg" alt="" class="catalog-arrow" width="7px">
 									</a>
 									<div class="catalog-additional">
 										<ul>
@@ -210,7 +210,7 @@ Template Name: index
 								</li>
 								<li>
 									<a href="">Спорт и увлечения
-											<img src="assets/images/right-arrow.svg" alt="" class="catalog-arrow" width="7px">
+											<img src="<?php echo get_template_directory_uri() ?>/assets/images/right-arrow.svg" alt="" class="catalog-arrow" width="7px">
 									</a>
 									<div class="catalog-additional">
 										<ul>
@@ -229,7 +229,7 @@ Template Name: index
 								</li>
 								<li>
 									<a href="">Десткие товары
-											<img src="assets/images/right-arrow.svg" alt="" class="catalog-arrow" width="7px">
+											<img src="<?php echo get_template_directory_uri() ?>/assets/images/right-arrow.svg" alt="" class="catalog-arrow" width="7px">
 									</a>
 									<div class="catalog-additional">
 										<ul>
@@ -248,7 +248,7 @@ Template Name: index
 								</li>
 								<li>
 									<a href="">Канцтовары и книги
-											<img src="assets/images/right-arrow.svg" alt="" class="catalog-arrow" width="7px">
+											<img src="<?php echo get_template_directory_uri() ?>/assets/images/right-arrow.svg" alt="" class="catalog-arrow" width="7px">
 									</a>
 									<div class="catalog-additional">
 										<ul>
@@ -267,7 +267,7 @@ Template Name: index
 								</li>
 								<li>
 									<a href="">Инструменты
-											<img src="assets/images/right-arrow.svg" alt="" class="catalog-arrow" width="7px">
+											<img src="<?php echo get_template_directory_uri() ?>/assets/images/right-arrow.svg" alt="" class="catalog-arrow" width="7px">
 									</a>
 									<div class="catalog-additional">
 										<ul>
@@ -369,7 +369,7 @@ Template Name: index
 			  <div class="wrapper">
 				  <div class="sale-banner__items">
 					  <div class="sale-banner__items-item">
-						<img src="assets/images/sale1.jpg" alt="">
+						<img src="<?php echo get_template_directory_uri() ?>/assets/images/sale1.jpg" alt="">
 							<div class="sale-banner__items-item__inside">
 								<a class="sale-banner__items-item__inside-name " href="">
 									<span>Чайник из нержавеющейстали “Corsair” по акционной цене.</span> 
@@ -381,7 +381,7 @@ Template Name: index
 							</div>		
 					  </div>
 					  <div class="sale-banner__items-item">
-						<img src="assets/images/sale2.jpg" alt="">
+						<img src="<?php echo get_template_directory_uri() ?>/assets/images/sale2.jpg" alt="">
 							<div class="sale-banner__items-item__inside">
 								<a class="sale-banner__items-item__inside-name light-p" href="">
 									<span>Лучшие цены на текстиль, только в апреле:</span> 
@@ -393,7 +393,7 @@ Template Name: index
 							</div>
 					  </div>
 					  <div class="sale-banner__items-item">
-						<img src="assets/images/sale3.jpg" alt="">
+						<img src="<?php echo get_template_directory_uri() ?>/assets/images/sale3.jpg" alt="">
 							<div class="sale-banner__items-item__inside">
 								<a class="sale-banner__items-item__inside-name " href="">
 									<span>Чайник из нержавеющейстали “Corsair” по акционной цене.</span> 
@@ -417,7 +417,7 @@ Template Name: index
 								  -<span>20</span>%
 							  </div>
 							  <div class="best-offers__inside-items__item-img">
-								  <img src="assets/images/item-1.jpg" alt="">
+								  <img src="<?php echo get_template_directory_uri() ?>/assets/images/item-1.jpg" alt="">
 							  </div>
 							  <div class="best-offers__inside-items__item-info">
 								<div class="best-offers__inside-items__item-info__category">
@@ -441,7 +441,7 @@ Template Name: index
 									</div>
 									<div class="best-offers__inside-items__item-info__buy-inCart">
 										<a href="">
-											<img src="assets/images/mbasket.png" alt="">
+											<img src="<?php echo get_template_directory_uri() ?>/assets/images/mbasket.png" alt="">
 											В корзину
 										</a>
 									</div>
@@ -456,7 +456,7 @@ Template Name: index
 									NEW
 								</div>
 								<div class="best-offers__inside-items__item-img">
-									<img src="assets/images/item-2.jpg" alt="">
+									<img src="<?php echo get_template_directory_uri() ?>/assets/images/item-2.jpg" alt="">
 								</div>
 								<div class="best-offers__inside-items__item-info">
 								  <div class="best-offers__inside-items__item-info__category">
@@ -480,7 +480,7 @@ Template Name: index
 									  </div>
 									  <div class="best-offers__inside-items__item-info__buy-inCart">
 										  <a href="">
-											  <img src="assets/images/mbasket.png" alt="">
+											  <img src="<?php echo get_template_directory_uri() ?>/assets/images/mbasket.png" alt="">
 											  В корзину
 										  </a>
 									  </div>
@@ -492,7 +492,7 @@ Template Name: index
 									-<span>20</span>%
 								</div>
 							  <div class="best-offers__inside-items__item-img">
-								  <img src="assets/images/item-3.jpg" alt="">
+								  <img src="<?php echo get_template_directory_uri() ?>/assets/images/item-3.jpg" alt="">
 							  </div>
 							  <div class="best-offers__inside-items__item-info">
 								<div class="best-offers__inside-items__item-info__category">
@@ -516,7 +516,7 @@ Template Name: index
 									</div>
 									<div class="best-offers__inside-items__item-info__buy-inCart">
 										<a href="">
-											<img src="assets/images/mbasket.png" alt="">
+											<img src="<?php echo get_template_directory_uri() ?>/assets/images/mbasket.png" alt="">
 											В корзину
 										</a>
 									</div>
@@ -528,7 +528,7 @@ Template Name: index
 									-<span>20</span>%
 								</div>
 							  <div class="best-offers__inside-items__item-img">
-								  <img src="assets/images/item-4.jpg" alt="">
+								  <img src="<?php echo get_template_directory_uri() ?>/assets/images/item-4.jpg" alt="">
 							  </div>
 							  <div class="best-offers__inside-items__item-info">
 								<div class="best-offers__inside-items__item-info__category">
@@ -552,7 +552,7 @@ Template Name: index
 									</div>
 									<div class="best-offers__inside-items__item-info__buy-inCart">
 										<a href="">
-											<img src="assets/images/mbasket.png" alt="">
+											<img src="<?php echo get_template_directory_uri() ?>/assets/images/mbasket.png" alt="">
 											В корзину
 										</a>
 									</div>
@@ -564,7 +564,7 @@ Template Name: index
 									-<span>20</span>%
 								</div>
 								<div class="best-offers__inside-items__item-img">
-									<img src="assets/images/item-1.jpg" alt="">
+									<img src="<?php echo get_template_directory_uri() ?>/assets/images/item-1.jpg" alt="">
 								</div>
 								<div class="best-offers__inside-items__item-info">
 								  <div class="best-offers__inside-items__item-info__category">
@@ -588,7 +588,7 @@ Template Name: index
 									  </div>
 									  <div class="best-offers__inside-items__item-info__buy-inCart">
 										  <a href="">
-											  <img src="assets/images/mbasket.png" alt="">
+											  <img src="<?php echo get_template_directory_uri() ?>/assets/images/mbasket.png" alt="">
 											  В корзину
 										  </a>
 									  </div>
@@ -603,7 +603,7 @@ Template Name: index
 									  NEW
 								  </div>
 								  <div class="best-offers__inside-items__item-img">
-									  <img src="assets/images/item-2.jpg" alt="">
+									  <img src="<?php echo get_template_directory_uri() ?>/assets/images/item-2.jpg" alt="">
 								  </div>
 								  <div class="best-offers__inside-items__item-info">
 									<div class="best-offers__inside-items__item-info__category">
@@ -627,7 +627,7 @@ Template Name: index
 										</div>
 										<div class="best-offers__inside-items__item-info__buy-inCart">
 											<a href="">
-												<img src="assets/images/mbasket.png" alt="">
+												<img src="<?php echo get_template_directory_uri() ?>/assets/images/mbasket.png" alt="">
 												В корзину
 											</a>
 										</div>
@@ -639,7 +639,7 @@ Template Name: index
 									  -<span>20</span>%
 								  </div>
 								<div class="best-offers__inside-items__item-img">
-									<img src="assets/images/item-3.jpg" alt="">
+									<img src="<?php echo get_template_directory_uri() ?>/assets/images/item-3.jpg" alt="">
 								</div>
 								<div class="best-offers__inside-items__item-info">
 								  <div class="best-offers__inside-items__item-info__category">
@@ -663,7 +663,7 @@ Template Name: index
 									  </div>
 									  <div class="best-offers__inside-items__item-info__buy-inCart">
 										  <a href="">
-											  <img src="assets/images/mbasket.png" alt="">
+											  <img src="<?php echo get_template_directory_uri() ?>/assets/images/mbasket.png" alt="">
 											  В корзину
 										  </a>
 									  </div>
@@ -675,7 +675,7 @@ Template Name: index
 									  -<span>20</span>%
 								  </div>
 								<div class="best-offers__inside-items__item-img">
-									<img src="assets/images/item-4.jpg" alt="">
+									<img src="<?php echo get_template_directory_uri() ?>/assets/images/item-4.jpg" alt="">
 								</div>
 								<div class="best-offers__inside-items__item-info">
 								  <div class="best-offers__inside-items__item-info__category">
@@ -699,7 +699,7 @@ Template Name: index
 									  </div>
 									  <div class="best-offers__inside-items__item-info__buy-inCart">
 										  <a href="">
-											  <img src="assets/images/mbasket.png" alt="">
+											  <img src="<?php echo get_template_directory_uri() ?>/assets/images/mbasket.png" alt="">
 											  В корзину
 										  </a>
 									  </div>
@@ -711,7 +711,7 @@ Template Name: index
 								  -<span>20</span>%
 							  </div>
 							  <div class="best-offers__inside-items__item-img">
-								  <img src="assets/images/item-1.jpg" alt="">
+								  <img src="<?php echo get_template_directory_uri() ?>/assets/images/item-1.jpg" alt="">
 							  </div>
 							  <div class="best-offers__inside-items__item-info">
 								<div class="best-offers__inside-items__item-info__category">
@@ -735,7 +735,7 @@ Template Name: index
 									</div>
 									<div class="best-offers__inside-items__item-info__buy-inCart">
 										<a href="">
-											<img src="assets/images/mbasket.png" alt="">
+											<img src="<?php echo get_template_directory_uri() ?>/assets/images/mbasket.png" alt="">
 											В корзину
 										</a>
 									</div>
@@ -750,7 +750,7 @@ Template Name: index
 									NEW
 								</div>
 								<div class="best-offers__inside-items__item-img">
-									<img src="assets/images/item-2.jpg" alt="">
+									<img src="<?php echo get_template_directory_uri() ?>/assets/images/item-2.jpg" alt="">
 								</div>
 								<div class="best-offers__inside-items__item-info">
 								  <div class="best-offers__inside-items__item-info__category">
@@ -774,7 +774,7 @@ Template Name: index
 									  </div>
 									  <div class="best-offers__inside-items__item-info__buy-inCart">
 										  <a href="">
-											  <img src="assets/images/mbasket.png" alt="">
+											  <img src="<?php echo get_template_directory_uri() ?>/assets/images/mbasket.png" alt="">
 											  В корзину
 										  </a>
 									  </div>
@@ -786,7 +786,7 @@ Template Name: index
 									-<span>20</span>%
 								</div>
 							  <div class="best-offers__inside-items__item-img">
-								  <img src="assets/images/item-3.jpg" alt="">
+								  <img src="<?php echo get_template_directory_uri() ?>/assets/images/item-3.jpg" alt="">
 							  </div>
 							  <div class="best-offers__inside-items__item-info">
 								<div class="best-offers__inside-items__item-info__category">
@@ -810,7 +810,7 @@ Template Name: index
 									</div>
 									<div class="best-offers__inside-items__item-info__buy-inCart">
 										<a href="">
-											<img src="assets/images/mbasket.png" alt="">
+											<img src="<?php echo get_template_directory_uri() ?>/assets/images/mbasket.png" alt="">
 											В корзину
 										</a>
 									</div>
@@ -822,7 +822,7 @@ Template Name: index
 									-<span>20</span>%
 								</div>
 							  <div class="best-offers__inside-items__item-img">
-								  <img src="assets/images/item-4.jpg" alt="">
+								  <img src="<?php echo get_template_directory_uri() ?>/assets/images/item-4.jpg" alt="">
 							  </div>
 							  <div class="best-offers__inside-items__item-info">
 								<div class="best-offers__inside-items__item-info__category">
@@ -846,7 +846,7 @@ Template Name: index
 									</div>
 									<div class="best-offers__inside-items__item-info__buy-inCart">
 										<a href="">
-											<img src="assets/images/mbasket.png" alt="">
+											<img src="<?php echo get_template_directory_uri() ?>/assets/images/mbasket.png" alt="">
 											В корзину
 										</a>
 									</div>
@@ -869,7 +869,7 @@ Template Name: index
 						</p>
 					  </div>
 					  <div class="stock-block__inside-img">
-						  <img src="assets/images/skov.png" alt="">
+						  <img src="<?php echo get_template_directory_uri() ?>/assets/images/skov.png" alt="">
 					  </div>
 					  <a href="" class="stock-block__inside-more">Подробнее</a>
 				  </div>
@@ -881,7 +881,7 @@ Template Name: index
 				  <div class="news-inside">
 						<div class="news-inside__article">
 							<div class="news-inside__article-img">
-								<img src="assets/images/article.jpg" alt="">
+								<img src="<?php echo get_template_directory_uri() ?>/assets/images/article.jpg" alt="">
 							</div>
 							<div class="news-inside__article-text">
 								<p class="news-inside__article-text__date">
@@ -907,7 +907,7 @@ Template Name: index
 						</div>
 						<div class="news-inside__article">
 							<div class="news-inside__article-img">
-								<img src="assets/images/article.jpg" alt="">
+								<img src="<?php echo get_template_directory_uri() ?>/assets/images/article.jpg" alt="">
 							</div>
 							<div class="news-inside__article-text">
 								<p class="news-inside__article-text__date">
@@ -933,7 +933,7 @@ Template Name: index
 						</div>
 						<div class="news-inside__article">
 							<div class="news-inside__article-img">
-								<img src="assets/images/article.jpg" alt="">
+								<img src="<?php echo get_template_directory_uri() ?>/assets/images/article.jpg" alt="">
 							</div>
 							<div class="news-inside__article-text">
 								<p class="news-inside__article-text__date">
@@ -959,7 +959,7 @@ Template Name: index
 						</div>
 						<div class="news-inside__article">
 							<div class="news-inside__article-img">
-								<img src="assets/images/article.jpg" alt="">
+								<img src="<?php echo get_template_directory_uri() ?>/assets/images/article.jpg" alt="">
 							</div>
 							<div class="news-inside__article-text">
 								<p class="news-inside__article-text__date">
