@@ -12,14 +12,17 @@
 		<div class="wrapper">
 			<div class="header-inside">
 				<div class="header-inside__logo">
-					<a href=""><img src="<?php echo get_template_directory_uri() ?>/assets/images/logo.png" alt=""></a>
+					<a href="<?php echo get_home_url(); ?>">
+						<img src="<?php echo esc_url( get_theme_mod( 'header_logo' ) ); ?>" alt="Header logo">
+					</a>
 				</div>
 				<div class="header-inside__contacts">
 					<div class="header-inside__contacts-img"></div>
 					<div class="header-inside__contacts-text">
 						<ul>
-							<li>+38 (067) 613-33-06</li>
-							<li>г.Мелитополь, ул. Интеркультурная, 38</li>
+							<?php $phone = get_theme_mod( 'phone' ); ?>
+							<li><a href="tel:<?php echo get_call_phobe($phone); ?>" class="header-phone"><?php echo $phone; ?></a></li>
+							<li><?php echo get_theme_mod( 'address' ); ?></li>
 						</ul>
 					</div>
 				</div>
@@ -61,3 +64,4 @@
 			</div>
 		</div>
 	</header>
+

@@ -36,6 +36,7 @@ function mytheme_customize_register( $wp_customize ) {
         )
     );
 
+
     /*PHONE*/
     $wp_customize->add_setting(
         'phone',
@@ -49,86 +50,159 @@ function mytheme_customize_register( $wp_customize ) {
     	    'type' => 'text',
     	)
     );
-    /*SOCIAL Viber*/
+    // /*SOCIAL Viber*/
+    // $wp_customize->add_setting(
+    //     'Viber',
+    //     array('default' => 'https://www.viber.com/ru/')
+    // );
+    // $wp_customize->add_control(
+    //   'Viber',
+    //   array(
+    //       'label' => 'Viber',
+    //       'section' => 'main_option',
+    //       'type' => 'text',
+    //   )
+    // );
+    // /*SOCIAL whatsapp*/
+    // $wp_customize->add_setting(
+    //     'WhatsApp',
+    //     array('default' => 'https://www.whatsapp.com/?lang=ru')
+    // );
+    // $wp_customize->add_control(
+    //   'WhatsApp',
+    //   array(
+    //       'label' => 'WhatsApp',
+    //       'section' => 'main_option',
+    //       'type' => 'text',
+    //   )
+    // );
+    // /*SOCIAL Telegram*/
+    // $wp_customize->add_setting(
+    //     'Telegram',
+    //     array('default' => 'https://telegram.org/')
+    // );
+    // $wp_customize->add_control(
+    //   'Telegram',
+    //   array(
+    //       'label' => 'Telegram',
+    //       'section' => 'main_option',
+    //       'type' => 'text',
+    //   )
+    // );
+    // /*SOCIAL VK*/
+    // $wp_customize->add_setting(
+    //     'VK',
+    //     array('default' => 'https://vk.com')
+    // );
+    // $wp_customize->add_control(
+    //   'VK',
+    //   array(
+    //       'label' => 'VK',
+    //       'section' => 'main_option',
+    //       'type' => 'text',
+    //   )
+    // );
+    // /*SOCIAL FaceBook*/
+    // $wp_customize->add_setting(
+    //     'FaceBook',
+    //     array('default' => 'https://ru-ru.facebook.com/')
+    // );
+    // $wp_customize->add_control(
+    //   'FaceBook',
+    //   array(
+    //       'label' => 'FaceBook',
+    //       'section' => 'main_option',
+    //       'type' => 'text',
+    //   )
+    // );
+    // /*SOCIAL Instagram*/
+    // $wp_customize->add_setting(
+    //     'Instagram',
+    //     array('default' => 'https://www.instagram.com/?hl=ru')
+    // );
+    // $wp_customize->add_control(
+    //   'Instagram',
+    //   array(
+    //       'label' => 'Instagram',
+    //       'section' => 'main_option',
+    //       'type' => 'text',
+    //   )
+    // );
+
+    /*Address*/
     $wp_customize->add_setting(
-        'Viber',
-        array('default' => 'https://www.viber.com/ru/')
+        'address',
+        array('default' => 'Африка о. Мадагаскар')
     );
     $wp_customize->add_control(
-      'Viber',
+      'address',
       array(
-          'label' => 'Viber',
+          'label' => 'адресс',
           'section' => 'main_option',
           'type' => 'text',
       )
     );
-    /*SOCIAL whatsapp*/
+
+    /*Копирайт*/
     $wp_customize->add_setting(
-        'WhatsApp',
-        array('default' => 'https://www.whatsapp.com/?lang=ru')
+        'copyright',
+        array('default' => '2019 все права защищены (с)')
     );
     $wp_customize->add_control(
-      'WhatsApp',
+      'copyright',
       array(
-          'label' => 'WhatsApp',
+          'label' => 'Копирайт',
           'section' => 'main_option',
           'type' => 'text',
       )
     );
-    /*SOCIAL Telegram*/
-    $wp_customize->add_setting(
-        'Telegram',
-        array('default' => 'https://telegram.org/')
-    );
-    $wp_customize->add_control(
-      'Telegram',
-      array(
-          'label' => 'Telegram',
-          'section' => 'main_option',
-          'type' => 'text',
-      )
-    );
-    /*SOCIAL VK*/
-    $wp_customize->add_setting(
-        'VK',
-        array('default' => 'https://vk.com')
-    );
-    $wp_customize->add_control(
-      'VK',
-      array(
-          'label' => 'VK',
-          'section' => 'main_option',
-          'type' => 'text',
-      )
-    );
-    /*SOCIAL FaceBook*/
-    $wp_customize->add_setting(
-        'FaceBook',
-        array('default' => 'https://ru-ru.facebook.com/')
-    );
-    $wp_customize->add_control(
-      'FaceBook',
-      array(
-          'label' => 'FaceBook',
-          'section' => 'main_option',
-          'type' => 'text',
-      )
-    );
-    /*SOCIAL Instagram*/
-    $wp_customize->add_setting(
-        'Instagram',
-        array('default' => 'https://www.instagram.com/?hl=ru')
-    );
-    $wp_customize->add_control(
-      'Instagram',
-      array(
-          'label' => 'Instagram',
-          'section' => 'main_option',
-          'type' => 'text',
-      )
-    );
+
+    // Section - Логотипы
+    $wp_customize->add_section('slideshow', array(
+        'title'             => 'Логотипы', 
+        'priority'          => 70,
+    ));    
+
+    // 2 поля логотипов
+    $wp_customize->add_setting('header_logo', array(
+        'transport'         => 'refresh',
+        'height'         => 325,
+    ));
+    $wp_customize->add_setting('footer_logo', array(
+        'transport'         => 'refresh',
+        'height'         => 325,
+    ));
+
+    // 2 поля логотипов
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'customizer_setting_one_control', array(
+        'label'             => 'Лого в шапке сайта',
+        'section'           => 'slideshow',
+        'settings'          => 'header_logo',    
+    )));
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'customizer_setting_two_control', array(
+        'label'             => 'Лого в шапке подвале',
+        'section'           => 'slideshow',
+        'settings'          => 'footer_logo',
+    )));
 }
+
+
+
+
+
 
 function get_call_phobe($phone){
 	return str_replace([' ', '-', '(', ')', '-', '+'], '', $phone);
 }
+
+function themename_custom_logo_setup() {
+    $defaults = array(
+        'height'      => 100,
+        'width'       => 400,
+        'flex-height' => true,
+        'flex-width'  => true,
+        'header-text' => array( 'site-title', 'site-description' ),
+    );
+    add_theme_support( 'custom-logo', $defaults );
+}
+add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
