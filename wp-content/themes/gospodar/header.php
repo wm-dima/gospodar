@@ -64,4 +64,31 @@
 			</div>
 		</div>
 	</header>
+	<main>
+		<div class="search-catalog">
+			<div class="wrapper">
+				<div class="search-catalog__inside">
+					<?php get_template_part('template-parts/categories', 'catalog'); ?>
+					<div class="search-catalog__inside-stock">
+						<a href="">
+							<div class="search-catalog__inside-stock-inside">
+								<div class="search-catalog__inside-stock-inside__img"></div>
+								<a href="">Акции</a>
+							</div>
+						</a>
+					</div>
+					<div class="search-catalog__inside-search">
+						<form action="">
+							<input type="text" class="search-field" placeholder="Введите запрос для поиска">
+							<div class="select">
+								<select name="" id="select">
+									<option value="">Все категории</option>
+								</select>
+							</div>		
+							<input type="button" value="Искать">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 
