@@ -220,20 +220,6 @@ function only_search_for_full_phrase( $query ) {
 add_action( 'pre_get_posts', 'only_search_for_full_phrase' );
 
 
-function wm_before_products(){
-	get_template_part('template-parts/main', 'slider');
-	?>
-	<div class="free-delivery">
-		<div class="wrapper">
-			<div class="free-delivery__inside">
-				<h4><?php echo get_field('main_subtitle', 5); ?></h4>
-			</div>
-		</div>
-	</div>
-	<?php
-	get_template_part('template-parts/sale', 'banner');
-}
-
 function get_main_page_prod_ids(){
 	global $wpdb;
 	$sql = "SELECT ID FROM `{$wpdb->prefix}posts` WHERE post_type = 'product' ORDER BY ID DESC LIMIT 12";
