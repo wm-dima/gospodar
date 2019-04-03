@@ -152,10 +152,7 @@ Template Name: index
 					<div class="subscribe-inside">
 						<div class="subscribe-inside__img"></div>
 						<p>Для наших подписчиков - скидки, новинки и полезные советы</p>
-						<form action="">
-							<input type="text" placeholder="Введите свой Email для подписки на новости">
-							<input type="submit" value="Подписаться">
-						</form> 
+						<?php echo do_shortcode( '[mc4wp_form id="216"]' ); ?>
 					</div>
 				</div>
 			</div>
