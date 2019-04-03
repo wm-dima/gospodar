@@ -258,9 +258,11 @@ function wm_get_main_img_url($id){
 
 function is_new_product($created_date){
 	if (! $created_date == null ) {
-		return $created_date->getTimestamp() > strtotime("-1 hour");
+		return $created_date->getTimestamp() > strtotime("-1 week");
 	}
 }
+
+
 /*woo start main page*/
 
 // remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );

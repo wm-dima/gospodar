@@ -11,3 +11,7 @@ Theme Name: Господар
 .item-saleBlock, .item-new{
 	z-index: 2;
 }
+
+.added_to_cart.wc-forward{
+	display: none;
+}
