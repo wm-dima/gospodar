@@ -1,10 +1,13 @@
 @charset "UTF-8";
 /*
 Theme Name: Господар
- */
-
+*/
 
 .header-phone{
 	color: #fff;
 	text-decoration-line: none;
+}
+
+.item-saleBlock, .item-new{
+	z-index: 2;
 }

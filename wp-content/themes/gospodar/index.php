@@ -4,505 +4,80 @@ Template Name: index
 */
 ?>
 <?php get_header(); ?>
-
-
-		  <div class="free-delivery">
-			  <div class="wrapper">
-				  <div class="free-delivery__inside">
-					  <h4>Бесплатная доставка при заказе от 4000грн. Всегда.</h4>
-				  </div>
-			  </div>
-		  </div>
-
-		  <div class="sale-banner">
-			  <div class="wrapper">
-				  <div class="sale-banner__items">
-					  <div class="sale-banner__items-item">
-						<img src="<?php echo get_template_directory_uri() ?>/assets/images/sale1.jpg" alt="">
-							<div class="sale-banner__items-item__inside">
-								<a class="sale-banner__items-item__inside-name " href="">
-									<span>Чайник из нержавеющейстали “Corsair” по акционной цене.</span> 
-								</a>
-								<p class="sale-banner__items-item__inside-position_price">
-									<span class="sp1"><span class="last-price">1000</span>грн</span>
-									<span class="sp2"><span class="current-price">850</span>грн</span>
-								</p>
-							</div>		
-					  </div>
-					  <div class="sale-banner__items-item">
-						<img src="<?php echo get_template_directory_uri() ?>/assets/images/sale2.jpg" alt="">
-							<div class="sale-banner__items-item__inside">
-								<a class="sale-banner__items-item__inside-name light-p" href="">
-									<span>Лучшие цены на текстиль, только в апреле:</span> 
-								</a>
-								<p class="sale-banner__items-item__inside-sale_price">
-									Скидка
-									<span class="sale-index">20%</span>
-								</p>
-							</div>
-					  </div>
-					  <div class="sale-banner__items-item">
-						<img src="<?php echo get_template_directory_uri() ?>/assets/images/sale3.jpg" alt="">
-							<div class="sale-banner__items-item__inside">
-								<a class="sale-banner__items-item__inside-name " href="">
-									<span>Чайник из нержавеющейстали “Corsair” по акционной цене.</span> 
-								</a>
-								<p class="sale-banner__items-item__inside-position_price">
-									<span class="sp1"><span class="last-price">1000</span>грн</span>
-									<span class="sp2"><span class="current-price">850</span>грн</span>
-								</p>
-							</div>	
-					  </div>
-				  </div>
-			  </div>
-		  </div>
+		  <?php wm_before_products(); ?>
 		  <div class="best-offers">
 			  <div class="wrapper">
 				  <div class="best-offers__inside">
-					  <h4>Текстиль</h4>
+					  <h4><?php echo get_field('entry_word', 5) ?></h4>
 					  <div class="best-offers__inside-items">
+					  	<?php 
+				  		$ids = get_main_page_prod_ids();
+						foreach ($ids as $key => $value): ?>
+							<?php 
+								$product = wc_get_product($value->ID);
+							?>
 						  <div class="best-offers__inside-items__item item-sale">
+						  	<?php if ($product->is_on_sale()): ?>
 							  <div class="item-saleBlock">
-								  -<span>20</span>%
+								  -<span><?php echo get_percent_sale($product); ?></span>%
 							  </div>
-							  <div class="best-offers__inside-items__item-img">
-								  <img src="<?php echo get_template_directory_uri() ?>/assets/images/item-1.jpg" alt="">
-							  </div>
+							<?php elseif(is_new_product($product->date_created)): ?>
+								<div class="item-new">
+									<div class="item-newBlock">
+										NEW
+									</div>
+								</div>
+						  	<?php endif ?>
+						      <a href="<?php echo get_permalink( $product->id ); ?>">
+							    <div class="best-offers__inside-items__item-img">
+								  <img src="<?php echo wm_get_main_img_url( $product->id ); ?>" alt="">
+							    </div>
+						  	  </a>
 							  <div class="best-offers__inside-items__item-info">
 								<div class="best-offers__inside-items__item-info__category">
-									<p>
-										Мелкая бытовая техника
-									</p>
+									<p><?php echo get_term( $product->category_ids[0] )->name; ?></p>
 								</div>
-								<a class="best-offers__inside-items__item-info__name">
-									Электрочайник из нержавеющей стали Midea
+								<a href="<?php echo get_permalink( $product->id); ?>" class="best-offers__inside-items__item-info__name">
+									<?php echo $product->name; ?>
 								</a>
 								<div class="best-offers__inside-items__item-info__buy">
 									<div class="best-offers__inside-items__item-info__buy-price">
+										<?php if ($product->is_on_sale()): ?>
 										<p class="last-price">
-											<span class="last-price-value">1300</span> грн
+											<span class="last-price-value"><?php echo $product->get_regular_price(); ?></span> грн
 										</p>
 										<p class="current-price-item">
 											<span class="current-price-value">
-												1190<sup> 17</sup>
+												<?php echo $product->get_sale_price(); ?>
 											</span> грн 
 										</p>
+										<?php else: ?>
+											<span class="current-price-value">
+												<?php echo $product->get_regular_price(); ?>
+											</span> грн 
+										<?php endif ?>
 									</div>
 									<div class="best-offers__inside-items__item-info__buy-inCart">
-										<a href="">
-											<img src="<?php echo get_template_directory_uri() ?>/assets/images/mbasket.png" alt="">
-											В корзину
-										</a>
+		                                <?php if ($product->stock_status == 'outofstock'): ?>
+		                                	<a href="javascript:void(0)" class="out-of-stock">Нет в наличие</a>
+		                                <?php else: ?>
+		                                    <a 
+		                                        href="/shop/?add-to-cart=<?php echo $product->id; ?>" 
+		                                        data-quantity="1" 
+		                                        class="button product_type_simple add_to_cart_button ajax_add_to_cart" 
+		                                        data-product_id="<?php echo $product->id; ?>" 
+		                                        data-product_sku="" 
+		                                        rel="nofollow"
+		                                    >
+		                              		    <img src="<?php echo get_template_directory_uri() ?>/assets/images/mbasket.png" alt="">
+		                                        В корзину
+		                                    </a>
+		                                <?php endif ?>
 									</div>
 								</div>
 							</div>	
 						  </div>
-						  <div class="best-offers__inside-items__item item-new">
-								<div class="item-saleBlock">
-									-<span>20</span>%
-								</div>
-								<div class="item-newBlock">
-									NEW
-								</div>
-								<div class="best-offers__inside-items__item-img">
-									<img src="<?php echo get_template_directory_uri() ?>/assets/images/item-2.jpg" alt="">
-								</div>
-								<div class="best-offers__inside-items__item-info">
-								  <div class="best-offers__inside-items__item-info__category">
-									  <p>
-										  Текстиль
-									  </p>
-								  </div>
-								  <a class="best-offers__inside-items__item-info__name">
-									  Электрочайник из нержавеющей стали Midea
-								  </a>
-								  <div class="best-offers__inside-items__item-info__buy">
-									  <div class="best-offers__inside-items__item-info__buy-price">
-										  <p class="last-price">
-											  <span class="last-price-value">1300</span> грн
-										  </p>
-										  <p class="current-price-item">
-											  <span class="current-price-value">
-												  1190<sup> 17</sup>
-											  </span> грн 
-										  </p>
-									  </div>
-									  <div class="best-offers__inside-items__item-info__buy-inCart">
-										  <a href="">
-											  <img src="<?php echo get_template_directory_uri() ?>/assets/images/mbasket.png" alt="">
-											  В корзину
-										  </a>
-									  </div>
-								  </div>
-							  </div>	
-							</div>
-							<div class="best-offers__inside-items__item">
-								<div class="item-saleBlock">
-									-<span>20</span>%
-								</div>
-							  <div class="best-offers__inside-items__item-img">
-								  <img src="<?php echo get_template_directory_uri() ?>/assets/images/item-3.jpg" alt="">
-							  </div>
-							  <div class="best-offers__inside-items__item-info">
-								<div class="best-offers__inside-items__item-info__category">
-									<p>
-										Мелкая бытовая техника
-									</p>
-								</div>
-								<a class="best-offers__inside-items__item-info__name">
-									Электрочайник из нержавеющей стали Midea
-								</a>
-								<div class="best-offers__inside-items__item-info__buy">
-									<div class="best-offers__inside-items__item-info__buy-price">
-										<p class="last-price">
-											<span class="last-price-value">1300</span> грн
-										</p>
-										<p class="current-price-item">
-											<span class="current-price-value">
-												1190<sup> 17</sup>
-											</span> грн 
-										</p>
-									</div>
-									<div class="best-offers__inside-items__item-info__buy-inCart">
-										<a href="">
-											<img src="<?php echo get_template_directory_uri() ?>/assets/images/mbasket.png" alt="">
-											В корзину
-										</a>
-									</div>
-								</div>
-							</div>	
-						  </div>
-						  <div class="best-offers__inside-items__item">
-							  <div class="item-saleBlock">
-									-<span>20</span>%
-								</div>
-							  <div class="best-offers__inside-items__item-img">
-								  <img src="<?php echo get_template_directory_uri() ?>/assets/images/item-4.jpg" alt="">
-							  </div>
-							  <div class="best-offers__inside-items__item-info">
-								<div class="best-offers__inside-items__item-info__category">
-									<p>
-										Кухонные приборы
-									</p>
-								</div>
-								<a class="best-offers__inside-items__item-info__name">
-									Электрочайник из нержавеющей стали Midea
-								</a>
-								<div class="best-offers__inside-items__item-info__buy">
-									<div class="best-offers__inside-items__item-info__buy-price">
-										<p class="last-price">
-											<span class="last-price-value">1300</span> грн
-										</p>
-										<p class="current-price-item">
-											<span class="current-price-value">
-												1190<sup> 17</sup>
-											</span> грн 
-										</p>
-									</div>
-									<div class="best-offers__inside-items__item-info__buy-inCart">
-										<a href="">
-											<img src="<?php echo get_template_directory_uri() ?>/assets/images/mbasket.png" alt="">
-											В корзину
-										</a>
-									</div>
-								</div>
-							</div>	
-						  </div>
-						  <div class="best-offers__inside-items__item item-sale">
-								<div class="item-saleBlock">
-									-<span>20</span>%
-								</div>
-								<div class="best-offers__inside-items__item-img">
-									<img src="<?php echo get_template_directory_uri() ?>/assets/images/item-1.jpg" alt="">
-								</div>
-								<div class="best-offers__inside-items__item-info">
-								  <div class="best-offers__inside-items__item-info__category">
-									  <p>
-										  Мелкая бытовая техника
-									  </p>
-								  </div>
-								  <a class="best-offers__inside-items__item-info__name">
-									  Электрочайник из нержавеющей стали Midea
-								  </a>
-								  <div class="best-offers__inside-items__item-info__buy">
-									  <div class="best-offers__inside-items__item-info__buy-price">
-										  <p class="last-price">
-											  <span class="last-price-value">1300</span> грн
-										  </p>
-										  <p class="current-price-item">
-											  <span class="current-price-value">
-												  1190<sup> 17</sup>
-											  </span> грн 
-										  </p>
-									  </div>
-									  <div class="best-offers__inside-items__item-info__buy-inCart">
-										  <a href="">
-											  <img src="<?php echo get_template_directory_uri() ?>/assets/images/mbasket.png" alt="">
-											  В корзину
-										  </a>
-									  </div>
-								  </div>
-							  </div>	
-							</div>
-							<div class="best-offers__inside-items__item item-new">
-								  <div class="item-saleBlock">
-									  -<span>20</span>%
-								  </div>
-								  <div class="item-newBlock">
-									  NEW
-								  </div>
-								  <div class="best-offers__inside-items__item-img">
-									  <img src="<?php echo get_template_directory_uri() ?>/assets/images/item-2.jpg" alt="">
-								  </div>
-								  <div class="best-offers__inside-items__item-info">
-									<div class="best-offers__inside-items__item-info__category">
-										<p>
-											Текстиль
-										</p>
-									</div>
-									<a class="best-offers__inside-items__item-info__name">
-										Электрочайник из нержавеющей стали Midea
-									</a>
-									<div class="best-offers__inside-items__item-info__buy">
-										<div class="best-offers__inside-items__item-info__buy-price">
-											<p class="last-price">
-												<span class="last-price-value">1300</span> грн
-											</p>
-											<p class="current-price-item">
-												<span class="current-price-value">
-													1190<sup> 17</sup>
-												</span> грн 
-											</p>
-										</div>
-										<div class="best-offers__inside-items__item-info__buy-inCart">
-											<a href="">
-												<img src="<?php echo get_template_directory_uri() ?>/assets/images/mbasket.png" alt="">
-												В корзину
-											</a>
-										</div>
-									</div>
-								</div>	
-							  </div>
-							  <div class="best-offers__inside-items__item">
-								  <div class="item-saleBlock">
-									  -<span>20</span>%
-								  </div>
-								<div class="best-offers__inside-items__item-img">
-									<img src="<?php echo get_template_directory_uri() ?>/assets/images/item-3.jpg" alt="">
-								</div>
-								<div class="best-offers__inside-items__item-info">
-								  <div class="best-offers__inside-items__item-info__category">
-									  <p>
-										  Мелкая бытовая техника
-									  </p>
-								  </div>
-								  <a class="best-offers__inside-items__item-info__name">
-									  Электрочайник из нержавеющей стали Midea
-								  </a>
-								  <div class="best-offers__inside-items__item-info__buy">
-									  <div class="best-offers__inside-items__item-info__buy-price">
-										  <p class="last-price">
-											  <span class="last-price-value">1300</span> грн
-										  </p>
-										  <p class="current-price-item">
-											  <span class="current-price-value">
-												  1190<sup> 17</sup>
-											  </span> грн 
-										  </p>
-									  </div>
-									  <div class="best-offers__inside-items__item-info__buy-inCart">
-										  <a href="">
-											  <img src="<?php echo get_template_directory_uri() ?>/assets/images/mbasket.png" alt="">
-											  В корзину
-										  </a>
-									  </div>
-								  </div>
-							  </div>	
-							</div>
-							<div class="best-offers__inside-items__item">
-								<div class="item-saleBlock">
-									  -<span>20</span>%
-								  </div>
-								<div class="best-offers__inside-items__item-img">
-									<img src="<?php echo get_template_directory_uri() ?>/assets/images/item-4.jpg" alt="">
-								</div>
-								<div class="best-offers__inside-items__item-info">
-								  <div class="best-offers__inside-items__item-info__category">
-									  <p>
-										  Кухонные приборы
-									  </p>
-								  </div>
-								  <a class="best-offers__inside-items__item-info__name">
-									  Электрочайник из нержавеющей стали Midea
-								  </a>
-								  <div class="best-offers__inside-items__item-info__buy">
-									  <div class="best-offers__inside-items__item-info__buy-price">
-										  <p class="last-price">
-											  <span class="last-price-value">1300</span> грн
-										  </p>
-										  <p class="current-price-item">
-											  <span class="current-price-value">
-												  1190<sup> 17</sup>
-											  </span> грн 
-										  </p>
-									  </div>
-									  <div class="best-offers__inside-items__item-info__buy-inCart">
-										  <a href="">
-											  <img src="<?php echo get_template_directory_uri() ?>/assets/images/mbasket.png" alt="">
-											  В корзину
-										  </a>
-									  </div>
-								  </div>
-							  </div>	
-							</div>
-							<div class="best-offers__inside-items__item item-sale">
-							  <div class="item-saleBlock">
-								  -<span>20</span>%
-							  </div>
-							  <div class="best-offers__inside-items__item-img">
-								  <img src="<?php echo get_template_directory_uri() ?>/assets/images/item-1.jpg" alt="">
-							  </div>
-							  <div class="best-offers__inside-items__item-info">
-								<div class="best-offers__inside-items__item-info__category">
-									<p>
-										Мелкая бытовая техника
-									</p>
-								</div>
-								<a class="best-offers__inside-items__item-info__name">
-									Электрочайник из нержавеющей стали Midea
-								</a>
-								<div class="best-offers__inside-items__item-info__buy">
-									<div class="best-offers__inside-items__item-info__buy-price">
-										<p class="last-price">
-											<span class="last-price-value">1300</span> грн
-										</p>
-										<p class="current-price-item">
-											<span class="current-price-value">
-												1190<sup> 17</sup>
-											</span> грн 
-										</p>
-									</div>
-									<div class="best-offers__inside-items__item-info__buy-inCart">
-										<a href="">
-											<img src="<?php echo get_template_directory_uri() ?>/assets/images/mbasket.png" alt="">
-											В корзину
-										</a>
-									</div>
-								</div>
-							</div>	
-						  </div>
-						  <div class="best-offers__inside-items__item item-new">
-								<div class="item-saleBlock">
-									-<span>20</span>%
-								</div>
-								<div class="item-newBlock">
-									NEW
-								</div>
-								<div class="best-offers__inside-items__item-img">
-									<img src="<?php echo get_template_directory_uri() ?>/assets/images/item-2.jpg" alt="">
-								</div>
-								<div class="best-offers__inside-items__item-info">
-								  <div class="best-offers__inside-items__item-info__category">
-									  <p>
-										  Текстиль
-									  </p>
-								  </div>
-								  <a class="best-offers__inside-items__item-info__name">
-									  Электрочайник из нержавеющей стали Midea
-								  </a>
-								  <div class="best-offers__inside-items__item-info__buy">
-									  <div class="best-offers__inside-items__item-info__buy-price">
-										  <p class="last-price">
-											  <span class="last-price-value">1300</span> грн
-										  </p>
-										  <p class="current-price-item">
-											  <span class="current-price-value">
-												  1190<sup> 17</sup>
-											  </span> грн 
-										  </p>
-									  </div>
-									  <div class="best-offers__inside-items__item-info__buy-inCart">
-										  <a href="">
-											  <img src="<?php echo get_template_directory_uri() ?>/assets/images/mbasket.png" alt="">
-											  В корзину
-										  </a>
-									  </div>
-								  </div>
-							  </div>	
-							</div>
-							<div class="best-offers__inside-items__item">
-								<div class="item-saleBlock">
-									-<span>20</span>%
-								</div>
-							  <div class="best-offers__inside-items__item-img">
-								  <img src="<?php echo get_template_directory_uri() ?>/assets/images/item-3.jpg" alt="">
-							  </div>
-							  <div class="best-offers__inside-items__item-info">
-								<div class="best-offers__inside-items__item-info__category">
-									<p>
-										Мелкая бытовая техника
-									</p>
-								</div>
-								<a class="best-offers__inside-items__item-info__name">
-									Электрочайник из нержавеющей стали Midea
-								</a>
-								<div class="best-offers__inside-items__item-info__buy">
-									<div class="best-offers__inside-items__item-info__buy-price">
-										<p class="last-price">
-											<span class="last-price-value">1300</span> грн
-										</p>
-										<p class="current-price-item">
-											<span class="current-price-value">
-												1190<sup> 17</sup>
-											</span> грн 
-										</p>
-									</div>
-									<div class="best-offers__inside-items__item-info__buy-inCart">
-										<a href="">
-											<img src="<?php echo get_template_directory_uri() ?>/assets/images/mbasket.png" alt="">
-											В корзину
-										</a>
-									</div>
-								</div>
-							</div>	
-						  </div>
-						  <div class="best-offers__inside-items__item">
-							  <div class="item-saleBlock">
-									-<span>20</span>%
-								</div>
-							  <div class="best-offers__inside-items__item-img">
-								  <img src="<?php echo get_template_directory_uri() ?>/assets/images/item-4.jpg" alt="">
-							  </div>
-							  <div class="best-offers__inside-items__item-info">
-								<div class="best-offers__inside-items__item-info__category">
-									<p>
-										Кухонные приборы
-									</p>
-								</div>
-								<a class="best-offers__inside-items__item-info__name">
-									Электрочайник из нержавеющей стали Midea
-								</a>
-								<div class="best-offers__inside-items__item-info__buy">
-									<div class="best-offers__inside-items__item-info__buy-price">
-										<p class="last-price">
-											<span class="last-price-value">1300</span> грн
-										</p>
-										<p class="current-price-item">
-											<span class="current-price-value">
-												1190<sup> 17</sup>
-											</span> грн 
-										</p>
-									</div>
-									<div class="best-offers__inside-items__item-info__buy-inCart">
-										<a href="">
-											<img src="<?php echo get_template_directory_uri() ?>/assets/images/mbasket.png" alt="">
-											В корзину
-										</a>
-									</div>
-								</div>
-							</div>	
-						  </div>
-						  
+						<?php endforeach ?>
 					  </div>
 				  </div>
 			  </div>

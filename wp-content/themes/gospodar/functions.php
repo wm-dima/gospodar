@@ -12,9 +12,9 @@ function my_them_load_css_and_js() {
     wp_enqueue_style( 'main-style', get_template_directory_uri() . '/style.css');
     wp_enqueue_style( 'assets-css-app-style', get_template_directory_uri() . '/assets/css/app.css');
 
-    wp_deregister_script('jquery');
-    wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.2.1.slim.min.js', array(), null, true);
- 
+    // wp_deregister_script('jquery');
+    // wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.2.1.slim.min.js', array(), null, false);
+
     wp_enqueue_script( 'my-swiper-min-js', get_template_directory_uri() . '/assets/js/swiper.min.js', array('jquery'), null, true );
     wp_enqueue_script( 'my-app-js', get_template_directory_uri() . '/assets/js/app.js', array('jquery'), null, true );
     wp_localize_script( 'my-app-js', 'my_custom_js', array( 
@@ -218,3 +218,53 @@ function only_search_for_full_phrase( $query ) {
     }
 }
 add_action( 'pre_get_posts', 'only_search_for_full_phrase' );
+
+
+function wm_before_products(){
+	get_template_part('template-parts/main', 'slider');
+	?>
+	<div class="free-delivery">
+		<div class="wrapper">
+			<div class="free-delivery__inside">
+				<h4><?php echo get_field('main_subtitle', 5); ?></h4>
+			</div>
+		</div>
+	</div>
+	<?php
+	get_template_part('template-parts/sale', 'banner');
+}
+
+function get_main_page_prod_ids(){
+	global $wpdb;
+	$sql = "SELECT ID FROM `{$wpdb->prefix}posts` WHERE post_type = 'product' ORDER BY ID DESC LIMIT 12";
+	return $wpdb->get_results($sql);
+}
+
+function get_percent_sale($product = false, $regular_price = false, $sale_price = false){
+	if ($product) {
+		$regular_price = $product->get_regular_price();
+		$sale_price = $product->get_sale_price();
+	}
+	return floor( 100 - 100 / ($regular_price/$sale_price) );
+}
+
+
+function wm_get_main_img_url($id){
+    if (has_post_thumbnail( $id )) 
+        return get_the_post_thumbnail_url($id);
+    else 
+        return get_template_directory_uri() . '/assets/images/no_image.png';
+}
+
+function is_new_product($created_date){
+	if (! $created_date == null ) {
+		return $created_date->getTimestamp() > strtotime("-1 hour");
+	}
+}
+/*woo start main page*/
+
+// remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+// remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
+// add_action( 'woocommerce_before_main_content', 'wm_before_products' );
+
+/*woo end main page*/
