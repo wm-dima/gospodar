@@ -97,127 +97,67 @@ Template Name: index
 			  </div>
 		  </div>
 		  <div class="news">
-			  <div class="wrapper">
-				  <h4>Новости, статьи, обзоры</h4>
-				  <div class="news-inside">
-						<div class="news-inside__article">
-							<div class="news-inside__article-img">
-								<img src="<?php echo get_template_directory_uri() ?>/assets/images/article.jpg" alt="">
-							</div>
-							<div class="news-inside__article-text">
-								<p class="news-inside__article-text__date">
-									15 марта, 2019
-								</p>
-								<a class="news-inside__article-text__name" href="#">
-									Как избавиться от неприятного запаха в квартире?
+			    <div class="wrapper">
+				    <h4>Новости, статьи, обзоры</h4>
+				    <div class="news-inside">
+					<?php 
+						$the_query = new WP_Query( array(
+						'post_type' => 'post',
+						'post_status' => 'publish',
+						'posts_per_page' => 4,
+						)); 
+					if ( $the_query->have_posts() ) : 
+						while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+							<div class="news-inside__article">
+								<a href="<?php echo get_permalink($post->id); ?>">
+									<div class="news-inside__article-img">
+										<img src="<?php
+										$img = get_the_post_thumbnail_url( $post, 'medium' );
+											echo  $img ? $img : get_template_directory_uri() . '/assets/images/article.jpg'
+										?>" 
+										alt="">
+									</div>
 								</a>
-								<p class="news-inside__article-text__text">
-									Нет ничего хуже неприятного запаха в квартире. Избавиться от него может быть совсем не просто. Куда хуже, если сами хозяева привыкают к нему и перестают его...							
-								</p>
-							</div>	
-							<div class="news-inside__article-stat">
-								<div class="news-inside__article-stat__comments">
-									<div class="news-inside__article-stat__comments-img"></div>
-									<span class="comments-quantity">245</span>
-								</div>
-								<div class="news-inside__article-stat__seens">
-									<div class="news-inside__article-stat__seens-img"></div>
-									<span class="seens-quantity">54</span>
-								</div>
-							</div>
-						</div>
-						<div class="news-inside__article">
-							<div class="news-inside__article-img">
-								<img src="<?php echo get_template_directory_uri() ?>/assets/images/article.jpg" alt="">
-							</div>
-							<div class="news-inside__article-text">
-								<p class="news-inside__article-text__date">
-									15 марта, 2019
-								</p>
-								<a class="news-inside__article-text__name" href="#">
-									Как избавиться от неприятного запаха в квартире?
-								</a>
-								<p class="news-inside__article-text__text">
-									Нет ничего хуже неприятного запаха в квартире. Избавиться от него может быть совсем не просто. Куда хуже, если сами хозяева привыкают к нему и перестают его...							
-								</p>
-							</div>	
-							<div class="news-inside__article-stat">
-								<div class="news-inside__article-stat__comments">
-									<div class="news-inside__article-stat__comments-img"></div>
-									<span class="comments-quantity">245</span>
-								</div>
-								<div class="news-inside__article-stat__seens">
-									<div class="news-inside__article-stat__seens-img"></div>
-									<span class="seens-quantity">54</span>
+								<div class="news-inside__article-text">
+									<p class="news-inside__article-text__date">
+										15 марта, 2019
+									</p>
+									<a class="news-inside__article-text__name" href="<?php echo get_permalink($post->id); ?>">
+										<?php the_title(); ?>
+									</a>
+									<p class="news-inside__article-text__text">
+										 <?php the_excerpt(); ?>						
+									</p>
+								</div>	
+								<div class="news-inside__article-stat">
+									<div class="news-inside__article-stat__comments">
+										<div class="news-inside__article-stat__comments-img"></div>
+										<span class="comments-quantity"><?php echo get_comments_number($post->id); ?></span>
+									</div>
+									<div class="news-inside__article-stat__seens">
+										<div class="news-inside__article-stat__seens-img"></div>
+										<span class="seens-quantity"><?php echo get_post_meta( get_the_ID(), 'viewed' )[0]; ?></span>
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="news-inside__article">
-							<div class="news-inside__article-img">
-								<img src="<?php echo get_template_directory_uri() ?>/assets/images/article.jpg" alt="">
-							</div>
-							<div class="news-inside__article-text">
-								<p class="news-inside__article-text__date">
-									15 марта, 2019
-								</p>
-								<a class="news-inside__article-text__name" href="#">
-									Как избавиться от неприятного запаха в квартире?
-								</a>
-								<p class="news-inside__article-text__text">
-									Нет ничего хуже неприятного запаха в квартире. Избавиться от него может быть совсем не просто. Куда хуже, если сами хозяева привыкают к нему и перестают его...							
-								</p>
-							</div>	
-							<div class="news-inside__article-stat">
-								<div class="news-inside__article-stat__comments">
-									<div class="news-inside__article-stat__comments-img"></div>
-									<span class="comments-quantity">245</span>
-								</div>
-								<div class="news-inside__article-stat__seens">
-									<div class="news-inside__article-stat__seens-img"></div>
-									<span class="seens-quantity">54</span>
-								</div>
-							</div>
-						</div>
-						<div class="news-inside__article">
-							<div class="news-inside__article-img">
-								<img src="<?php echo get_template_directory_uri() ?>/assets/images/article.jpg" alt="">
-							</div>
-							<div class="news-inside__article-text">
-								<p class="news-inside__article-text__date">
-									15 марта, 2019
-								</p>
-								<a class="news-inside__article-text__name" href="#">
-									Как избавиться от неприятного запаха в квартире?
-								</a>
-								<p class="news-inside__article-text__text">
-									Нет ничего хуже неприятного запаха в квартире. Избавиться от него может быть совсем не просто. Куда хуже, если сами хозяева привыкают к нему и перестают его...							
-								</p>
-							</div>	
-							<div class="news-inside__article-stat">
-								<div class="news-inside__article-stat__comments">
-									<div class="news-inside__article-stat__comments-img"></div>
-									<span class="comments-quantity">245</span>
-								</div>
-								<div class="news-inside__article-stat__seens">
-									<div class="news-inside__article-stat__seens-img"></div>
-									<span class="seens-quantity">54</span>
-								</div>
-							</div>
-						</div>
-				  </div>
-			  </div>
-		  </div>
-		  <div class="subscribe">
-			  <div class="wrapper">
-				  <div class="subscribe-inside">
-					  <div class="subscribe-inside__img"></div>
-					  <p>Для наших подписчиков - скидки, новинки и полезные советы</p>
-					  <form action="">
-						  <input type="text" placeholder="Введите свой Email для подписки на новости">
-						  <input type="submit" value="Подписаться">
-					  </form> 
+						<?php endwhile; wp_reset_postdata(); ?>
+					<?php else : ?>
+						<p>Пока еще нет записей</p>
+					<?php endif; ?>
+				    </div>
+			    </div>
+		    </div>
+		    <div class="subscribe">
+			    <div class="wrapper">
+					<div class="subscribe-inside">
+						<div class="subscribe-inside__img"></div>
+						<p>Для наших подписчиков - скидки, новинки и полезные советы</p>
+						<form action="">
+							<input type="text" placeholder="Введите свой Email для подписки на новости">
+							<input type="submit" value="Подписаться">
+						</form> 
 					</div>
-			  </div>
-		  </div>
-	</main>
+				</div>
+			</div>
+</main>
 <?php get_footer(); ?>
