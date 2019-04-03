@@ -29,11 +29,6 @@ get_header( 'shop' );
 do_action( 'woocommerce_before_main_content' );
 
 ?>
-<!-- <header class="woocommerce-products-header"> -->
-	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-		<!-- <h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1> -->
-	<?php endif; ?>
-
 	<?php
 	/**
 	 * Hook: woocommerce_archive_description.
@@ -43,7 +38,6 @@ do_action( 'woocommerce_before_main_content' );
 	 */
 	//do_action( 'woocommerce_archive_description' );
 	?>
-<!-- </header> -->
 <?php
 if ( woocommerce_product_loop() ) {
 
@@ -103,7 +97,7 @@ if ( woocommerce_product_loop() ) {
 	 *
 	 * @hooked woocommerce_pagination - 10
 	 */
-	do_action( 'woocommerce_after_shop_loop' );
+	//do_action( 'woocommerce_after_shop_loop' );
 } else {
 	/**
 	 * Hook: woocommerce_no_products_found.
@@ -118,13 +112,37 @@ if ( woocommerce_product_loop() ) {
  *
  * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
  */
-do_action( 'woocommerce_after_main_content' );
+// do_action( 'woocommerce_after_main_content' );
 
 /**
  * Hook: woocommerce_sidebar.
  *
  * @hooked woocommerce_get_sidebar - 10
  */
-do_action( 'woocommerce_sidebar' );
+// do_action( 'woocommerce_sidebar' );
+
+?>
+                    </div>
+                    <di class="wm-pagination">
+                    	<?php woocommerce_pagination(); ?>
+                    </di>
+                    <div class="catalog-block__inside-downNav">
+                        <div class="catalog-block__inside-downNav__found">
+                            <p>
+                                Найдено товаров:
+                                <span class="found-quantity"><?php woocommerce_result_count(); ?></span>
+                            </p>
+                        </div>
+                        <div class="catalog-block__inside-downNav__nav">
+
+                        </div>
+                    </div>
+                    <?php get_template_part('template-parts/stock', 'offer'); ?>
+					<?php get_template_part('template-parts/last', 'news'); ?>
+                </div>
+            </div>
+        </div>
+    </main>
+<?php 
 
 get_footer( 'shop' );

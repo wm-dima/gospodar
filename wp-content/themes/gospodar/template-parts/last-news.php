@@ -8,6 +8,20 @@
 			'post_status' => 'publish',
 			'posts_per_page' => 4,
 		)); 
+		$_monthsList = array(
+			".01." => "января",
+			".02." => "февраля",
+			".03." => "марта",
+			".04." => "апреля",
+			".05." => "мая",
+			".06." => "июня",
+			".07." => "июля",
+			".08." => "августа",
+			".09." => "сентября",
+			".10." => "октября",
+			".11." => "ноября",
+			".12." => "декабря"
+		);
 		if ( $the_query->have_posts() ) : 
 			while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 				<div class="news-inside__article">
@@ -22,7 +36,10 @@
 					</a>
 					<div class="news-inside__article-text">
 						<p class="news-inside__article-text__date">
-							15 марта, 2019
+							<?php 
+							$now =  date( 'j  .m., Y', strtotime( $post->post_date ) );
+							echo str_replace(date('.m.', time()), $_monthsList, $now);
+							?>
 						</p>
 						<a class="news-inside__article-text__name" href="<?php echo get_permalink($post->id); ?>">
 							<?php the_title(); ?>
