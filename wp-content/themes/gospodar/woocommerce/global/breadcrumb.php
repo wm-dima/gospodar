@@ -23,25 +23,30 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! empty( $breadcrumb ) ) {
 
-	echo $wrap_before;
-
-	foreach ( $breadcrumb as $key => $crumb ) {
-
-		echo $before;
-
-		if ( ! empty( $crumb[1] ) && sizeof( $breadcrumb ) !== $key + 1 ) {
-			echo '<a href="' . esc_url( $crumb[1] ) . '">' . esc_html( $crumb[0] ) . '</a>';
-		} else {
-			echo esc_html( $crumb[0] );
-		}
-
-		echo $after;
-
-		if ( sizeof( $breadcrumb ) !== $key + 1 ) {
-			echo $delimiter;
-		}
-	}
-
-	echo $wrap_after;
-
+?>
+<div class="page-nav">
+	<div class="wrapper">
+		<div class="page-nav__inside">
+			<div class="page-nav__inside-nav">
+				<ul>
+					<?php 
+					foreach ( $breadcrumb as $key => $crumb ) {
+						echo "<li>";
+						if ( ! empty( $crumb[1] ) && sizeof( $breadcrumb ) !== $key + 1 ) {
+							echo '<a href="' . esc_url( $crumb[1] ) . '">' . esc_html( $crumb[0] ) . '</a>';
+						} else {
+							echo esc_html( $crumb[0] );
+						}
+						if ( sizeof( $breadcrumb ) !== $key + 1 ) {
+							echo '<img src="' . get_template_directory_uri() . '/assets/images/pagenavArrow.png" alt="">';
+						}
+						echo "</li>";
+					}
+					?>
+				</ul>
+			</div>
+		</div>    
+	</div>    
+</div>
+<?php 
 }

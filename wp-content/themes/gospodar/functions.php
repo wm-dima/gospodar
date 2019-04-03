@@ -251,8 +251,7 @@ function is_new_product($created_date){
 
 /*woo start main page*/
 
-// remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 // remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
-// add_action( 'woocommerce_before_main_content', 'wm_before_products' );
 
 /*woo end main page*/
