@@ -29,9 +29,9 @@ get_header( 'shop' );
 do_action( 'woocommerce_before_main_content' );
 
 ?>
-<header class="woocommerce-products-header">
+<!-- <header class="woocommerce-products-header"> -->
 	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-		<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
+		<!-- <h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1> -->
 	<?php endif; ?>
 
 	<?php
@@ -41,9 +41,9 @@ do_action( 'woocommerce_before_main_content' );
 	 * @hooked woocommerce_taxonomy_archive_description - 10
 	 * @hooked woocommerce_product_archive_description - 10
 	 */
-	do_action( 'woocommerce_archive_description' );
+	//do_action( 'woocommerce_archive_description' );
 	?>
-</header>
+<!-- </header> -->
 <?php
 if ( woocommerce_product_loop() ) {
 
@@ -54,7 +54,30 @@ if ( woocommerce_product_loop() ) {
 	 * @hooked woocommerce_result_count - 20
 	 * @hooked woocommerce_catalog_ordering - 30
 	 */
-	do_action( 'woocommerce_before_shop_loop' );
+	// do_action( 'woocommerce_before_shop_loop' );
+	
+?>
+        <div class="catalog-block">
+            <div class="wrapper">
+                <div class="catalog-block__inside">
+                    <div class="catalog-block__inside-info">
+                        <div class="catalog-block__inside-info__name">
+                           <h2><?php woocommerce_page_title(); ?></h2>
+                        </div>
+                        <div class="catalog-block__inside-info__sort">
+                            <div class="catalog-block__inside-info__sort-name">
+                                <p>Сортировать по: </p>
+                            	<?php woocommerce_catalog_ordering(); ?>
+                            </div>
+                            <div class="catalog-block__inside-info__sort-quantity">
+                                <p>Показывать по: </p>
+                                <?php get_template_part('template-parts/woo/per', 'page'); ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalog-block__inside-items">
+
+<?php 
 
 	woocommerce_product_loop_start();
 

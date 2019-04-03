@@ -26,3 +26,21 @@ Theme Name: Господар
     flex-direction: column;
     margin-top: 15px;
 }
+
+.wm-hid{
+	display: none !important;
+}
+
+.orderby-option{
+	height: 10px;
+	width: 100%;
+}
+
+#dd-variants{
+	display: none;
+}
+
+#dd-wrapper:hover #dd-variants{
+	display: flex;
+    flex-direction: column;
+}

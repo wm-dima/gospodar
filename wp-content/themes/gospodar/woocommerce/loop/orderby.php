@@ -22,11 +22,46 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 <form class="woocommerce-ordering" method="get">
-	<select name="orderby" class="orderby">
+	<select id="select-ordering" name="orderby" class="orderby wm-hid"> 
 		<?php foreach ( $catalog_orderby_options as $id => $name ) : ?>
-			<option value="<?php echo esc_attr( $id ); ?>" <?php selected( $orderby, $id ); ?>><?php echo esc_html( $name ); ?></option>
+			<option 
+				id="option-<?php echo esc_attr( $id ); ?>" 
+				value="<?php echo esc_attr( $id ); ?>" 
+				<?php selected( $orderby, $id ); ?>
+			>
+				<?php echo esc_html( $name ); ?>
+			</option>
 		<?php endforeach; ?>
 	</select>
+	<div id="dd-wrapper">
+		<span id="active-option"></span>
+		<div id="dd-variants">
+		<?php foreach ( $catalog_orderby_options as $id => $name ) : ?>
+			<label 
+				for="option-<?php echo esc_attr( $id ); ?>"
+				value="<?php echo esc_attr( $id ); ?>" 
+				<?php selected( $orderby, $id ); ?>
+			>
+				<?php echo esc_html( $name ); ?>
+			</label>
+		<?php endforeach; ?>
+		</div>
+	</div>
 	<input type="hidden" name="paged" value="1" />
 	<?php wc_query_string_form_fields( null, array( 'orderby', 'submit', 'paged', 'product-page' ) ); ?>
+	<input type="submit" class="order-apply wm-hid" data-order-apply value="Применить">
 </form>
+
+<script>
+	let ddWrapper = document.querySelector('#dd-wrapper');
+	let ddResult = ddWrapper.querySelector('#active-option');
+	let ddVariants = ddWrapper.querySelector('#dd-variants');
+
+	ddResult.innerText = ddVariants.querySelector('[selected="selected"]').innerText;
+
+	ddVariants.addEventListener('click', function(e){
+		document.querySelector('#select-ordering').value = e.target.getAttribute('value');
+		document.querySelector('form [data-order-apply]').classList.remove('wm-hid');
+		ddResult.innerText = e.target.innerText;
+	})
+</script>

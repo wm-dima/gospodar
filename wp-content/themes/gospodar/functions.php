@@ -249,9 +249,15 @@ function is_new_product($created_date){
 }
 
 
-/*woo start main page*/
+/*woo start shop*/
 
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 // remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
 
-/*woo end main page*/
+add_filter( 'loop_shop_per_page', create_function( 
+    '$cols',
+    'return '. ( isset( $_GET['per_page'] ) ? $_GET['per_page'] : 24 ) .';' ),
+    20
+);
+
+/*woo end shop*/
