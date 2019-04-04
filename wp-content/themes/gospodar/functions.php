@@ -12,8 +12,10 @@ function my_them_load_css_and_js() {
     wp_enqueue_style( 'main-style', get_template_directory_uri() . '/style.css');
     wp_enqueue_style( 'assets-css-app-style', get_template_directory_uri() . '/assets/css/app.css');
 
-    // wp_deregister_script('jquery');
+    wp_deregister_script('jquery');
+    
     // wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.2.1.slim.min.js', array(), null, false);
+    wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.2.1.js', array(), null, false);
 
     wp_enqueue_script( 'my-swiper-min-js', get_template_directory_uri() . '/assets/js/swiper.min.js', array('jquery'), null, true );
     wp_enqueue_script( 'my-app-js', get_template_directory_uri() . '/assets/js/app.js', array('jquery'), null, true );
