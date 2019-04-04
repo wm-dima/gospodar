@@ -24,6 +24,31 @@ get_header( 'shop' );
 $product =  wc_get_product(get_the_ID());
 $main_img_id = $product->get_image_id();
 $attachment_ids = $product->get_gallery_image_ids();
+
+
+$attributes = $product->get_attributes();
+
+foreach ($attributes as $key => $value) {
+	$attributes_dropdown .= $value['name'] . ": ";
+	$attributes_dropdown .= '<select>';
+	if (strpos( $value['name'], 'pa_' ) === 0 ) {
+		foreach ($value['options'] as $key => $value) {
+			$term = get_term(  $value );
+			$attributes_dropdown .= '<option value="' . $term->slug . '">' . $term->name . '</option>';
+		}
+	} else {
+		$product_attributes = explode('|',$value['value']);
+        foreach ( $product_attributes as $pa ) {
+            $attributes_dropdown .= '<option value="' . $pa . '">' . $pa . '</option>';
+        }
+	}
+	$attributes_dropdown .= '</select>';
+}
+$attributes_dropdown;
+echo '<div class="summary entry-summary">';
+woocommerce_template_single_price();
+woocommerce_template_single_add_to_cart();
+echo "<div>";
 ?>
 		<?php woocommerce_breadcrumb(); ?>
         <div class="wrapper">
