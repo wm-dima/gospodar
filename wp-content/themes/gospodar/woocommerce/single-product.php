@@ -24,100 +24,44 @@ get_header( 'shop' );
 $product =  wc_get_product(get_the_ID());
 $main_img_id = $product->get_image_id();
 $attachment_ids = $product->get_gallery_image_ids();
-?>
 
-<div class="page-nav">
-            <div class="wrapper">
-                <div class="page-nav__inside">
-                    <div class="page-nav__inside-nav">
-                        <ul>
-                            <li>
-                                <a href="">Главная</a>
-                                <p>Главная</p>
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/pagenavArrow.png" alt="">
-                            </li>
-                            <li>
-                                <a href="">Хозтовары</a>
-                                <p>Хозтовары</p>
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/pagenavArrow.png" alt="">
-                            </li>
-                            <li>
-                                <a href="">Чайники</a>
-                                <p>Чайники</p>
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/pagenavArrow.png" alt="">
-                            </li>
-                            <li>
-                                <a href="">Чайник MIDEA 035</a>
-                                <p>Чайник MIDEA 035</p>
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/pagenavArrow.png" alt="">
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+$attributes = $product->get_attributes();
+
+foreach ($attributes as $key => $value) {
+	$attributes_dropdown .= $value['name'] . ": ";
+	$attributes_dropdown .= '<select>';
+	if (strpos( $value['name'], 'pa_' ) === 0 ) {
+		foreach ($value['options'] as $key => $value) {
+			$term = get_term(  $value );
+			$attributes_dropdown .= '<option value="' . $term->slug . '">' . $term->name . '</option>';
+		}
+	} else {
+		$product_attributes = explode('|',$value['value']);
+        foreach ( $product_attributes as $pa ) {
+            $attributes_dropdown .= '<option value="' . $pa . '">' . $pa . '</option>';
+        }
+	}
+	$attributes_dropdown .= '</select>';
+}
+$attributes_dropdown;
+echo '<div class="summary entry-summary">';
+woocommerce_template_single_price();
+woocommerce_template_single_add_to_cart();
+echo "<div>";
+?>
+		<?php woocommerce_breadcrumb(); ?>
         <div class="wrapper">
             <div id="product">
-				<div id="product-gallery">
-				    <div id="amazingslider-wrapper-1">
-				        <div id="amazingslider-1">
-				            <ul class="amazingslider-slides">
-				                <li>
-				            		<img src="<?php echo wp_get_attachment_image_url( $main_img_id, 'full' ) ?>" />
-				                </li>
-				                <?php if (!empty($attachment_ids)): ?>
-				                	<?php foreach ($attachment_ids as $key => $value): ?>
-						                <li>
-						            		<img src="<?php echo wp_get_attachment_image_url( $value, 'full' ) ?>" />
-						                </li>	
-				                	<?php endforeach ?>
-				                <?php endif ?>
-				            </ul>
-				            <ul class="amazingslider-thumbnails">
-				                <li>
-				            		<img src="<?php echo wp_get_attachment_image_url( $main_img_id, 'full' ) ?>" />
-				                </li>
-				                <?php if (!empty($attachment_ids)): ?>
-				                	<?php foreach ($attachment_ids as $key => $value): ?>
-						                <li>
-						            		<img src="<?php echo wp_get_attachment_image_url( $value, 'full' ) ?>" />
-						                </li>	
-				                	<?php endforeach ?>
-				                <?php endif ?>
-				            </ul>
-
-				        </div>
-					</div>
-					<div class="swiper-container">
-						<!-- Additional required wrapper -->
-						<div class="swiper-wrapper">
-							<!-- Slides -->
-							<li class="swiper-slide">
-				                <li>
-				            		<img src="<?php echo wp_get_attachment_image_url( $main_img_id, 'full' ) ?>" />
-				                </li>
-				                <?php if (!empty($attachment_ids)): ?>
-				                	<?php foreach ($attachment_ids as $key => $value): ?>
-						                <li>
-						            		<img src="<?php echo wp_get_attachment_image_url( $value, 'full' ) ?>" />
-						                </li>	
-				                	<?php endforeach ?>
-				                <?php endif ?>
-							</li>
-						</div>
-						<!-- If we need pagination -->
-						<div class="swiper-pagination"></div>
-						<!-- If we need navigation buttons -->
-						<div class="swiper-button-prev"></div>
-						<div class="swiper-button-next"></div>
-					</div>
-				</div>
+            	<?php woocommerce_show_product_images(); ?>
                 <div id="product-info">
                     <div id="product-info__first">
-                        <h3 id="product-info__first-name">Чайник MIDEA 035</h3>
-                        <p id="product-info__first-articul">
-                            Код товара: <span>1234567</span>
-                        </p>
+                        <h3 id="product-info__first-name"><?php the_title(); ?></h3>
+                        <?php if ( $sku = $product->get_sku() ): ?>
+	                        <p id="product-info__first-articul">
+	                            Код товара: <span><?php echo $sku; ?></span>
+	                        </p>
+                        <?php endif ?>
                     </div>
                     <div id="product-info__specifications">
                         <ul>
@@ -130,6 +74,7 @@ $attachment_ids = $product->get_gallery_image_ids();
                             <li><span class="specification">Материал корпуса:</span><span class="specification-answer">Металл/Пластик</span></li>
                         </ul>
                     </div>
+
                     <div class="product-info__properties">
                         <form action="">
                             <div class="product-info__properties-color">
