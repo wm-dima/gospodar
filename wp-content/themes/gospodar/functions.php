@@ -261,3 +261,9 @@ add_filter( 'loop_shop_per_page', create_function(
 );
 
 /*woo end shop*/
+
+/*woo start single prod*/
+
+remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
+
+/*woo end single prod*/
