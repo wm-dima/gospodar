@@ -16,17 +16,32 @@
 			$product_cat = get_terms( $args );
 			foreach ($product_cat as $parent_product_cat) : ?>
 				<li>
-					<a href="<?php echo get_term_link($parent_product_cat->term_id); ?>"><?php echo $parent_product_cat->name; ?>
-					<?php 
-					$child_args = array(
-					'taxonomy' => 'product_cat',
-					'hide_empty' => false,
-					'parent'   => $parent_product_cat->term_id
-					);
-					$child_product_cats = get_terms( $child_args );
-					if ($child_product_cats) :?>
+					<a href="<?php echo get_term_link($parent_product_cat->term_id); ?>">
+					<div class="cat-a1">
+						<div class="cat-1 cat"></div>
+						<!--<div class="cat-2 cat"></div>
+						<div class="cat-3 cat"></div>
+						<div class="cat-4 cat"></div>
+						<div class="cat-5 cat"></div>
+						<div class="cat-6 cat"></div>
+						<div class="cat-7 cat"></div>
+						<div class="cat-8 cat"></div>
+						<div class="cat-9 cat"></div>
+						<div class="cat-10 cat"></div>-->
+						<?php echo $parent_product_cat->name; ?>
+						<?php 
+						$child_args = array(
+						'taxonomy' => 'product_cat',
+						'hide_empty' => false,
+						'parent'   => $parent_product_cat->term_id
+						);
+						$child_product_cats = get_terms( $child_args );
+						if ($child_product_cats) :?>
+					</div>
+					<div class="cat-a2">	
 						<img src="<?php echo get_template_directory_uri() ?>/assets/images/right-arrow.svg" alt="" class="catalog-arrow" width="7px">
-						</a>
+					</div>
+					</a>
 						<div class="catalog-additional">
 							<ul>
 								<?php
