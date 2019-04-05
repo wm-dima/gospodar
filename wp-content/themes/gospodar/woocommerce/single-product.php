@@ -26,30 +26,43 @@ $main_img_id = $product->get_image_id();
 $attachment_ids = $product->get_gallery_image_ids();
 
 
-$attributes = $product->get_attributes();
 
-foreach ($attributes as $key => $value) {
-	$attributes_dropdown .= $value['name'] . ": ";
-	$attributes_dropdown .= '<select>';
-	if (strpos( $value['name'], 'pa_' ) === 0 ) {
-		foreach ($value['options'] as $key => $value) {
-			$term = get_term(  $value );
-			$attributes_dropdown .= '<option value="' . $term->slug . '">' . $term->name . '</option>';
-		}
-	} else {
-		$product_attributes = explode('|',$value['value']);
-        foreach ( $product_attributes as $pa ) {
-            $attributes_dropdown .= '<option value="' . $pa . '">' . $pa . '</option>';
-        }
-	}
-	$attributes_dropdown .= '</select>';
-}
-$attributes_dropdown;
-echo '<div class="summary entry-summary">';
-woocommerce_template_single_price();
+
+/*
+get_variation_attributes - только те ЗНАЧЕНИЯ атрибутов, которые использовались для вариации
+get_variation_default_attribute - Выводит выбор опций вариативного товара.
+get_attributes - все атрибуты 
+get_default_attributes - только те ЗНАЧЕНИЯ атрибутов, которые использовались для сравнения
+get_variation_default_attributes - только те ЗНАЧЕНИЯ атрибутов, которые использовались для сравнения
+wc_display_product_attributes($product) - просто список всех атрибутов товара
+
+*/
+
+// echo "<pre>";
+	                        		
+// var_dump( get_class_methods( $product ) );
+// var_dump( $product->get_regular_price() );
+// die;
+
+// $variations = $product->get_available_variations();
+// var_dump( $variations[0]['image']['full_src'] );
+// die;
+
+
+// echo '<div class="summary entry-summary">';
 woocommerce_template_single_add_to_cart();
-echo "<div>";
+// echo "<div>";
+// die;
+
+// wm_show_all_attributes($product->get_attributes());
+// if ( function_exists('dynamic_sidebar') )
+		// dynamic_sidebar('sidebar-0');
+
 ?>
+<script>
+	let prodType = '<?php echo $product->get_type(); ?>';
+</script>
+		<?php wc_print_notices(); ?>
 		<?php woocommerce_breadcrumb(); ?>
         <div class="wrapper">
             <div id="product">
@@ -65,43 +78,17 @@ echo "<div>";
                     </div>
                     <div id="product-info__specifications">
                         <ul>
-                            <li><span class="specification">Материал корпуса:</span><span class="specification-answer">Металл/Пластик</span></li>
-                            <li><span class="specification">Материал корпуса:</span><span class="specification-answer">Металл/Пластик</span></li>
-                            <li><span class="specification">Материал корпуса:</span><span class="specification-answer">Металл/Пластик</span></li>
-                            <li><span class="specification">Материал корпуса:</span><span class="specification-answer">Металл/Пластик</span></li>
-                            <li><span class="specification">Материал корпуса:</span><span class="specification-answer">Металл/Пластик</span></li>
-                            <li><span class="specification">Материал корпуса:</span><span class="specification-answer">Металл/Пластик</span></li>
-                            <li><span class="specification">Материал корпуса:</span><span class="specification-answer">Металл/Пластик</span></li>
+                        	<?php echo wm_show_all_attributes($product->get_attributes()); ?>
                         </ul>
                     </div>
 
                     <div class="product-info__properties">
-                        <form action="">
-                            <div class="product-info__properties-color">
-                                <input type="radio" id="product-black" name="color" value="black" checked="checked">
-                                <label for="product-black">
-                                    <div id="black"></div>
-                                </label>
-
-                                <input type="radio" id="product-red" name="color" value="red">
-                                <label for="product-red">
-                                    <div id="red"></div>
-                                </label>
-
-                                <input type="radio" id="product-green" name="color" value="green">
-                                <label for="product-green">
-                                    <div id="green"></div>
-                                </label>
-
-                                <input type="radio" id="product-white" name="color" value="white">
-                                <label for="product-white">
-                                    <div id="white"></div>
-                                </label>
-
-                                <input type="radio" id="product-blue" name="color" value="blue">
-                                <label for="product-blue">
-                                    <div id="blue"></div>
-                                </label>
+                        <!-- <form action=""> -->
+                            <div class="product-info__properties-color" id="select-color">
+	                        	<div id="product-form" class="wm-hid">
+		                        	<?php //woocommerce_template_single_add_to_cart(); ?>
+	                        	</div>
+	                        	<?php echo get_color_variation($product); ?>
                             </div>
                             <div class="product-info__properties-quantity">
                                 <p>Количество</p>
@@ -117,13 +104,26 @@ echo "<div>";
                                 <span>(Оптовая цена от 3 шт.)</span>
                             </div>
                             <div class="product-info__properties-price">
-                                <p class="product-info__properties-price__last">
-                                    Старая цена:
-                                    <span>1120 грн</span>
-                                </p>
-                                <div class="product-info__properties-price__current">
-                                    <p>1049 грн</p>
-                                </div>
+                            	<?php if ($product->get_type() == 'simple'): ?>
+                            		<?php if ($product->is_on_sale()): ?>
+		                                <p class="product-info__properties-price__last">
+		                                    Старая цена:
+		                                    <span><?php echo $product->get_sale_price(); ?> грн</span>
+		                                </p>
+                            		<?php endif ?>
+	                                <div class="product-info__properties-price__current">
+	                                    <p><?php echo $product->get_regular_price(); ?> грн</p>
+	                                </div>
+                              	<?php else: ?>
+                              		<p class="product-info__properties-price__last" id="old-price">
+	                                    Старая цена:
+	                                    <span id="price_reg"></span>
+	                                </p>
+                              		<div class="product-info__properties-price__current">
+	                                    <p id="price_sale"></p>
+	                                    <span class="before-price">Выберите вариацию товара</span>
+	                                </div>
+                            	<?php endif ?>
                             </div>
                             <div class="product-add">
                                 <button>
@@ -133,7 +133,7 @@ echo "<div>";
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/oneClick.png" alt=""> Купить в один клик
                                 </button>
                             </div>
-                        </form>
+                        <!-- </form> -->
                     </div>
                 </div>
             </div>

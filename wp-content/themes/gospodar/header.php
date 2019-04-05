@@ -6,6 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title><?php the_title(); ?></title>
 	<?php wp_head(); ?>
+	<?php global $woocommerce, $WC; ?>
 </head>
 <body>
 	<header>
@@ -47,13 +48,13 @@
 								<li>
 									Корзина 
 									<span>
-										(<span class="quantity-positions">5</span>)
+										(<span class="quantity-positions"><?php echo $woocommerce->cart->cart_contents_count; ?></span>)
 									</span> 
 								</li>
 								<li>
 									Сумма: 
 									<span>
-										<span class="price">6500 </span>
+										<span class="price"><?php echo number_format( WC()->cart->cart_contents_total, 2 ); ?> </span>
 										грн
 									</span>
 								</li>

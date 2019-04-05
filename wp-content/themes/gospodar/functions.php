@@ -25,6 +25,11 @@ function my_them_load_css_and_js() {
         'log_in' => is_user_logged_in() 
       ) 
     );
+
+
+    if (get_post_type() == 'product') {
+        wp_enqueue_script( 'my-single_prod.js', get_template_directory_uri() . '/assets/js/single_prod.js', [], null, true);
+    } 
 }
 
 add_action('customize_register', 'mytheme_customize_register');
@@ -53,84 +58,6 @@ function mytheme_customize_register( $wp_customize ) {
     	    'type' => 'text',
     	)
     );
-    // /*SOCIAL Viber*/
-    // $wp_customize->add_setting(
-    //     'Viber',
-    //     array('default' => 'https://www.viber.com/ru/')
-    // );
-    // $wp_customize->add_control(
-    //   'Viber',
-    //   array(
-    //       'label' => 'Viber',
-    //       'section' => 'main_option',
-    //       'type' => 'text',
-    //   )
-    // );
-    // /*SOCIAL whatsapp*/
-    // $wp_customize->add_setting(
-    //     'WhatsApp',
-    //     array('default' => 'https://www.whatsapp.com/?lang=ru')
-    // );
-    // $wp_customize->add_control(
-    //   'WhatsApp',
-    //   array(
-    //       'label' => 'WhatsApp',
-    //       'section' => 'main_option',
-    //       'type' => 'text',
-    //   )
-    // );
-    // /*SOCIAL Telegram*/
-    // $wp_customize->add_setting(
-    //     'Telegram',
-    //     array('default' => 'https://telegram.org/')
-    // );
-    // $wp_customize->add_control(
-    //   'Telegram',
-    //   array(
-    //       'label' => 'Telegram',
-    //       'section' => 'main_option',
-    //       'type' => 'text',
-    //   )
-    // );
-    // /*SOCIAL VK*/
-    // $wp_customize->add_setting(
-    //     'VK',
-    //     array('default' => 'https://vk.com')
-    // );
-    // $wp_customize->add_control(
-    //   'VK',
-    //   array(
-    //       'label' => 'VK',
-    //       'section' => 'main_option',
-    //       'type' => 'text',
-    //   )
-    // );
-    // /*SOCIAL FaceBook*/
-    // $wp_customize->add_setting(
-    //     'FaceBook',
-    //     array('default' => 'https://ru-ru.facebook.com/')
-    // );
-    // $wp_customize->add_control(
-    //   'FaceBook',
-    //   array(
-    //       'label' => 'FaceBook',
-    //       'section' => 'main_option',
-    //       'type' => 'text',
-    //   )
-    // );
-    // /*SOCIAL Instagram*/
-    // $wp_customize->add_setting(
-    //     'Instagram',
-    //     array('default' => 'https://www.instagram.com/?hl=ru')
-    // );
-    // $wp_customize->add_control(
-    //   'Instagram',
-    //   array(
-    //       'label' => 'Instagram',
-    //       'section' => 'main_option',
-    //       'type' => 'text',
-    //   )
-    // );
 
     /*Address*/
     $wp_customize->add_setting(
@@ -251,6 +178,58 @@ function is_new_product($created_date){
 	}
 }
 
+function wm_show_all_attributes($attributes){
+    $attributes_dropdown = '';
+    $wc_tax = wc_get_attribute_taxonomies();
+    foreach ($attributes as $key => $value) {
+        if ($value['name'] == 'pa_color') continue;
+        if (strpos( $value['name'], 'pa_' ) === 0 ) {
+            foreach ($wc_tax as $key => $tax) {
+                if ($tax->attribute_id == 2) {
+                    $attributes_dropdown .= '<li><span class="specification">';
+                    $attributes_dropdown .= $tax->attribute_label . ": ";
+                    $attributes_dropdown .= '</span>';
+                }
+            }
+            foreach ($value['options'] as $key => $value) {
+                $term = get_term(  $value );
+                $attributes_dropdown .= '<span class="specification-answer"> ' . $term->name . ' </span>';
+            }
+        } else {
+            $attributes_dropdown .= '<li><span class="specification">';
+            $attributes_dropdown .= $value['name'] . ": ";
+            $attributes_dropdown .= '</span>';
+            $product_attributes = explode('|',$value['value']);
+            foreach ( $product_attributes as $pa ) {
+                $attributes_dropdown .= '<span class="specification-answer"> ' . $pa . ' </span>';
+            }
+        }
+        $attributes_dropdown .= '</li>';
+    }
+    return $attributes_dropdown;
+}
+
+function get_color_variation($product){
+    if ($product->get_type() !== 'variable') return;
+    $colors = $product->get_variation_attributes()['pa_color'];
+    if ( $colors == null ) return false;
+    $html = '';
+    foreach ($colors as $key => $value) {
+        $html .= '
+            <input type="radio" id="product-'.$value.'" name="pa_color" value="'.$value.'">
+            <label for="product-'.$value.'">
+                <div 
+                  class="variation-circle" 
+                  data-color-val="'.$value.'" 
+                  style="background: '.
+                  str_replace('hsh_', '#', $value)
+                  .';"></div>
+            </label>
+        ';
+    }
+    return $html;
+}
+
 
 /*woo start shop*/
 
@@ -270,3 +249,36 @@ add_filter( 'loop_shop_per_page', create_function(
 remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
 
 /*woo end single prod*/
+
+
+add_action( 'widgets_init', 'register_my_widgets' );
+function register_my_widgets(){
+    register_sidebar( array(
+        'name'          => sprintf(__('Sidebar %d'), $i ),
+        'id'            => "sidebar-0",
+        'description'   => '',
+        'class'         => '',
+        'before_widget' => '<li id="%1$s" class="widget %2$s">',
+        'after_widget'  => "</li>\n",
+        'before_title'  => '<h2 class="widgettitle">',
+        'after_title'   => "</h2>\n",
+    ) );
+}
+
+function how_to_use_colors() {
+    // var_dump($_GET['taxonomy'] == 'pa_color'  );
+    if (  isset( $_GET['taxonomy'] ) && $_GET['taxonomy'] == 'pa_color' ) {
+    ?>
+        <div class="notice notice-success is-dismissible">
+            <p>Для использования цветов следует ввести в поле 'Ярлык' цветна английском.</p>
+            <p>
+                Если данный вариант не работает найдите в гугле требуемый цвет в формате 'HEX'.
+                Например розовый будет 'FFCBDB'. В таком случае цвет требуеться вводить с префиксом 'hsh_'.
+                В результате для получения розового цвет следует вводть 'hsh_FFCBDB' или 'pink'.
+            </p>
+
+        </div>
+    <?php
+    }
+}
+add_action( 'admin_notices', 'how_to_use_colors' );

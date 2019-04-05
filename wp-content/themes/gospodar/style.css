@@ -44,3 +44,14 @@ Theme Name: Господар
 	display: flex;
     flex-direction: column;
 }
+
+.variation-circle {
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    /*border: 3px solid #fff;*/
+    cursor: pointer;
+	border: 1px solid #aaa;
+    cursor: pointer;
+}
+
