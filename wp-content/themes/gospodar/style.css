@@ -23,8 +23,8 @@ Theme Name: Господар
 
 #mc4wp-form-1.mc4wp-form{
 	display: flex;
-    flex-direction: column;
-    margin-top: 15px;
+	flex-direction: column;
+	padding: 10px 0px;
 }
 
 .wm-hid{
@@ -37,10 +37,28 @@ Theme Name: Господар
 }
 
 #dd-variants{
-	display: none;
+	top:-9999px;
+	position: absolute;
+	z-index: 998;
+	background: rgb(255, 255, 255);
+	opacity: 0;
+	transition:0.5s opacity;
 }
-
+#dd-wrapper {
+	position: relative;
+}
 #dd-wrapper:hover #dd-variants{
 	display: flex;
-    flex-direction: column;
+	flex-direction: column;
+	opacity: 1;
+	top: 17px;
+	left: -19px;
+	width: 232px;
+	padding: 10px 20px;
+	color:#25afe8
+}
+.mc4wp-alert p , .mc4wp-error p {
+	margin-top: 5px !important;
+	margin-bottom: 0 !important;
+	font-size: 14px !important;
 }

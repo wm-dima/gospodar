@@ -13,11 +13,11 @@ Template Name: index
 	</div>
 </div>
 <?php get_template_part('template-parts/sale_main_page', 'banner'); ?>
-<div class="best-offers">
+<div class="best-offers boBody">
 	<div class="wrapper">
 		<div class="best-offers__inside">
 			<h4><?php echo get_field('entry_word', 5) ?></h4>
-			<div class="best-offers__inside-items">
+			<div class="best-offers__inside-items" id="best-offers__inside-items">
 				<?php 
 				$ids = get_main_page_prod_ids();
 				foreach ($ids as $key => $value): ?>
