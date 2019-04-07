@@ -62,3 +62,15 @@ Theme Name: Господар
 	margin-bottom: 0 !important;
 	font-size: 14px !important;
 }
+.page-numbers {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+.page-numbers li {
+	list-style:none;
+	margin-right:10px
+}
+.page-numbers li a{
+	color:#00b4ff;
+}

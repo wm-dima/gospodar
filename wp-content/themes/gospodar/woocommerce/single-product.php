@@ -195,7 +195,7 @@ $attachment_ids = $product->get_gallery_image_ids();
             
         </div>
 
-        <div class="wrapper">
+        
             <div class="stock-block">
                 <div class="stock-block__inside">
                     <div class="stock-block__inside-text">
@@ -211,7 +211,7 @@ $attachment_ids = $product->get_gallery_image_ids();
                     <a href="" class="stock-block__inside-more">Подробнее</a>
                 </div>
             </div>
-		</div>
+		
 		
 		<div class="best-offers">
                 <div class="wrapper">

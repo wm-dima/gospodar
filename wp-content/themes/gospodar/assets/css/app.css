@@ -2262,13 +2262,11 @@ footer .footer-inside__right-contacts__watch-map a span {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	width: 160px;
-	-webkit-box-pack: justify;
-	-ms-flex-pack: justify;
-	justify-content: space-between;
 	margin-bottom: 20px
 }
-
+.product-info__properties-color label{
+	margin-right:5px;
+}
 .product-info__properties-color input {
 	display: none
 }
@@ -2963,7 +2961,24 @@ input[type=radio]:checked+label div {
 		text-align: justify
 	}
 }
-
+@media (max-width:1045px) {
+	.catalog-block__inside-info__sort {
+		flex-direction: column;
+	}
+	.catalog-block__inside-info__sort-name .woocommerce-ordering {
+		 flex-direction: row !important;
+	}
+	.catalog-block__inside-info__sort-name .woocommerce-ordering .order-apply {
+		position: static !important; 
+		margin-left: 10px;
+	}
+	.catalog-block__inside-info__sort-name {
+		margin-bottom: 10px;
+	}
+	#per-page .order-apply {
+		margin-left: 7px;
+	}
+}
 @media (max-width:1010px) {
 	.catalog-block__inside-items {
 		max-width: 655px;
@@ -3009,6 +3024,13 @@ input[type=radio]:checked+label div {
 	}
 	.news-inside__article {
 		margin-bottom: 50px
+	}
+	.catalog-block__inside-info {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.catalog-block__inside-info__name {
+		margin-bottom: 20px;
 	}
 }
 
@@ -3352,6 +3374,21 @@ input[type=radio]:checked+label div {
 		-ms-flex-align: center;
 		align-items: center
 	}
+	.popup-form__reg, .popup-form__log {
+		width: 300px !important;
+	}
+	.popup-name p {
+		font-size: 22px !important;
+	}
+	.popup-inputs form input {
+		height: 30px !important;
+		font-size: 14px !important;
+	}
+	.popup-inputs form button {
+		width: 180px !important;
+		height: 35px !important;
+		font-size: 14px !important;
+	}
 }
 @media (max-width:545px) {
 	.mc4wp-form-fields {
@@ -3421,7 +3458,19 @@ input[type=radio]:checked+label div {
 		width: 180%
 	}
 }
-
+@media (max-width:520px) {
+	.catalog-block__inside-info__sort-name {
+		flex-direction: column !important;
+		margin-right: 0;
+		margin-bottom: 20px;
+	}
+	.catalog-block__inside-info__sort-name > p {
+		margin-bottom: 10px;
+	}
+	.catalog-block__inside-info__sort-quantity {
+		justify-content: center;
+	}
+}
 @media (max-width:485px) {
 	.cart-inside__total {
 		-webkit-box-orient: vertical;
@@ -3445,7 +3494,26 @@ input[type=radio]:checked+label div {
 	.swiper-wrapper img {
 	}
 }
-
+@media (max-width:465px) {
+	.catalog-block__inside-info__sort {
+		width: 100% !important;
+		min-width: auto !important;
+	}
+	.catalog-block__inside-info__sort-name {
+		flex-direction: column !important;
+		margin-right: 0;
+		margin-bottom: 20px;
+	}
+	.catalog-block__inside-info__sort-name > p {
+		margin-bottom: 10px;
+		font-size: 15px;
+	}
+	.catalog-block__inside-info__sort-quantity {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
 @media (max-width:435px) {
 	.swiper-pic {
 		display: none
@@ -3497,7 +3565,19 @@ input[type=radio]:checked+label div {
 		width: 240%
 	}
 }
-
+@media (max-width:420px) {
+	.popup-form__reg, .popup-form__log {
+		width: 260px !important;
+	}
+	.popup-close {
+		right: 115px !important;
+		top: -45px !important;
+	}
+	.catalog-block__inside-info__sort-name .woocommerce-ordering {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
 @media (max-width:400px) {
 	.product-info__properties-quantity {
 		-webkit-box-orient: vertical;
@@ -3536,7 +3616,9 @@ input[type=radio]:checked+label div {
 		width: 239px
 	}
 }
-
+@media (max-width:384px) {
+	
+}
 @media (max-width:370px) {
 	.search-catalog__inside-show_catalog-inside,
 	.search-catalog__inside-stock {
@@ -3589,6 +3671,15 @@ input[type=radio]:checked+label div {
 @media (max-width:320px) {
 	.sale-banner__items-item {
 		width: 115%
+	}
+	#dd-variants {
+		display: flex;
+		flex-direction: column;
+		top: 17px !important;
+		left: -30px !important;
+		width: 232px !important;
+		padding: 10px 10px !important;
+		color: #25afe8;
 	}
 }
 
@@ -4640,6 +4731,9 @@ button.swiper-pagination-bullet {
 }
 #active-option {
 	font-size: 15px;
+	background: #ffffff;
+	border: 1px dashed #25afe8;
+	padding: 2px 2px;
 }
 .per-page .order-apply {
 	font-size: 14px;
@@ -4654,4 +4748,8 @@ button.swiper-pagination-bullet {
 }
 #product-gallery .swiper-container {
 	display: none;
+}
+#per-page input[name="per_page"] {
+	border: 1px dashed #25afe8;
+	outline: 0;
 }
