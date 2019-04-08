@@ -266,7 +266,6 @@ function register_my_widgets(){
 }
 
 function how_to_use_colors() {
-    // var_dump($_GET['taxonomy'] == 'pa_color'  );
     if (  isset( $_GET['taxonomy'] ) && $_GET['taxonomy'] == 'pa_color' ) {
     ?>
         <div class="notice notice-success is-dismissible">

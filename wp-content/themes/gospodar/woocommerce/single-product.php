@@ -37,28 +37,10 @@ get_variation_default_attributes - только те ЗНАЧЕНИЯ атриб
 wc_display_product_attributes($product) - просто список всех атрибутов товара
 
 */
-
-// echo "<pre>";
-	                        		
-// var_dump( get_class_methods( $product ) );
-// var_dump( $product->get_regular_price() );
-// die;
-
-// $variations = $product->get_available_variations();
-// var_dump( $variations[0]['image']['full_src'] );
-// die;
-
-
-// echo '<div class="summary entry-summary">';
-woocommerce_template_single_add_to_cart();
-// echo "<div>";
-// die;
-
-// wm_show_all_attributes($product->get_attributes());
-// if ( function_exists('dynamic_sidebar') )
-		// dynamic_sidebar('sidebar-0');
-
 ?>
+<div class="wm-hid">
+	<?php woocommerce_template_single_add_to_cart(); ?>
+</div>
 <script>
 	let prodType = '<?php echo $product->get_type(); ?>';
 </script>
@@ -93,11 +75,11 @@ woocommerce_template_single_add_to_cart();
                             <div class="product-info__properties-quantity">
                                 <p>Количество</p>
                                 <div class="quantity-block">
-                                    <button class="quantity-arrow-minus">
+                                    <button class="quantity-arrow-minus" onclick="qnt_minus(event)">
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/minus.png" alt="">
                                     </button>
                                     <input class="quantity-num" type="number" value="1" />
-                                    <button class="quantity-arrow-plus">
+                                    <button class="quantity-arrow-plus" onclick="qnt_plus(event)">
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/plus.png" alt="">
                                     </button>
                                 </div>
@@ -139,182 +121,84 @@ woocommerce_template_single_add_to_cart();
             </div>
             
         </div>
-
-        
-            <div class="stock-block">
-                <div class="stock-block__inside">
-                    <div class="stock-block__inside-text">
-                        <p>Акционное предложение</p>
-                        <p>Скидки на
-                            <span class="stock-item">сковороды</span> до -
-                            <span class="stock-value">25%</span>
-                        </p>
-                    </div>
-                    <div class="stock-block__inside-img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/skov.png" alt="">
-                    </div>
-                    <a href="" class="stock-block__inside-more">Подробнее</a>
-                </div>
-            </div>
-		
-		
+        <?php get_template_part('template-parts/stock', 'offer'); ?>
 		<div class="best-offers">
                 <div class="wrapper">
                     <div class="best-offers__inside">
-                        <h4>Похожие товары</h4>
-                        <div class="catalog-block__inside-items">
-                        <div class="catalog-block__inside-items__item item-sale">
-							  <div class="item-saleBlock">
-								  -<span>20</span>%
-                              </div>
-                                <a href="#" class="itemAnchor">
-                                    <div class="catalog-block__inside-items__item-img">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/item-1.jpg" alt="">
-                                    </div>
-                                </a>  
-							  <div class="catalog-block__inside-items__item-info">
-								<div class="catalog-block__inside-items__item-info__category">
-									<p>
-										Мелкая бытовая техника
-									</p>
-								</div>
-								<a class="catalog-block__inside-items__item-info__name" href="#">
-									Электрочайник из нержавеющей стали Midea
-								</a>
-								<div class="catalog-block__inside-items__item-info__buy">
-									<div class="catalog-block__inside-items__item-info__buy-price">
-										<p class="last-price">
-											<span class="last-price-value">1300</span> грн
-										</p>
-										<p class="current-price-item">
-											<span class="current-price-value">
-												1190<sup> 17</sup>
-											</span> грн 
-										</p>
-									</div>
-									<div class="catalog-block__inside-items__item-info__buy-inCart">
-										<a href="">
-											<img src="<?php echo get_template_directory_uri(); ?>/assets/images/mbasket.png" alt="">
-											В корзину
+                    	<?php 
+						$upsell_ids = $product->get_upsell_ids();
+                    	if (!empty($upsell_ids)): ?>                    		
+	                        <h4>Похожие товары</h4>
+	                        <div class="catalog-block__inside-items">
+							<?php
+							foreach ($upsell_ids as $id): ?>
+							<?php 
+								$product = wc_get_product($id);
+							?>
+								<div class="best-offers__inside-items__item item-sale">
+									<?php if ($product->is_on_sale()): ?>
+										<div class="item-saleBlock">
+											-<span><?php echo get_percent_sale($product); ?></span>%
+										</div>
+									<?php elseif(is_new_product($product->date_created)): ?>
+											<div class="item-new">
+												<div class="item-newBlock">
+													NEW
+												</div>
+											</div>
+									<?php endif ?>
+									<a href="<?php echo get_permalink( $product->id ); ?>">
+										<div class="best-offers__inside-items__item-img">
+											<img src="<?php echo wm_get_main_img_url( $product->id ); ?>" alt="">
+										</div>
+									</a>
+									<div class="best-offers__inside-items__item-info">
+										<div class="best-offers__inside-items__item-info__category">
+											<p><?php echo get_term( $product->category_ids[0] )->name; ?></p>
+										</div>
+										<a href="<?php echo get_permalink( $product->id); ?>" class="best-offers__inside-items__item-info__name">
+											<?php echo $product->name; ?>
 										</a>
-									</div>
+										<div class="best-offers__inside-items__item-info__buy">
+											<div class="best-offers__inside-items__item-info__buy-price">
+												<?php if ($product->is_on_sale()): ?>
+													<p class="last-price">
+														<span class="last-price-value"><?php echo $product->get_regular_price(); ?></span> грн
+													</p>
+													<p class="current-price-item">
+														<span class="current-price-value">
+															<?php echo $product->get_sale_price(); ?>
+														</span> грн 
+													</p>
+													<?php else: ?>
+														<span class="current-price-value">
+															<?php echo $product->get_regular_price(); ?>
+														</span> грн 
+												<?php endif ?>
+											</div>
+											<div class="best-offers__inside-items__item-info__buy-inCart">
+												<?php if ($product->stock_status == 'outofstock'): ?>
+													<a href="javascript:void(0)" class="out-of-stock">Нет в наличие</a>
+													<?php else: ?>
+														<a 
+														href="/shop/?add-to-cart=<?php echo $product->id; ?>" 
+														data-quantity="1" 
+														class="button product_type_simple add_to_cart_button ajax_add_to_cart" 
+														data-product_id="<?php echo $product->id; ?>" 
+														data-product_sku="" 
+														rel="nofollow"
+														>
+														<img src="<?php echo get_template_directory_uri() ?>/assets/images/mbasket.png" alt="">
+														В корзину
+													</a>
+												<?php endif ?>
+											</div>
+										</div>
+									</div>	
 								</div>
-							</div>	
-                          </div>
-                          <div class="catalog-block__inside-items__item item-sale">
-							  <div class="item-saleBlock">
-								  -<span>20</span>%
-                              </div>
-                                <a href="#" class="itemAnchor">
-                                    <div class="catalog-block__inside-items__item-img">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/item-1.jpg" alt="">
-                                    </div>
-                                </a>  
-							  <div class="catalog-block__inside-items__item-info">
-								<div class="catalog-block__inside-items__item-info__category">
-									<p>
-										Мелкая бытовая техника
-									</p>
-								</div>
-								<a class="catalog-block__inside-items__item-info__name" href="#">
-									Электрочайник из нержавеющей стали Midea
-								</a>
-								<div class="catalog-block__inside-items__item-info__buy">
-									<div class="catalog-block__inside-items__item-info__buy-price">
-										<p class="last-price">
-											<span class="last-price-value">1300</span> грн
-										</p>
-										<p class="current-price-item">
-											<span class="current-price-value">
-												1190<sup> 17</sup>
-											</span> грн 
-										</p>
-									</div>
-									<div class="catalog-block__inside-items__item-info__buy-inCart">
-										<a href="">
-											<img src="<?php echo get_template_directory_uri(); ?>/assets/images/mbasket.png" alt="">
-											В корзину
-										</a>
-									</div>
-								</div>
-							</div>	
-                          </div>
-                          <div class="catalog-block__inside-items__item item-sale">
-							  <div class="item-saleBlock">
-								  -<span>20</span>%
-                              </div>
-                                <a href="#" class="itemAnchor">
-                                    <div class="catalog-block__inside-items__item-img">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/item-1.jpg" alt="">
-                                    </div>
-                                </a>  
-							  <div class="catalog-block__inside-items__item-info">
-								<div class="catalog-block__inside-items__item-info__category">
-									<p>
-										Мелкая бытовая техника
-									</p>
-								</div>
-								<a class="catalog-block__inside-items__item-info__name" href="#">
-									Электрочайник из нержавеющей стали Midea
-								</a>
-								<div class="catalog-block__inside-items__item-info__buy">
-									<div class="catalog-block__inside-items__item-info__buy-price">
-										<p class="last-price">
-											<span class="last-price-value">1300</span> грн
-										</p>
-										<p class="current-price-item">
-											<span class="current-price-value">
-												1190<sup> 17</sup>
-											</span> грн 
-										</p>
-									</div>
-									<div class="catalog-block__inside-items__item-info__buy-inCart">
-										<a href="">
-											<img src="<?php echo get_template_directory_uri(); ?>/assets/images/mbasket.png" alt="">
-											В корзину
-										</a>
-									</div>
-								</div>
-							</div>	
-                          </div>
-                          <div class="catalog-block__inside-items__item item-sale">
-							  <div class="item-saleBlock">
-								  -<span>20</span>%
-                              </div>
-                                <a href="#" class="itemAnchor">
-                                    <div class="catalog-block__inside-items__item-img">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/item-1.jpg" alt="">
-                                    </div>
-                                </a>  
-							  <div class="catalog-block__inside-items__item-info">
-								<div class="catalog-block__inside-items__item-info__category">
-									<p>
-										Мелкая бытовая техника
-									</p>
-								</div>
-								<a class="catalog-block__inside-items__item-info__name" href="#">
-									Электрочайник из нержавеющей стали Midea
-								</a>
-								<div class="catalog-block__inside-items__item-info__buy">
-									<div class="catalog-block__inside-items__item-info__buy-price">
-										<p class="last-price">
-											<span class="last-price-value">1300</span> грн
-										</p>
-										<p class="current-price-item">
-											<span class="current-price-value">
-												1190<sup> 17</sup>
-											</span> грн 
-										</p>
-									</div>
-									<div class="catalog-block__inside-items__item-info__buy-inCart">
-										<a href="">
-											<img src="<?php echo get_template_directory_uri(); ?>/assets/images/mbasket.png" alt="">
-											В корзину
-										</a>
-									</div>
-								</div>
-							</div>	
-						</div>
+							<?php endforeach ?>
+							</div>
+                		<?php endif ?>
                     </div>
                     </div>
                 </div>

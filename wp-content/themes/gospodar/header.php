@@ -9,6 +9,14 @@
 	<?php global $woocommerce, $WC; ?>
 </head>
 <body>
+
+<?php 
+// echo "<pre>";
+// var_dump($_POST);
+// echo "<hr>";
+// var_dump($_GET);
+// die;
+?>
 	<header>
 		<div class="wrapper">
 			<div class="header-inside">
