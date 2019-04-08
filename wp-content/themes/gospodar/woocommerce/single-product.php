@@ -126,7 +126,7 @@ woocommerce_template_single_add_to_cart();
                             	<?php endif ?>
                             </div>
                             <div class="product-add">
-                                <button>
+                                <button id="wm-add-to-cart">
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/cart.png" alt=""> Добавить в корзину
                                 </button>
                                 <button>

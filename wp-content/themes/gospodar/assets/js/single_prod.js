@@ -1,5 +1,7 @@
-let variations = eval(document.querySelector('[data-product_variations]').getAttribute('data-product_variations'));
-let priceReg = document.querySelector('#price_reg');
+if (prodType == 'variable') {
+	let variations = eval(document.querySelector('[data-product_variations]').getAttribute('data-product_variations'));
+	let priceReg = document.querySelector('#price_reg');
+}
 let priceSale = document.querySelector('#price_sale');
 document.addEventListener('DOMContentLoaded', function(){
 	document.querySelector('#select-color').addEventListener('click', function(e){
@@ -18,5 +20,8 @@ document.addEventListener('DOMContentLoaded', function(){
 				}
 			})
 		}
+	});
+	document.querySelector('#wm-add-to-cart').addEventListener('click', function(e){
+		document.querySelector('.single_add_to_cart_button').click();
 	});
 });
