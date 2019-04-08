@@ -402,3 +402,8 @@ function my_registration_form(){
 
 add_action("wp_ajax_registration_form", "my_registration_form");
 add_action("wp_ajax_nopriv_registration_form", "my_registration_form");
+
+function do_anything() {
+    header('Location: '.$_SERVER['HTTP_REFERER']);
+}
+add_action('wp_login', 'do_anything');

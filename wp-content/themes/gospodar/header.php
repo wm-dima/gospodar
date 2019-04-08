@@ -47,31 +47,39 @@ if (isset($_SESSION['wm_woo_notices'])) {
 							<ul>
 								<li>Личный кабинет</li>
 								<li>
-									<a href="" onclick="$('.popup-formLog').toggleClass('popup-show')">Вход</a>
-									|
-									<a href="" onclick="$('.popup-formReg').toggleClass('popup-show')">Регистрация</a>
+									<?php if (is_user_logged_in()): ?>
+										<a href="" onclick="window.location.href = '<?php echo wp_logout_url(); ?>'" class="log-out">Выход</a>
+									<?php else: ?>
+										<a href="" onclick="$('.popup-formLog').toggleClass('popup-show')">Вход</a>
+										|
+										<a href="" onclick="$('.popup-formReg').toggleClass('popup-show')">Регистрация</a>
+									<?php endif ?>
 								</li>
 							</ul>
 						</div>
 					</div>
 					<div class="header-inside__part2-cart">
-						<div class="header-inside__part2-cart__img"></div>
+						<a class="cart-wrap-link" href="<?php echo wc_get_cart_url(); ?>">
+							<div class="header-inside__part2-cart__img"></div>
+						</a>
 						<div class="header-inside__part2-cart__text">
-							<ul>
-								<li>
-									Корзина 
-									<span>
-										(<span class="quantity-positions"><?php echo $woocommerce->cart->cart_contents_count; ?></span>)
-									</span> 
-								</li>
-								<li>
-									Сумма: 
-									<span>
-										<span class="price"><?php echo number_format( WC()->cart->cart_contents_total, 2 ); ?> </span>
-										грн
-									</span>
-								</li>
-							</ul>
+							<a class="cart-wrap-link" href="<?php echo wc_get_cart_url(); ?>">
+								<ul>
+									<li>
+										Корзина 
+										<span>
+											(<span class="quantity-positions"><?php echo $woocommerce->cart->cart_contents_count; ?></span>)
+										</span> 
+									</li>
+									<li>
+										Сумма: 
+										<span>
+											<span class="price"><?php echo number_format( WC()->cart->cart_contents_total, 2 ); ?> </span>
+											грн
+										</span>
+									</li>
+								</ul>
+							</a>
 						</div>
 					</div>
 				</div>	
@@ -99,4 +107,3 @@ if (isset($_SESSION['wm_woo_notices'])) {
 				</div>
 			</div>
 		</div>
-
