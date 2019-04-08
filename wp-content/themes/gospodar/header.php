@@ -65,48 +65,8 @@
 			</div>
 		</div>
 	</header>
-	<div class="popup-formReg">
-		<div class="popup-form__reg">
-			<div class="popup-name">
-				<p>Регистрация</p>
-			</div>
-			<div class="popup-inputs">
-				<form action="">
-					<input type="text" placeholder="Имя">
-					<input type="text" placeholder="Фамилия">
-					<input type="text" placeholder="Телефон">
-					<input type="text" placeholder="Email">
-					<input type="text" placeholder="Пароль">
-					<input type="text" placeholder="Повторите пароль">
-					<button>Зарегистрироваться</button>
-				</form>
-			</div>
-			<div class="popup-close" onclick="$('.popup-formReg').toggleClass('popup-show')"></div>
-		</div>
-	</div>
-	<div class="popup-formLog">
-		<div class="popup-form__log">
-			<div class="popup-name">
-				<p>Авторизация</p>
-			</div>
-			<div class="popup-inputs">
-				<form action="">
-					<input type="text" placeholder="Введите ваш логин">
-					<input type="text" placeholder="Введите ваш пароль">
-					<button>Войти</button>
-				</form>
-			</div>
-			<div class="login-socials">
-				<p>Вход через социальные сети</p>
-				<div class="login-socials__block">
-					<a href=""><img src="assets/images/f.png" alt=""></a>
-					<a href=""><img src="assets/images/g+.png" alt=""></a>
-					<a href=""><img src="assets/images/tw.png" alt=""></a>
-				</div>
-			</div>
-			<div class="popup-close" onclick="$('.popup-formLog').toggleClass('popup-show')"></div>
-		</div>
-	</div>
+	<?php get_template_part('template-parts/form', 'registration'); ?>
+	<?php get_template_part('template-parts/form', 'login'); ?>
 	<main>
 		<div class="search-catalog">
 			<div class="wrapper">
