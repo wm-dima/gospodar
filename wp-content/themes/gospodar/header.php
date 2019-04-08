@@ -2,25 +2,13 @@
 if ( isset($_POST['quantity']) || isset($_POST['add-to-cart']) ) {
 	global $woocommerce;
 	session_start();
-	// var_dump($woocommerce->session->wc_notices);
-	// echo "<br>";
 	$_SESSION['wm_woo_notices'] = $woocommerce->session->wc_notices;
-// var_dump($_SESSION['wm_woo_notices']);
-// die;
 	header('Location: '.$_SERVER['HTTP_REFERER']);
 }
 if (isset($_SESSION['wm_woo_notices'])) {
 	session_start();
 	global $woocommerce;
 	$woocommerce->session->wc_notices = $_SESSION['wm_woo_notices'];
-var_dump($woocommerce->session->wc_notices);
-
-echo "<br>";
-
-var_dump($_SESSION['wm_woo_notices']);
-
-die;
-
 }
 ?>
 <!DOCTYPE html>
