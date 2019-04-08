@@ -140,7 +140,7 @@ woocommerce_template_single_add_to_cart();
             
         </div>
 
-        <div class="wrapper">
+        
             <div class="stock-block">
                 <div class="stock-block__inside">
                     <div class="stock-block__inside-text">
@@ -156,7 +156,7 @@ woocommerce_template_single_add_to_cart();
                     <a href="" class="stock-block__inside-more">Подробнее</a>
                 </div>
             </div>
-		</div>
+		
 		
 		<div class="best-offers">
                 <div class="wrapper">
