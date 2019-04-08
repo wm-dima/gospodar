@@ -2140,7 +2140,7 @@ footer .footer-inside__right-contacts__watch-map a span {
 	width: 100%;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	/*justify-content: space-between;*/
 }
 
 #product {
