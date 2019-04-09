@@ -124,6 +124,7 @@ a.button.added{
     font-size: 14px;
     font-weight: 300;
     border: 1px solid #ccc;
+    text-align: -webkit-center;
 }
 
 .select:hover .naebka {
@@ -147,3 +148,21 @@ a.button.added{
     justify-content: center;
     text-decoration: none;
 }
+.woocommerce {
+	max-width: 1295px;
+	margin: 0 auto;
+	padding:0px 20px;
+}
+
+.news-insideMain {
+	flex-wrap: wrap;
+}
+.wc-auth-login label {
+	margin-bottom: 10px;
+}
+/*
+.best-offers__inside-items__item-info__buy-price {
+	display: flex;
+    align-items: center;
+    flex-direction: column;
+}*/
