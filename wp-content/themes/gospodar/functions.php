@@ -470,3 +470,17 @@ add_action("wp_ajax_nopriv_the_clean_session", "clean_session");
 // function is_product_in_cart($prod_id){
 
 // }
+
+function splitInHalf($string, $is_img)
+{
+    if ($is_img) {
+        $first_part_len = strlen($string) / 2200 - 1;
+        $middle = mb_strrpos(mb_substr($string, 0, floor( strlen($string) - 2200 * $first_part_len), 'UTF-8'), ' ', null, 'UTF-8') + 1;
+    } else {
+        $middle = mb_strrpos(mb_substr($string, 0, floor(strlen($string) / 2), 'UTF-8'), ' ', null, 'UTF-8') + 1;
+    }
+    return [
+        mb_substr($string, 0, $middle - 1, 'UTF-8'),
+        mb_substr($string, $middle, null, 'UTF-8')
+    ];
+}
