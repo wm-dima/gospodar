@@ -107,7 +107,12 @@ wc_display_product_attributes($product) - просто список всех а�
                             </div>
                             <div class="product-add">
                                 <button id="wm-add-to-cart">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/cart.png" alt=""> Добавить в корзину
+									<?php if ($product->stock_status != 'outofstock'): ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/cart.png" alt="">
+	                                    Добавить в корзину
+	                                <?php else: ?>
+	                                    На складе
+									<?php endif ?>
                                 </button>
                                 <button>
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/oneClick.png" alt=""> Купить в один клик
@@ -176,7 +181,7 @@ wc_display_product_attributes($product) - просто список всех а�
 											</div>
 											<div class="best-offers__inside-items__item-info__buy-inCart">
 												<?php if ($product->stock_status == 'outofstock'): ?>
-													<a href="javascript:void(0)" class="out-of-stock">Нет в наличие</a>
+													<a href="javascript:void(0)" class="out-of-stock">На складе</a>
 													<?php else: ?>
 														<a 
 														href="/shop/?add-to-cart=<?php echo $product->id; ?>" 
