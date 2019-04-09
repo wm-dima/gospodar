@@ -203,7 +203,6 @@
 		})
 	})
 
-
 </script>
 	<!-- <div class="cart-collaterals"> -->
 		<?php
@@ -218,3 +217,14 @@
 	<!-- </div> -->
 
 	<?php do_action( 'woocommerce_after_cart' ); ?>
+
+	<?php get_template_part('template-parts/last', 'news'); ?>
+	<div class="subscribe">
+		<div class="wrapper">
+			<div class="subscribe-inside">
+				<div class="subscribe-inside__img"></div>
+				<p>Для наших подписчиков - скидки, новинки и полезные советы</p>
+				<?php echo do_shortcode( '[mc4wp_form id="216"]' ); ?>
+			</div>
+		</div>
+	</div>

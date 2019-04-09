@@ -9,6 +9,7 @@
 		required
 	>
 	<div class="select">
+		<div class="naebka">Все категории</div>
 		<select name="product_cat" id="select">
 			<option value="">Все категории</option>
 			<?php 

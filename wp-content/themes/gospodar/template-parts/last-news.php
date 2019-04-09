@@ -8,7 +8,7 @@
 			'post_status' => 'publish',
 			'posts_per_page' => 4,
 		)); 
-		$_monthsList = array(
+		$_monthsList = [
 			".01." => "января",
 			".02." => "февраля",
 			".03." => "марта",
@@ -21,7 +21,7 @@
 			".10." => "октября",
 			".11." => "ноября",
 			".12." => "декабря"
-		);
+		];
 		if ( $the_query->have_posts() ) : 
 			while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 				<div class="news-inside__article">
@@ -38,7 +38,8 @@
 						<p class="news-inside__article-text__date">
 							<?php 
 							$now =  date( 'j  .m., Y', strtotime( $post->post_date ) );
-							echo str_replace(date('.m.', time()), $_monthsList, $now);
+							$month = date( '.m.', strtotime( $post->post_date ) );
+							echo str_replace( $month , $_monthsList[$month], $now);
 							?>
 						</p>
 						<a class="news-inside__article-text__name" href="<?php echo get_permalink($post->id); ?>">
