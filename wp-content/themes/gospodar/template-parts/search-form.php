@@ -25,3 +25,10 @@
 	</div>		
 	<button>Искать</button>
 </form>
+
+<script>
+	select.addEventListener('change', function(e){
+		let newText = select.querySelector('[value="'+e.target.value+'"]').innerText.lenght = 40;
+		document.querySelector('.select .naebka').innerText = newText;
+	})
+</script>
