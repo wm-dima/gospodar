@@ -25,9 +25,6 @@ $product =  wc_get_product(get_the_ID());
 $main_img_id = $product->get_image_id();
 $attachment_ids = $product->get_gallery_image_ids();
 
-
-
-
 /*
 get_variation_attributes - только те ЗНАЧЕНИЯ атрибутов, которые использовались для вариации
 get_variation_default_attribute - Выводит выбор опций вариативного товара.
