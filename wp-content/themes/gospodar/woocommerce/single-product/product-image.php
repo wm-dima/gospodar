@@ -59,26 +59,16 @@ $attachment_ids = $product->get_gallery_image_ids();
 
 		        </div>
 			</div>
-			<div class="swiper-container">
-				<!-- Additional required wrapper -->
+			<div class="swiper-container" data-wm-slider-mini>
 				<div class="swiper-wrapper">
-					<!-- Slides -->
-					<li class="swiper-slide">
-		                <li>
-		            		<img src="<?php echo $main_img; ?>" />
-		                </li>
-		                <?php if (!empty($attachment_ids)): ?>
-		                	<?php foreach ($attachment_ids as $key => $value): ?>
-				                <li>
-				            		<img src="<?php echo wp_get_attachment_image_url( $value, 'full' ) ?>" />
-				                </li>	
-		                	<?php endforeach ?>
-		                <?php endif ?>
-					</li>
+					<li class="swiper-slide"><img src="<?php echo $main_img; ?>" /></li>
+	                <?php if (!empty($attachment_ids)): ?>
+	                	<?php foreach ($attachment_ids as $key => $value): ?>
+			                <li class="swiper-slide"><img src="<?php echo wp_get_attachment_image_url( $value, 'full' ) ?>" /></li>
+	                	<?php endforeach ?>
+	                <?php endif ?>
 				</div>
-				<!-- If we need pagination -->
 				<div class="swiper-pagination"></div>
-				<!-- If we need navigation buttons -->
 				<div class="swiper-button-prev"></div>
 				<div class="swiper-button-next"></div>
 			</div>

@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function(){
 			document.querySelector('#pa_color').value = document.querySelector('#pa_color [value="'+value+'"]');
 			variations.forEach(item => {
 				if(item.attributes.attribute_pa_color == value){
+					document.querySelector('.amazingslider-img-1 img').src = item.image.full_src;
+					document.querySelector('[data-wm-slider-mini] .swiper-slide.swiper-slide-active img').src = item.image.full_src;
 					document.querySelector('[name="variation_id"]').value == item.variation_id;
 					document.querySelector('[data-product_variations]').setAttribute('current-image', item.image_id);
 					if (item.display_regular_price == item.display_price) {
