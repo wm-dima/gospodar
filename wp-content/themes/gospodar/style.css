@@ -101,5 +101,13 @@ a.button.loading{
 }
 
 a.button.added{
-	background: #4cc71c !important;
+	background: #25afe8 !important;
+}
+
+.delete-item a{
+	margin: auto;
+}
+
+[data-update-btn]:hover{
+	cursor: pointer;
 }

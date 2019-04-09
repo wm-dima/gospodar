@@ -407,3 +407,12 @@ function do_anything() {
     header('Location: '.$_SERVER['HTTP_REFERER']);
 }
 add_action('wp_login', 'do_anything');
+
+
+function sww_remove_wc_currency_symbols( $currency_symbol, $currency ) {
+     $currency_symbol = '';
+     return $currency_symbol;
+}
+add_filter('woocommerce_currency_symbol', 'sww_remove_wc_currency_symbols', 10, 2);
+
+// remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cart_totals', 10 );
