@@ -14,7 +14,7 @@
 				<input type="submit" name="submit" value="Зарегистрироваться"/>
 			</form>
 		</div>
-		<div class="popup-close" onclick="$('.popup-formReg').toggleClass('popup-show')"></div>
+		<div class="popup-close" onclick="document.querySelector('.popup-formReg').classList.toggle('popup-show')"></div>
 	</div>
 </div>
 <script>

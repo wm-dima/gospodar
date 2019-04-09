@@ -9814,6 +9814,7 @@
     }), t.hot.dispose(function() {
         s()
     })
+<<<<<<< HEAD
 }]);
 try{
 $( ".header-inside__part2-login__text ul li a" ).click(function( event ) {
@@ -9821,3 +9822,11 @@ $( ".header-inside__part2-login__text ul li a" ).click(function( event ) {
 });
 } catch(err){}
     
+=======
+}]);   
+try {
+    $(".header-inside__part2-login__text ul li a").click(function(event) {
+        event.preventDefault();
+  });
+} catch (e){}
+>>>>>>> antonIO
