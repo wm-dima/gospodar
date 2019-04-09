@@ -95,3 +95,11 @@ Theme Name: Господар
     width: 100%;
     text-align: center;
 }
+
+a.button.loading{
+	background: #aab5b4 !important;
+}
+
+a.button.added{
+	background: #4cc71c !important;
+}

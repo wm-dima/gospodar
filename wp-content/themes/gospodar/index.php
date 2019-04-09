@@ -50,20 +50,20 @@ Template Name: index
 							</a>
 							<div class="best-offers__inside-items__item-info__buy">
 								<div class="best-offers__inside-items__item-info__buy-price">
-									<?php if ($product->is_on_sale()): ?>
-										<p class="last-price">
-											<span class="last-price-value"><?php echo $product->get_regular_price(); ?></span> грн
-										</p>
-										<p class="current-price-item">
-											<span class="current-price-value">
-												<?php echo $product->get_sale_price(); ?>
-											</span> грн 
-										</p>
-										<?php else: ?>
-											<span class="current-price-value">
-												<?php echo $product->get_regular_price(); ?>
-											</span> грн 
-									<?php endif ?>
+								<?php if ($product->is_on_sale() && $product->get_sale_price() != '' && $product->get_regular_price() != '' ): ?>
+									<p class="last-price">
+										<span class="last-price-value"><?php echo $product->get_regular_price(); ?></span> грн
+									</p>
+									<p class="current-price-item">
+										<span class="current-price-value">
+											<?php echo $product->get_sale_price(); ?>
+										</span> грн 
+									</p>
+								<?php else: ?>
+										<span class="current-price-value">
+											<?php echo $product->price; ?>
+										</span> грн 
+								<?php endif ?>
 								</div>
 								<div class="best-offers__inside-items__item-info__buy-inCart">
 									<?php if ($product->stock_status == 'outofstock'): ?>
