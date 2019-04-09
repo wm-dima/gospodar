@@ -1,0 +1,135 @@
+2019-04-05T08:45:40+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function WC_Product_Variable::get_variation_default_attribute(), 0 passed in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php on line 47 and exactly 1 expected in C:\OSPanel\domains\gospodar\wp-content\plugins\woocommerce\includes\class-wc-product-variable.php:255
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php(47): WC_Product_Variable->get_variation_default_attribute()
+#1 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#4 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\plugins\woocommerce\includes\class-wc-product-variable.php на строке 255
+
+2019-04-05T08:53:33+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function WC_Abstract_Legacy_Product::sync_attributes(), 0 passed in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php on line 44 and at least 1 expected in C:\OSPanel\domains\gospodar\wp-content\plugins\woocommerce\includes\legacy\abstract-wc-legacy-product.php:572
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php(44): WC_Abstract_Legacy_Product::sync_attributes()
+#1 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#4 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\plugins\woocommerce\includes\legacy\abstract-wc-legacy-product.php на строке 572
+
+2019-04-05T08:54:15+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Variable::wc_display_product_attributes() in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php:43
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include()
+#1 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php на строке 43
+
+2019-04-05T08:54:22+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function wc_display_product_attributes(), 0 passed in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php on line 43 and exactly 1 expected in C:\OSPanel\domains\gospodar\wp-content\plugins\woocommerce\includes\wc-template-functions.php:3130
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php(43): wc_display_product_attributes()
+#1 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#4 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\plugins\woocommerce\includes\wc-template-functions.php на строке 3130
+
+2019-04-05T10:28:21+00:00 CRITICAL Uncaught Error: Cannot use object of type stdClass as array in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:266
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php(54): wm_show_all_attributes(Array)
+#1 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#4 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 266
+
+2019-04-05T13:52:50+00:00 CRITICAL Uncaught Error: Call to undefined function money_format() in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php:48
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include()
+#1 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php на строке 48
+
+2019-04-05T15:44:55+00:00 CRITICAL syntax error, unexpected '}' в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 294
+
+2019-04-05T15:55:03+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function get_color_variation(), 0 passed in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php on line 119 and exactly 1 expected in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:285
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php(119): get_color_variation()
+#1 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#4 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 285
+
+2019-04-05T15:55:22+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function get_color_variation(), 0 passed in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php on line 119 and exactly 1 expected in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:285
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php(119): get_color_variation()
+#1 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#4 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 285
+
+2019-04-05T19:01:25+00:00 CRITICAL syntax error, unexpected 'if' (T_IF) в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 218
+
+2019-04-05T19:47:55+00:00 CRITICAL Cannot use isset() on the result of an expression (you can use "null !== expression" instead) в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 263
+
+2019-04-05T19:50:06+00:00 CRITICAL syntax error, unexpected ';', expecting ',' or ')' в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 263
+
+2019-04-05T19:50:38+00:00 CRITICAL syntax error, unexpected ')' в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 263
+
+2019-04-05T20:40:49+00:00 CRITICAL syntax error, unexpected 'true' (T_STRING), expecting ',' or ')' в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 29
+
+2019-04-05T20:54:27+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Variable::display_regular_price() in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php:43
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include()
+#1 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php на строке 43
+
+2019-04-05T21:00:37+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function WC_Product::is_type(), 0 passed in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php on line 64 and exactly 1 expected in C:\OSPanel\domains\gospodar\wp-content\plugins\woocommerce\includes\abstracts\abstract-wc-product.php:1405
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php(64): WC_Product->is_type()
+#1 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#4 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\plugins\woocommerce\includes\abstracts\abstract-wc-product.php на строке 1405
+
+2019-04-05T21:00:54+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function WC_Product::is_type(), 0 passed in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php on line 64 and exactly 1 expected in C:\OSPanel\domains\gospodar\wp-content\plugins\woocommerce\includes\abstracts\abstract-wc-product.php:1405
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php(64): WC_Product->is_type()
+#1 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#4 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\plugins\woocommerce\includes\abstracts\abstract-wc-product.php на строке 1405
+
+2019-04-05T21:02:05+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function WC_Product::is_type(), 0 passed in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php on line 107 and exactly 1 expected in C:\OSPanel\domains\gospodar\wp-content\plugins\woocommerce\includes\abstracts\abstract-wc-product.php:1405
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php(107): WC_Product->is_type()
+#1 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#4 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\plugins\woocommerce\includes\abstracts\abstract-wc-product.php на строке 1405
+
+2019-04-05T21:03:38+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Simple::get_variation_attributes() in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:213
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php(91): get_color_variation(Object(WC_Product_Simple))
+#1 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#4 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 213
+
+2019-04-05T21:04:30+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Simple::get_variation_attributes() in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:214
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php(91): get_color_variation(Object(WC_Product_Simple))
+#1 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#4 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 214
+

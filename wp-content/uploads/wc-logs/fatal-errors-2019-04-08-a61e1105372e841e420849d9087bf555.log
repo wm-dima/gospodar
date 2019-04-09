@@ -1,0 +1,400 @@
+2019-04-08T09:11:08+00:00 CRITICAL Uncaught Error: Call to a member function get() on null in C:\OSPanel\domains\gospodar\wp-content\plugins\woocommerce\includes\class-wc-cart-session.php:65
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(286): WC_Cart_Session->get_cart_from_session('')
+#1 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 C:\OSPanel\domains\gospodar\wp-includes\plugin.php(465): WP_Hook->do_action(Array)
+#3 C:\OSPanel\domains\gospodar\wp-settings.php(526): do_action('wp_loaded')
+#4 C:\OSPanel\domains\gospodar\wp-config.php(89): require_once('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\gospodar\wp-load.php(37): require_once('C:\\OSPanel\\doma...')
+#6 C:\OSPanel\domains\gospodar\wp-cron.php(39): require_once('C:\\OSPanel\\doma...')
+#7 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\plugins\woocommerce\includes\class-wc-cart-session.php на строке 65
+
+2019-04-08T09:23:16+00:00 CRITICAL Uncaught Error: Call to a member function add_to_cart() on null in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:299
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-settings.php(479): include()
+#1 C:\OSPanel\domains\gospodar\wp-config.php(89): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-load.php(37): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\wp-admin\admin-ajax.php(22): require_once('C:\\OSPanel\\doma...')
+#4 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 299
+
+2019-04-08T09:25:17+00:00 CRITICAL Uncaught Error: Call to a member function add_to_cart() on null in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:299
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-settings.php(479): include()
+#1 C:\OSPanel\domains\gospodar\wp-config.php(89): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-load.php(37): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\wp-admin\admin-ajax.php(22): require_once('C:\\OSPanel\\doma...')
+#4 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 299
+
+2019-04-08T09:25:53+00:00 CRITICAL Uncaught Error: Call to a member function add_to_cart() on null in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:299
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-settings.php(479): include()
+#1 C:\OSPanel\domains\gospodar\wp-config.php(89): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-load.php(37): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\wp-blog-header.php(13): require_once('C:\\OSPanel\\doma...')
+#4 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#5 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 299
+
+2019-04-08T09:29:14+00:00 CRITICAL Uncaught Error: Call to a member function add_to_cart() on null in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:294
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-settings.php(479): include()
+#1 C:\OSPanel\domains\gospodar\wp-config.php(89): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-load.php(37): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\wp-admin\admin-ajax.php(22): require_once('C:\\OSPanel\\doma...')
+#4 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 294
+
+2019-04-08T09:29:29+00:00 CRITICAL Uncaught Error: Call to a member function add_to_cart() on null in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:294
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-settings.php(479): include()
+#1 C:\OSPanel\domains\gospodar\wp-config.php(89): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-load.php(37): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\wp-admin\admin-ajax.php(22): require_once('C:\\OSPanel\\doma...')
+#4 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 294
+
+2019-04-08T09:29:44+00:00 CRITICAL Uncaught Error: Call to a member function add_to_cart() on null in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:294
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-settings.php(479): include()
+#1 C:\OSPanel\domains\gospodar\wp-config.php(89): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-load.php(37): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\wp-admin\admin-ajax.php(22): require_once('C:\\OSPanel\\doma...')
+#4 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 294
+
+2019-04-08T09:29:56+00:00 CRITICAL Uncaught Error: Call to a member function add_to_cart() on null in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:294
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-settings.php(479): include()
+#1 C:\OSPanel\domains\gospodar\wp-config.php(89): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-load.php(37): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\wp-blog-header.php(13): require_once('C:\\OSPanel\\doma...')
+#4 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#5 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 294
+
+2019-04-08T09:29:59+00:00 CRITICAL Uncaught Error: Call to a member function add_to_cart() on null in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:294
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-settings.php(479): include()
+#1 C:\OSPanel\domains\gospodar\wp-config.php(89): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-load.php(37): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\wp-admin\admin-ajax.php(22): require_once('C:\\OSPanel\\doma...')
+#4 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 294
+
+2019-04-08T09:30:17+00:00 CRITICAL Uncaught Error: Call to a member function add_to_cart() on null in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:295
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-settings.php(479): include()
+#1 C:\OSPanel\domains\gospodar\wp-config.php(89): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-load.php(37): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\wp-blog-header.php(13): require_once('C:\\OSPanel\\doma...')
+#4 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#5 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 295
+
+2019-04-08T09:30:28+00:00 CRITICAL Uncaught Error: Call to a member function add_to_cart() on null in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:295
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-settings.php(479): include()
+#1 C:\OSPanel\domains\gospodar\wp-config.php(89): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-load.php(37): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\wp-blog-header.php(13): require_once('C:\\OSPanel\\doma...')
+#4 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#5 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 295
+
+2019-04-08T09:31:31+00:00 CRITICAL Uncaught Error: Call to a member function get() on null in C:\OSPanel\domains\gospodar\wp-content\plugins\woocommerce\includes\class-wc-cart-session.php:65
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(286): WC_Cart_Session->get_cart_from_session('')
+#1 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 C:\OSPanel\domains\gospodar\wp-includes\plugin.php(465): WP_Hook->do_action(Array)
+#3 C:\OSPanel\domains\gospodar\wp-settings.php(526): do_action('wp_loaded')
+#4 C:\OSPanel\domains\gospodar\wp-config.php(89): require_once('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\gospodar\wp-load.php(37): require_once('C:\\OSPanel\\doma...')
+#6 C:\OSPanel\domains\gospodar\wp-cron.php(39): require_once('C:\\OSPanel\\doma...')
+#7 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\plugins\woocommerce\includes\class-wc-cart-session.php на строке 65
+
+2019-04-08T09:31:47+00:00 CRITICAL Uncaught Error: Call to a member function add_to_cart() on null in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:295
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-settings.php(479): include()
+#1 C:\OSPanel\domains\gospodar\wp-config.php(89): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-load.php(37): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\wp-blog-header.php(13): require_once('C:\\OSPanel\\doma...')
+#4 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#5 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 295
+
+2019-04-08T09:31:59+00:00 CRITICAL Uncaught Error: Call to a member function add_to_cart() on null in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:295
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-settings.php(479): include()
+#1 C:\OSPanel\domains\gospodar\wp-config.php(89): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-load.php(37): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\wp-admin\admin-ajax.php(22): require_once('C:\\OSPanel\\doma...')
+#4 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 295
+
+2019-04-08T09:32:08+00:00 CRITICAL Uncaught Error: Call to a member function add_to_cart() on null in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:295
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-settings.php(479): include()
+#1 C:\OSPanel\domains\gospodar\wp-config.php(89): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-load.php(37): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\wp-blog-header.php(13): require_once('C:\\OSPanel\\doma...')
+#4 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#5 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 295
+
+2019-04-08T09:34:00+00:00 CRITICAL Uncaught Error: Call to a member function add_to_cart() on null in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:296
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-settings.php(479): include()
+#1 C:\OSPanel\domains\gospodar\wp-config.php(89): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-load.php(37): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\wp-blog-header.php(13): require_once('C:\\OSPanel\\doma...')
+#4 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#5 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 296
+
+2019-04-08T09:34:00+00:00 CRITICAL Uncaught Error: Call to a member function add_to_cart() on null in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:296
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-settings.php(479): include()
+#1 C:\OSPanel\domains\gospodar\wp-config.php(89): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-load.php(37): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\wp-admin\admin-ajax.php(22): require_once('C:\\OSPanel\\doma...')
+#4 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 296
+
+2019-04-08T09:34:04+00:00 CRITICAL Uncaught Error: Call to a member function add_to_cart() on null in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:296
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-settings.php(479): include()
+#1 C:\OSPanel\domains\gospodar\wp-config.php(89): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-load.php(37): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\wp-blog-header.php(13): require_once('C:\\OSPanel\\doma...')
+#4 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#5 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 296
+
+2019-04-08T09:40:01+00:00 CRITICAL Uncaught Error: Call to a member function add_to_cart() on null in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:290
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-settings.php(479): include()
+#1 C:\OSPanel\domains\gospodar\wp-config.php(89): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-load.php(37): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\wp-admin\admin-ajax.php(22): require_once('C:\\OSPanel\\doma...')
+#4 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 290
+
+2019-04-08T09:40:16+00:00 CRITICAL Uncaught Error: Call to a member function add_to_cart() on null in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:290
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-settings.php(479): include()
+#1 C:\OSPanel\domains\gospodar\wp-config.php(89): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-load.php(37): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\wp-admin\admin-ajax.php(22): require_once('C:\\OSPanel\\doma...')
+#4 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 290
+
+2019-04-08T09:40:20+00:00 CRITICAL Uncaught Error: Call to a member function add_to_cart() on null in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:290
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-settings.php(479): include()
+#1 C:\OSPanel\domains\gospodar\wp-config.php(89): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-load.php(37): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\wp-blog-header.php(13): require_once('C:\\OSPanel\\doma...')
+#4 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#5 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 290
+
+2019-04-08T12:24:31+00:00 CRITICAL syntax error, unexpected ')' в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php на строке 149
+
+2019-04-08T12:24:56+00:00 CRITICAL Uncaught Error: Call to a member function is_on_sale() on boolean in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php:155
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include()
+#1 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php на строке 155
+
+2019-04-08T12:25:07+00:00 CRITICAL Uncaught Error: Call to a member function is_on_sale() on boolean in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php:155
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include()
+#1 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php на строке 155
+
+2019-04-08T12:25:26+00:00 CRITICAL Uncaught Error: Call to a member function is_on_sale() on boolean in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php:156
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include()
+#1 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php на строке 156
+
+2019-04-08T15:12:59+00:00 CRITICAL Uncaught Error: Call to undefined function registration_form() in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:388
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php(410): custom_registration_function()
+#1 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(286): my_registration_form('')
+#2 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#3 C:\OSPanel\domains\gospodar\wp-includes\plugin.php(465): WP_Hook->do_action(Array)
+#4 C:\OSPanel\domains\gospodar\wp-admin\admin-ajax.php(182): do_action('wp_ajax_nopriv_...')
+#5 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 388
+
+2019-04-08T15:14:20+00:00 CRITICAL Uncaught Error: Call to undefined function registration_form() in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:388
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php(410): custom_registration_function()
+#1 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(286): my_registration_form('')
+#2 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#3 C:\OSPanel\domains\gospodar\wp-includes\plugin.php(465): WP_Hook->do_action(Array)
+#4 C:\OSPanel\domains\gospodar\wp-admin\admin-ajax.php(182): do_action('wp_ajax_nopriv_...')
+#5 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 388
+
+2019-04-08T15:14:41+00:00 CRITICAL Uncaught Error: Call to undefined function registration_form() in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:388
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php(410): custom_registration_function()
+#1 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(286): my_registration_form('')
+#2 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#3 C:\OSPanel\domains\gospodar\wp-includes\plugin.php(465): WP_Hook->do_action(Array)
+#4 C:\OSPanel\domains\gospodar\wp-admin\admin-ajax.php(182): do_action('wp_ajax_nopriv_...')
+#5 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 388
+
+2019-04-08T15:15:20+00:00 CRITICAL Uncaught Error: Call to undefined function registration_form() in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:388
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php(410): custom_registration_function()
+#1 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(286): my_registration_form('')
+#2 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#3 C:\OSPanel\domains\gospodar\wp-includes\plugin.php(465): WP_Hook->do_action(Array)
+#4 C:\OSPanel\domains\gospodar\wp-admin\admin-ajax.php(182): do_action('wp_ajax_nopriv_...')
+#5 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 388
+
+2019-04-08T15:16:45+00:00 CRITICAL Uncaught Error: Call to undefined function registration_form() in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:388
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php(410): custom_registration_function()
+#1 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(286): my_registration_form('')
+#2 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#3 C:\OSPanel\domains\gospodar\wp-includes\plugin.php(465): WP_Hook->do_action(Array)
+#4 C:\OSPanel\domains\gospodar\wp-admin\admin-ajax.php(182): do_action('wp_ajax_nopriv_...')
+#5 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 388
+
+2019-04-08T15:18:02+00:00 CRITICAL Uncaught Error: Call to undefined function registration_form() in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:388
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php(410): custom_registration_function()
+#1 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(286): my_registration_form('')
+#2 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#3 C:\OSPanel\domains\gospodar\wp-includes\plugin.php(465): WP_Hook->do_action(Array)
+#4 C:\OSPanel\domains\gospodar\wp-admin\admin-ajax.php(182): do_action('wp_ajax_nopriv_...')
+#5 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 388
+
+2019-04-08T15:18:20+00:00 CRITICAL Uncaught Error: Call to undefined function registration_form() in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:388
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php(410): custom_registration_function()
+#1 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(286): my_registration_form('')
+#2 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#3 C:\OSPanel\domains\gospodar\wp-includes\plugin.php(465): WP_Hook->do_action(Array)
+#4 C:\OSPanel\domains\gospodar\wp-admin\admin-ajax.php(182): do_action('wp_ajax_nopriv_...')
+#5 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 388
+
+2019-04-08T18:52:17+00:00 CRITICAL Uncaught Error: Call to undefined function registration_form() in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:388
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php(410): custom_registration_function()
+#1 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(286): my_registration_form('')
+#2 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#3 C:\OSPanel\domains\gospodar\wp-includes\plugin.php(465): WP_Hook->do_action(Array)
+#4 C:\OSPanel\domains\gospodar\wp-admin\admin-ajax.php(182): do_action('wp_ajax_nopriv_...')
+#5 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 388
+
+2019-04-08T19:36:11+00:00 CRITICAL Uncaught Error: Call to undefined function registration_form() in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:388
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php(411): custom_registration_function()
+#1 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(286): my_registration_form('')
+#2 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#3 C:\OSPanel\domains\gospodar\wp-includes\plugin.php(465): WP_Hook->do_action(Array)
+#4 C:\OSPanel\domains\gospodar\wp-admin\admin-ajax.php(182): do_action('wp_ajax_nopriv_...')
+#5 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 388
+
+2019-04-08T19:37:03+00:00 CRITICAL Uncaught Error: Call to undefined function registration_form() in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:388
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php(411): custom_registration_function()
+#1 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(286): my_registration_form('')
+#2 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#3 C:\OSPanel\domains\gospodar\wp-includes\plugin.php(465): WP_Hook->do_action(Array)
+#4 C:\OSPanel\domains\gospodar\wp-admin\admin-ajax.php(182): do_action('wp_ajax_nopriv_...')
+#5 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 388
+
+2019-04-08T19:38:05+00:00 CRITICAL syntax error, unexpected ')', expecting variable (T_VARIABLE) в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 335
+
+2019-04-08T19:38:24+00:00 CRITICAL syntax error, unexpected ')', expecting variable (T_VARIABLE) в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 335
+
+2019-04-08T19:39:25+00:00 CRITICAL syntax error, unexpected ')', expecting variable (T_VARIABLE) в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 335
+
+2019-04-08T19:39:33+00:00 CRITICAL Uncaught Error: Call to undefined function registration_form() in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:387
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php(410): custom_registration_function()
+#1 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(286): my_registration_form('')
+#2 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#3 C:\OSPanel\domains\gospodar\wp-includes\plugin.php(465): WP_Hook->do_action(Array)
+#4 C:\OSPanel\domains\gospodar\wp-admin\admin-ajax.php(182): do_action('wp_ajax_nopriv_...')
+#5 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 387
+
+2019-04-08T19:39:50+00:00 CRITICAL Uncaught Error: Call to undefined function registration_form() in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:387
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php(410): custom_registration_function()
+#1 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(286): my_registration_form('')
+#2 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#3 C:\OSPanel\domains\gospodar\wp-includes\plugin.php(465): WP_Hook->do_action(Array)
+#4 C:\OSPanel\domains\gospodar\wp-admin\admin-ajax.php(182): do_action('wp_ajax_nopriv_...')
+#5 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 387
+
+2019-04-08T19:41:16+00:00 CRITICAL syntax error, unexpected ',' в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 281
+
+2019-04-08T19:41:26+00:00 CRITICAL Uncaught Error: Call to undefined function registration_form() in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:387
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php(410): custom_registration_function()
+#1 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(286): my_registration_form('')
+#2 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#3 C:\OSPanel\domains\gospodar\wp-includes\plugin.php(465): WP_Hook->do_action(Array)
+#4 C:\OSPanel\domains\gospodar\wp-admin\admin-ajax.php(182): do_action('wp_ajax_nopriv_...')
+#5 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 387
+
+2019-04-08T19:42:40+00:00 CRITICAL Uncaught Error: Call to undefined function registration_form() in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:387
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php(410): custom_registration_function()
+#1 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(286): my_registration_form('')
+#2 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#3 C:\OSPanel\domains\gospodar\wp-includes\plugin.php(465): WP_Hook->do_action(Array)
+#4 C:\OSPanel\domains\gospodar\wp-admin\admin-ajax.php(182): do_action('wp_ajax_nopriv_...')
+#5 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 387
+
+2019-04-08T19:43:38+00:00 CRITICAL Uncaught Error: Call to undefined function registration_form() in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:387
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php(410): custom_registration_function()
+#1 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(286): my_registration_form('')
+#2 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#3 C:\OSPanel\domains\gospodar\wp-includes\plugin.php(465): WP_Hook->do_action(Array)
+#4 C:\OSPanel\domains\gospodar\wp-admin\admin-ajax.php(182): do_action('wp_ajax_nopriv_...')
+#5 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 387
+
+2019-04-08T20:22:49+00:00 CRITICAL Uncaught Error: Call to undefined function registration_form() in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:387
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php(410): custom_registration_function()
+#1 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(286): my_registration_form('')
+#2 C:\OSPanel\domains\gospodar\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#3 C:\OSPanel\domains\gospodar\wp-includes\plugin.php(465): WP_Hook->do_action(Array)
+#4 C:\OSPanel\domains\gospodar\wp-admin\admin-ajax.php(182): do_action('wp_ajax_nopriv_...')
+#5 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 387
+
+2019-04-08T21:00:25+00:00 CRITICAL syntax error, unexpected end of file в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 409
+

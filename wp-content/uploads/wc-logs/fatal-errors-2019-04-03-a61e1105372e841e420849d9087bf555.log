@@ -1,0 +1,126 @@
+2019-04-03T07:50:28+00:00 CRITICAL syntax error, unexpected ';', expecting ',' or ')' в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\index.php на строке 25
+
+2019-04-03T08:05:14+00:00 CRITICAL Object of class WP_Term could not be converted to string в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\index.php на строке 45
+
+2019-04-03T08:05:38+00:00 CRITICAL Object of class WP_Term could not be converted to string в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\index.php на строке 46
+
+2019-04-03T08:10:44+00:00 CRITICAL Uncaught Error: Call to undefined function wm_get_main_img_url() in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\index.php:40
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include()
+#1 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\index.php на строке 40
+
+2019-04-03T08:11:14+00:00 CRITICAL Uncaught Error: Call to undefined function wm_get_main_img_url() in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\index.php:40
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include()
+#1 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\index.php на строке 40
+
+2019-04-03T08:11:47+00:00 CRITICAL Uncaught Error: Call to undefined function wm_get_main_img_url() in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\index.php:24
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include()
+#1 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\index.php на строке 24
+
+2019-04-03T08:16:39+00:00 CRITICAL syntax error, unexpected ',' в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\index.php на строке 26
+
+2019-04-03T08:55:29+00:00 CRITICAL Uncaught Error: Cannot use object of type WC_DateTime as array in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\index.php:24
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include()
+#1 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\index.php на строке 24
+
+2019-04-03T08:57:14+00:00 CRITICAL Uncaught Error: Cannot use object of type WC_DateTime as array in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:263
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\index.php(24): is_new_product(Object(WC_DateTime))
+#1 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#4 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 263
+
+2019-04-03T09:09:58+00:00 CRITICAL syntax error, unexpected 'if' (T_IF), expecting ':' в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\index.php на строке 35
+
+2019-04-03T10:26:10+00:00 CRITICAL Uncaught Error: Call to a member function getTimestamp() on null in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:260
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\index.php(35): is_new_product(NULL)
+#1 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#4 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 260
+
+2019-04-03T10:27:08+00:00 CRITICAL Uncaught Error: Call to a member function getTimestamp() on null in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:260
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\index.php(35): is_new_product(NULL)
+#1 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#4 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 260
+
+2019-04-03T10:29:37+00:00 CRITICAL Uncaught Error: Call to a member function getTimestamp() on null in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php:260
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\index.php(35): is_new_product(NULL)
+#1 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#4 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php на строке 260
+
+2019-04-03T10:41:13+00:00 CRITICAL Uncaught Error: Call to a member function is_on_sale() on boolean in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\index.php:31
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include()
+#1 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\index.php на строке 31
+
+2019-04-03T10:43:48+00:00 CRITICAL Uncaught Error: Call to a member function is_on_sale() on boolean in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\index.php:27
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include()
+#1 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\index.php на строке 27
+
+2019-04-03T10:45:23+00:00 CRITICAL Uncaught Error: Call to a member function is_on_sale() on boolean in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\index.php:29
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include()
+#1 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\index.php на строке 29
+
+2019-04-03T10:51:28+00:00 CRITICAL Uncaught Error: Call to a member function is_on_sale() on boolean in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\index.php:30
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include()
+#1 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\index.php на строке 30
+
+2019-04-03T11:02:03+00:00 CRITICAL Uncaught Error: Call to a member function is_on_sale() on boolean in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\index.php:24
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include()
+#1 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\index.php на строке 24
+
+2019-04-03T15:33:32+00:00 CRITICAL syntax error, unexpected ')' в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\single-post.php на строке 3
+
+2019-04-03T20:48:48+00:00 CRITICAL syntax error, unexpected '}' в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\functions.php(259) : runtime-created function на строке 1
+
+2019-04-03T21:54:09+00:00 CRITICAL syntax error, unexpected 'strtotime' (T_STRING), expecting ',' or ')' в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\template-parts\last-news.php на строке 28
+
+2019-04-03T21:57:48+00:00 CRITICAL syntax error, unexpected ';', expecting ',' or ')' в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\template-parts\last-news.php на строке 42
+
