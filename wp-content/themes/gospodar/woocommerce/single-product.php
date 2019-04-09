@@ -44,6 +44,7 @@ wc_display_product_attributes($product) - просто список всех а�
 <script>
 	let prodType = '<?php echo $product->get_type(); ?>';
 </script>
+		<?php get_msgs(); ?>
 		<?php wc_print_notices(); ?>
 		<?php woocommerce_breadcrumb(); ?>
         <div class="wrapper">

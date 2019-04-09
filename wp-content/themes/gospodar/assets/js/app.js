@@ -9815,7 +9815,9 @@
         s()
     })
 }]);
+try{
 $( ".header-inside__part2-login__text ul li a" ).click(function( event ) {
       event.preventDefault();
 });
+} catch(err){}
     

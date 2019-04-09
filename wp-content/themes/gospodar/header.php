@@ -5,11 +5,7 @@ if ( isset($_POST['quantity']) || isset($_POST['add-to-cart']) ) {
 	$_SESSION['wm_woo_notices'] = $woocommerce->session->wc_notices;
 	header('Location: '.$_SERVER['HTTP_REFERER']);
 }
-if (isset($_SESSION['wm_woo_notices'])) {
-	session_start();
-	global $woocommerce;
-	$woocommerce->session->wc_notices = $_SESSION['wm_woo_notices'];
-}
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -50,9 +46,9 @@ if (isset($_SESSION['wm_woo_notices'])) {
 									<?php if (is_user_logged_in()): ?>
 										<a href="" onclick="window.location.href = '<?php echo wp_logout_url(); ?>'" class="log-out">Выход</a>
 									<?php else: ?>
-										<a href="" onclick="$('.popup-formLog').toggleClass('popup-show')">Вход</a>
+										<a href="" onclick="document.querySelector('.popup-formLog').classList.toggle('popup-show')">Вход</a>
 										|
-										<a href="" onclick="$('.popup-formReg').toggleClass('popup-show')">Регистрация</a>
+										<a href="" onclick="document.querySelector('.popup-formReg').classList.toggle('popup-show')">Регистрация</a>
 									<?php endif ?>
 								</li>
 							</ul>
