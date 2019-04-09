@@ -1,0 +1,149 @@
+@charset "UTF-8";
+/*
+Theme Name: Господар
+*/
+
+.header-phone{
+	color: #fff;
+	text-decoration-line: none;
+}
+
+.item-saleBlock, .item-new{
+	z-index: 2;
+}
+
+.added_to_cart.wc-forward{
+	display: none;
+}
+
+.mc4wp-form-fields{
+	display: flex;
+	width: 100%;
+}
+
+#mc4wp-form-1.mc4wp-form{
+	display: flex;
+	flex-direction: column;
+	padding: 10px 0px;
+}
+
+.wm-hid{
+	display: none !important;
+}
+
+.orderby-option{
+	height: 10px;
+	width: 100%;
+}
+
+#dd-variants{
+	top:-9999px;
+	position: absolute;
+	z-index: 998;
+	background: rgb(255, 255, 255);
+	opacity: 0;
+	transition:0.5s opacity;
+}
+#dd-wrapper {
+	position: relative;
+}
+#dd-wrapper:hover #dd-variants{
+	display: flex;
+	flex-direction: column;
+	opacity: 1;
+	top: 17px;
+	left: -19px;
+	width: 232px;
+	padding: 10px 20px;
+	color:#25afe8
+}
+.mc4wp-alert p , .mc4wp-error p {
+	margin-top: 5px !important;
+	margin-bottom: 0 !important;
+	font-size: 14px !important;
+}
+.page-numbers {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+.page-numbers li {
+	list-style:none;
+	margin-right:10px
+}
+.page-numbers li a{
+	color:#00b4ff;
+}
+
+.variation-circle {
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    /*border: 3px solid #fff;*/
+    cursor: pointer;
+	border: 1px solid #aaa;
+    cursor: pointer;
+}
+
+.cart-wrap-link{
+	color: inherit;
+    text-decoration: none;
+}
+
+.log-out{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+a.button.loading{
+	background: #aab5b4 !important;
+}
+
+a.button.added{
+	background: #25afe8 !important;
+}
+
+.delete-item a{
+	margin: auto;
+}
+
+[data-update-btn]:hover{
+	cursor: pointer;
+}
+
+.naebka{
+    position: absolute;
+    z-index: 9;
+    height: 97%;
+    width: 100%;
+    background: #efefef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 300;
+    border: 1px solid #ccc;
+}
+
+.select:hover .naebka {
+	z-index: -1;
+}
+
+#select {
+    padding-right: 30px;
+}
+
+.checkout-link{
+    background: #ffd304;
+    font-size: 18px;
+    font-weight: 500;
+    width: 224px;
+    height: 56px;
+    border: 0;
+    outline: 0;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
