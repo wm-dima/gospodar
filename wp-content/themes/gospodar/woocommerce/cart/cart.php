@@ -145,7 +145,7 @@
 	                    </div>
 	                    <div class="cart-inside__total">
 	                        <p>Итого: <span><?php echo WC()->cart->cart_contents_total; ?></span>грн.</p>
-	                        <button>Оформить заказ</button>
+	                        <a href="<?php echo get_permalink( wc_get_page_id( 'checkout' ) ); ?>" class="checkout-link">Оформить заказ</a>
 	                    </div>
 	                </div>
 	            </div>

@@ -133,3 +133,17 @@ a.button.added{
 #select {
     padding-right: 30px;
 }
+
+.checkout-link{
+    background: #ffd304;
+    font-size: 18px;
+    font-weight: 500;
+    width: 224px;
+    height: 56px;
+    border: 0;
+    outline: 0;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
