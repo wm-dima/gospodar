@@ -28,7 +28,8 @@
 
 <script>
 	select.addEventListener('change', function(e){
-		let newText = select.querySelector('[value="'+e.target.value+'"]').innerText.lenght = 40;
+		let newText = select.querySelector('[value="'+e.target.value+'"]').innerText;
+		newText.length = 40;
 		document.querySelector('.select .naebka').innerText = newText;
 	})
 </script>
