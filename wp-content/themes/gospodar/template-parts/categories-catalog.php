@@ -18,16 +18,6 @@
 				<li>
 					<a href="<?php echo get_term_link($parent_product_cat->term_id); ?>">
 					<div class="cat-a1">
-						<div class="cat-1 cat"></div>
-						<!--<div class="cat-2 cat"></div>
-						<div class="cat-3 cat"></div>
-						<div class="cat-4 cat"></div>
-						<div class="cat-5 cat"></div>
-						<div class="cat-6 cat"></div>
-						<div class="cat-7 cat"></div>
-						<div class="cat-8 cat"></div>
-						<div class="cat-9 cat"></div>
-						<div class="cat-10 cat"></div>-->
 						<?php echo $parent_product_cat->name; ?>
 						<?php 
 						$child_args = array(

@@ -1,12 +1,19 @@
+<?php
+/*
+Template Name: статьи 
+*/
+?>
+<?php get_header(); ?>
 <div class="news">
 <div class="wrapper">
 	<h4>Новости, статьи, обзоры</h4>
 	<div class="news-inside">
 		<?php 
 		$the_query = new WP_Query( array(
+			'paged' => get_query_var( 'paged', 1 ),
 			'post_type' => 'post',
 			'post_status' => 'publish',
-			'posts_per_page' => 4,
+			'posts_per_page' => 20,
 		)); 
 		$_monthsList = [
 			".01." => "января",
@@ -60,6 +67,9 @@
 						</div>
 					</div>
 				</div>
+			<div class="pagination">
+				<?php echo paginate_links( array ('total' => $the_query->max_num_pages ));?>
+			</div>
 			<?php endwhile; wp_reset_postdata(); ?>
 			<?php else : ?>
 				<p>Пока еще нет записей</p>
@@ -67,3 +77,4 @@
 		</div>
 	</div>
 </div>
+<?php get_footer(); ?>

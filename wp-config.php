@@ -89,3 +89,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 require_once( ABSPATH . 'wp-settings.php' );
 
 define('WPLANG', 'ru_RU');
+
+ini_set('log_errors','On'); // enable or disable php error logging (use 'On' or 'Off')
+ini_set('display_errors','Off'); // enable or disable public display of errors (use 'On' or 'Off')
+ini_set('error_log','./logs/php-errors.log'); // path to server-writable log file
+
+define('WP_DEBUG', true); // enable debugging mode
+

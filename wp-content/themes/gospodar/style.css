@@ -74,3 +74,76 @@ Theme Name: Господар
 .page-numbers li a{
 	color:#00b4ff;
 }
+
+.variation-circle {
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    /*border: 3px solid #fff;*/
+    cursor: pointer;
+	border: 1px solid #aaa;
+    cursor: pointer;
+}
+
+.cart-wrap-link{
+	color: inherit;
+    text-decoration: none;
+}
+
+.log-out{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+a.button.loading{
+	background: #aab5b4 !important;
+}
+
+a.button.added{
+	background: #25afe8 !important;
+}
+
+.delete-item a{
+	margin: auto;
+}
+
+[data-update-btn]:hover{
+	cursor: pointer;
+}
+
+.naebka{
+    position: absolute;
+    z-index: 9;
+    height: 97%;
+    width: 100%;
+    background: #efefef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 300;
+    border: 1px solid #ccc;
+}
+
+.select:hover .naebka {
+	z-index: -1;
+}
+
+#select {
+    padding-right: 30px;
+}
+
+.checkout-link{
+    background: #ffd304;
+    font-size: 18px;
+    font-weight: 500;
+    width: 224px;
+    height: 56px;
+    border: 0;
+    outline: 0;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}

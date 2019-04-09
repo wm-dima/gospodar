@@ -23,9 +23,13 @@ global $product;
 if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
+
+// echo "<pre>";
+// var_dump($product);
+// die;
 ?>
 <div class="best-offers__inside-items__item item-sale">
-	<?php if ($product->is_on_sale()): ?>
+	<?php if ($product->is_on_sale() && $product->get_type() !== 'variable'): ?>
 		<div class="item-saleBlock">
 			-<span><?php echo get_percent_sale($product); ?></span>%
 		</div>
@@ -50,7 +54,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 		</a>
 		<div class="best-offers__inside-items__item-info__buy">
 			<div class="best-offers__inside-items__item-info__buy-price">
-				<?php if ($product->is_on_sale()): ?>
+				<?php if ($product->is_on_sale() && $product->get_sale_price() != '' && $product->get_regular_price() != '' ): ?>
 					<p class="last-price">
 						<span class="last-price-value"><?php echo $product->get_regular_price(); ?></span> грн
 					</p>
@@ -59,9 +63,9 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 							<?php echo $product->get_sale_price(); ?>
 						</span> грн 
 					</p>
-					<?php else: ?>
+				<?php else: ?>
 						<span class="current-price-value">
-							<?php echo $product->get_regular_price(); ?>
+							<?php echo $product->price; ?>
 						</span> грн 
 				<?php endif ?>
 			</div>
