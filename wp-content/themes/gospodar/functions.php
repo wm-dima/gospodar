@@ -467,15 +467,28 @@ function clean_session(){
 add_action("wp_ajax_the_clean_session", "clean_session");
 add_action("wp_ajax_nopriv_the_clean_session", "clean_session");
 
-// function is_product_in_cart($prod_id){
-
-// }
-
-function splitInHalf($string, $is_img)
-{
+function splitInHalf($string, $is_img) {
     if ($is_img) {
-        $first_part_len = strlen($string) / 2200 - 1;
-        $middle = mb_strrpos(mb_substr($string, 0, floor( strlen($string) - 2200 * $first_part_len), 'UTF-8'), ' ', null, 'UTF-8') + 1;
+        $str_l = strlen($string);
+        switch (1) {
+            case ($str_l < 2000):
+                $part_x = 1;
+                break;
+
+            case ($str_l < 4000):
+                $part_x = 1000;
+                break;
+
+            case ($str_l < 5000):
+                $part_x = 1500;
+                break;
+            
+            default:
+                $part_x = 2200;
+                break;
+        }
+        $first_part_len = strlen($string) / $part_x - 1;
+        $middle = mb_strrpos(mb_substr($string, 0, floor( strlen($string) - $part_x * $first_part_len), 'UTF-8'), ' ', null, 'UTF-8') + 1;
     } else {
         $middle = mb_strrpos(mb_substr($string, 0, floor(strlen($string) / 2), 'UTF-8'), ' ', null, 'UTF-8') + 1;
     }
