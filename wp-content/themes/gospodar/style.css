@@ -178,3 +178,6 @@ body div div div div.search-catalog__inside-stock-inside a {
 body div div div div.only_in_stock--ative a {
 	color: #f70f2a !important;
 }
+body > header > div > div > div.header-inside__part2 > div.header-inside__part2-cart > div > a > ul > li:nth-child(1) > span > span {
+	margin-right: 0px !important;
+}

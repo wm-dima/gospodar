@@ -17,7 +17,7 @@ session_start();
 	<?php wp_head(); ?>
 	<?php global $woocommerce, $WC; ?>
 </head>
-<body>
+<body id="the-id-<?php echo get_the_ID(); ?>">
 	<header>
 		<div class="wrapper">
 			<div class="header-inside">
