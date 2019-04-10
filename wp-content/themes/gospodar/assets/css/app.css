@@ -5010,3 +5010,6 @@ button.swiper-pagination-bullet {
 #only_stock_form {
 	display: none;
 }
+#the-id-69 .stock-block > .wrapper , #the-id-69 .news > .wrapper {
+	padding:0;
+}
