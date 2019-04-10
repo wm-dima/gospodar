@@ -23,7 +23,7 @@ session_start();
 			<div class="header-inside">
 				<div class="header-inside__logo">
 					<a href="<?php echo get_home_url(); ?>">
-						<img src="<?php echo esc_url( get_theme_mod( 'header_logo' ) ); ?>" alt="Header logo">
+						<img src="<?php echo esc_url( get_theme_mod( 'header_logo' ) ); ?>" alt="the Header logo">
 					</a>
 				</div>
 				<div class="header-inside__contacts">
@@ -85,7 +85,7 @@ session_start();
 					<div class="mobile-menu__close" onclick="document.querySelector('.mobile-menu').classList.toggle('mobile-menuShow')"></div>
 						<div class="header-inside__logo">
 							<a href="<?php echo get_home_url(); ?>">
-								<img src="<?php echo esc_url( get_theme_mod( 'header_logo' ) ); ?>" alt="Header logo">
+								<img src="<?php echo esc_url( get_theme_mod( 'header_logo' ) ); ?>" alt="the Header logo">
 							</a>
 						</div>
 					<div class="mobile-menu__list">
@@ -119,19 +119,14 @@ session_start();
 				<div class="search-catalog__inside">
 					<?php get_template_part('template-parts/categories', 'catalog'); ?>
 					<div class="search-catalog__inside-stock">
-						<a href="">
+						<a href="javascript:void(0);" onclick="only_in_stock()">
 							<div class="search-catalog__inside-stock-inside">
 								<div class="search-catalog__inside-stock-inside__img"></div>
-								<a href="">Акции</a>
+								<a href="javascript:void(0);" onclick="only_in_stock()">Акции</a>
 							</div>
 						</a>
 					</div>
-					<form action="" method="get" class="wm-hid">
-						<input type="hidden" name="only-stock"
-							value="<?php (isset($_GET['only-stock']) && $_GET['only-stock']) ? 'false' : 'true' ?>"
-						>
-						<button>only stock</button>
-					</form>
+					<?php echo wm_render_only_stock_form(); ?>
 					<div class="search-catalog__inside-search">
 						<?php get_template_part('template-parts/search', 'form'); ?>
 					</div>

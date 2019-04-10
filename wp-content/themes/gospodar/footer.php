@@ -41,10 +41,14 @@
 			</div>
 		</div>
 		<?php wp_footer(); ?>
-		<script>
-		var xhttp = new XMLHttpRequest();
-		xhttp.open('POST', '<?php echo  admin_url('admin-ajax.php') ?>?action=the_clean_session', true);
-		xhttp.send();
-		</script>
+		<?php
+		session_start();
+		if (isset($_SESSION['wm_woo_notices']) && !empty($_SESSION['wm_woo_notices'])): ?>	
+			<script>
+				var xhttp = new XMLHttpRequest();
+				xhttp.open('POST', '<?php echo  admin_url('admin-ajax.php') ?>?action=the_clean_session', true);
+				xhttp.send();
+			</script>
+		<?php endif ?>
 	</footer>
 </html>

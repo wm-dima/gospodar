@@ -25,6 +25,7 @@ function my_them_load_css_and_js() {
         'log_in' => is_user_logged_in() 
       ) 
     );
+    wp_enqueue_script( 'my-global_js', get_template_directory_uri() . '/assets/js/global_js.js', array(), null, true );
 
 
     if (get_post_type() == 'product') {
@@ -496,4 +497,41 @@ function splitInHalf($string, $is_img) {
         mb_substr($string, 0, $middle - 1, 'UTF-8'),
         mb_substr($string, $middle, null, 'UTF-8')
     ];
+}
+
+function only_stock_prods() {
+    ob_start();
+    session_start();
+    if ( !isset ( $_SESSION['only_in_stock'] ) ) {
+        $_SESSION['only_in_stock'] = true;
+        header('Location: '.$_SERVER['HTTP_REFERER']);
+    } else {
+        $_SESSION['only_in_stock'] = !$_SESSION['only_in_stock'];
+        header('Location: '.$_SERVER['HTTP_REFERER']);
+    }
+    header('Location: '.$_SERVER['HTTP_REFERER']);
+    die;
+}
+add_action( 'admin_post_nopriv_only_stock', 'only_stock_prods' );
+add_action( 'admin_post_only_stock', 'only_stock_prods' );
+
+
+function wm_render_only_stock_form(){
+    session_start();
+    $html = '<form action="' . esc_url( admin_url('admin-post.php') ) . '" method="post" id="only_stock_form">';
+    $html .=   '<input type="hidden" name="action" value="only_stock">';
+    $html .='</form>';
+    return $html;
+}
+
+
+add_action( 'woocommerce_product_query', 'so_20990199_product_query' );
+
+function so_20990199_product_query( $q ){
+    session_start();
+    if ( isset($_SESSION['only_in_stock']) && $_SESSION['only_in_stock'] ) {
+        $product_ids_on_sale = wc_get_product_ids_on_sale();
+        $q->set( 'post__in', $product_ids_on_sale );
+    }
+
 }

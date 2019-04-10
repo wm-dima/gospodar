@@ -23,6 +23,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! empty( $breadcrumb ) ) {
 
+    if( is_product_category() || is_product_tag() || is_product() ) {
+        $shop_page_id = wc_get_page_id( 'shop' );
+        $shop_home_arr = array( get_the_title($shop_page_id), get_permalink($shop_page_id));
+
+        // insert to breadcrumbs array on second position
+        array_splice($breadcrumb, 1, 0, array($shop_home_arr));
+    }
+
 ?>
 <div class="page-nav">
 	<div class="wrapper">
