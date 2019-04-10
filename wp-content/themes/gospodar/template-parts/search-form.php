@@ -23,7 +23,10 @@
 			<?php endforeach ?>
 		</select>
 	</div>		
-	<button>Искать</button>
+	<button>
+		 <span>Искать</span>
+			<img src="<?php echo get_template_directory_uri() ?>/assets/images/search.svg" alt="" width="20px">
+	</button>
 </form>
 
 <script>

@@ -7129,7 +7129,8 @@
                                 }) : t(".amazingslider-bullet-img-" + e.id, this).css({
                                     width: "auto",
                                     height: "100%",
-                                    "margin-left": "-" + Math.floor(i / o * e.options.navimageheight / 2 - e.options.navimagewidth / 2) + "px"
+                                    objectFit: "contain",
+                                    marginLeft: "0px"
                                 })), "imageonly" != e.options.navthumbstyle && ("imageandtitle" == e.options.navthumbstyle ? t(".amazingslider-bullet-text-" + e.id, this).css({
                                     "margin-top": e.options.navimageheight + "px",
                                     width: e.options.navimagewidth + "px",
