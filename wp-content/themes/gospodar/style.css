@@ -181,3 +181,10 @@ body div div div div.only_in_stock--ative a {
 body > header > div > div > div.header-inside__part2 > div.header-inside__part2-cart > div > a > ul > li:nth-child(1) > span > span {
 	margin-right: 0px !important;
 }
+
+.fake-prod {
+	height: 0px !important;
+    max-height: 0px !important;
+    min-height: 0px !important;
+    box-shadow: none !important;
+}
