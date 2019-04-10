@@ -1,6 +1,6 @@
 <div class="news">
 <div class="wrapper">
-	<h4>Новости, статьи, обзоры</h4>
+	<a href="<?php echo get_permalink( 270 ) ?>" class="last-news-header"><h4>Новости, статьи, обзоры</h4></a>
 	<div class="news-inside">
 		<?php 
 		$the_query = new WP_Query( array(

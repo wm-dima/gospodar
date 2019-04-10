@@ -27,7 +27,11 @@ Template Name: index
 					<div class="best-offers__inside-items__item item-sale">
 						<?php if ($product->is_on_sale()): ?>
 							<div class="item-saleBlock">
-								-<span><?php echo get_percent_sale($product); ?></span>%
+								<?php if ($product->get_type() !== 'variable'): ?>
+									-<span><?php echo get_percent_sale($product); ?></span>%
+								<?php else: ?>
+									<span>SALE</span>
+								<?php endif ?>
 							</div>
 						<?php elseif(is_new_product($product->date_created)): ?>
 								<div class="item-new">
@@ -90,6 +94,8 @@ Template Name: index
 						</div>	
 					</div>
 				<?php endforeach ?>
+				<div class="best-offers__inside-items__item item-sale" style="height: 0px !important;"></div>
+				<div class="best-offers__inside-items__item item-sale" style="height: 0px !important;"></div>
 			</div>
 		</div>
 	</div>

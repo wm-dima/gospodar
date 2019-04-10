@@ -1,7 +1,8 @@
-if (prodType == 'variable') {
-	var variations = eval(document.querySelector('[data-product_variations]').getAttribute('data-product_variations'));
-	var priceReg = document.querySelector('#price_reg');
-}
+try{ 
+	if (prodType == 'variable') {
+		var variations = eval(document.querySelector('[data-product_variations]').getAttribute('data-product_variations'));
+		var priceReg = document.querySelector('#price_reg');
+	}
 let priceSale = document.querySelector('#price_sale');
 document.addEventListener('DOMContentLoaded', function(){
 	document.querySelector('#select-color').addEventListener('click', function(e){
@@ -11,7 +12,9 @@ document.addEventListener('DOMContentLoaded', function(){
 			variations.forEach(item => {
 				if(item.attributes.attribute_pa_color == value){
 					document.querySelector('.amazingslider-img-1 img').src = item.image.full_src;
-					document.querySelector('[data-wm-slider-mini] .swiper-slide.swiper-slide-active img').src = item.image.full_src;
+					try{
+						document.querySelector('[data-wm-slider-mini] .swiper-slide.swiper-slide-active img').src = item.image.full_src;
+					} catch (er){}
 					document.querySelector('[name="variation_id"]').value == item.variation_id;
 					document.querySelector('[data-product_variations]').setAttribute('current-image', item.image_id);
 					if (item.display_regular_price == item.display_price) {
@@ -30,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function(){
 		document.querySelector('.single_add_to_cart_button').click();
 	});
 });
+} catch (er){}
 
 function qnt_minus(e){
 	e.preventDefault();

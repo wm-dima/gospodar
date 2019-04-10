@@ -29,9 +29,15 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 // die;
 ?>
 <div class="best-offers__inside-items__item item-sale">
-	<?php if ($product->is_on_sale() && $product->get_type() !== 'variable'): ?>
+	<?php if ($product->is_on_sale()): ?>
 		<div class="item-saleBlock">
-			-<span><?php echo get_percent_sale($product); ?></span>%
+			<div class="item-saleBlock">
+				<?php if ($product->get_type() !== 'variable'): ?>
+					-<span><?php echo get_percent_sale($product); ?></span>%
+				<?php else: ?>
+					<span>SALE</span>
+				<?php endif ?>
+			</div>
 		</div>
 	<?php elseif(is_new_product($product->date_created)): ?>
 			<div class="item-new">

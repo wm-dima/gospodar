@@ -17,13 +17,13 @@ session_start();
 	<?php wp_head(); ?>
 	<?php global $woocommerce, $WC; ?>
 </head>
-<body>
+<body id="the-id-<?php echo get_the_ID(); ?>">
 	<header>
 		<div class="wrapper">
 			<div class="header-inside">
 				<div class="header-inside__logo">
 					<a href="<?php echo get_home_url(); ?>">
-						<img src="<?php echo esc_url( get_theme_mod( 'header_logo' ) ); ?>" alt="Header logo">
+						<img src="<?php echo esc_url( get_theme_mod( 'header_logo' ) ); ?>" alt="the Header logo">
 					</a>
 				</div>
 				<div class="header-inside__contacts">
@@ -84,8 +84,8 @@ session_start();
 				<div class="mobile-menu">
 					<div class="mobile-menu__close" onclick="document.querySelector('.mobile-menu').classList.toggle('mobile-menuShow')"></div>
 						<div class="header-inside__logo">
-							<a href="http://gospodar">
-								<img src="http://gospodar/wp-content/uploads/2019/04/logo.png" alt="Header logo">
+							<a href="<?php echo get_home_url(); ?>">
+								<img src="<?php echo esc_url( get_theme_mod( 'header_logo' ) ); ?>" alt="the Header logo">
 							</a>
 						</div>
 					<div class="mobile-menu__list">
@@ -118,14 +118,20 @@ session_start();
 			<div class="wrapper">
 				<div class="search-catalog__inside">
 					<?php get_template_part('template-parts/categories', 'catalog'); ?>
-					<div class="search-catalog__inside-stock">
-						<a href="">
+					<?php session_start(); ?>
+					<div 
+						class="search-catalog__inside-stock 
+						<?php if ( isset( $_SESSION['only_in_stock'] ) && $_SESSION['only_in_stock']): ?>
+							only_in_stock--ative 
+						<?php endif ?>">
+						<a href="javascript:void(0);" onclick="only_in_stock()">
 							<div class="search-catalog__inside-stock-inside">
 								<div class="search-catalog__inside-stock-inside__img"></div>
-								<a href="">Акции</a>
+								<a href="javascript:void(0);" onclick="only_in_stock()">Акции</a>
 							</div>
 						</a>
 					</div>
+					<?php echo wm_render_only_stock_form(); ?>
 					<div class="search-catalog__inside-search">
 						<?php get_template_part('template-parts/search', 'form'); ?>
 					</div>
