@@ -504,12 +504,10 @@ function only_stock_prods() {
     session_start();
     if ( !isset ( $_SESSION['only_in_stock'] ) ) {
         $_SESSION['only_in_stock'] = true;
-        header('Location: '.$_SERVER['HTTP_REFERER']);
     } else {
         $_SESSION['only_in_stock'] = !$_SESSION['only_in_stock'];
-        header('Location: '.$_SERVER['HTTP_REFERER']);
     }
-    header('Location: '.$_SERVER['HTTP_REFERER']);
+    header_only_stock_link();
     die;
 }
 add_action( 'admin_post_nopriv_only_stock', 'only_stock_prods' );
@@ -534,4 +532,13 @@ function so_20990199_product_query( $q ){
         $q->set( 'post__in', $product_ids_on_sale );
     }
 
+}
+
+function header_only_stock_link(){
+    session_start();
+     if ( isset($_SESSION['only_in_stock']) ) {
+        header('Location: '.$_SERVER['HTTP_REFERER']);
+    } else {
+        header('Location: '.get_permalink( wc_get_page_id( 'shop' ) )); ;
+    }
 }

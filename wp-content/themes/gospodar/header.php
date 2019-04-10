@@ -118,7 +118,12 @@ session_start();
 			<div class="wrapper">
 				<div class="search-catalog__inside">
 					<?php get_template_part('template-parts/categories', 'catalog'); ?>
-					<div class="search-catalog__inside-stock">
+					<?php session_start(); ?>
+					<div 
+						class="search-catalog__inside-stock 
+						<?php if ( isset( $_SESSION['only_in_stock'] ) && $_SESSION['only_in_stock']): ?>
+							only_in_stock--ative 
+						<?php endif ?>">
 						<a href="javascript:void(0);" onclick="only_in_stock()">
 							<div class="search-catalog__inside-stock-inside">
 								<div class="search-catalog__inside-stock-inside__img"></div>
