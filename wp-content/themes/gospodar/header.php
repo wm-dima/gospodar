@@ -84,8 +84,8 @@ session_start();
 				<div class="mobile-menu">
 					<div class="mobile-menu__close" onclick="document.querySelector('.mobile-menu').classList.toggle('mobile-menuShow')"></div>
 						<div class="header-inside__logo">
-							<a href="http://gospodar">
-								<img src="http://gospodar/wp-content/uploads/2019/04/logo.png" alt="Header logo">
+							<a href="<?php echo get_home_url(); ?>">
+								<img src="<?php echo esc_url( get_theme_mod( 'header_logo' ) ); ?>" alt="Header logo">
 							</a>
 						</div>
 					<div class="mobile-menu__list">
@@ -126,6 +126,12 @@ session_start();
 							</div>
 						</a>
 					</div>
+					<form action="" method="get" class="wm-hid">
+						<input type="hidden" name="only-stock"
+							value="<?php (isset($_GET['only-stock']) && $_GET['only-stock']) ? 'false' : 'true' ?>"
+						>
+						<button>only stock</button>
+					</form>
 					<div class="search-catalog__inside-search">
 						<?php get_template_part('template-parts/search', 'form'); ?>
 					</div>
