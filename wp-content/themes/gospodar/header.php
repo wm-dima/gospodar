@@ -5,11 +5,7 @@ if ( isset($_POST['quantity']) || isset($_POST['add-to-cart']) ) {
 	$_SESSION['wm_woo_notices'] = $woocommerce->session->wc_notices;
 	header('Location: '.$_SERVER['HTTP_REFERER']);
 }
-if (isset($_SESSION['wm_woo_notices'])) {
-	session_start();
-	global $woocommerce;
-	$woocommerce->session->wc_notices = $_SESSION['wm_woo_notices'];
-}
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="ru">

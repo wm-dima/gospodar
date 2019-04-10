@@ -426,3 +426,61 @@ function custom_override_checkout_fields( $fields ) {
     unset($fields['billing']['billing_state']);
     return $fields;
 }
+
+function get_msgs(){
+    if ( isset( $_SESSION['wm_woo_notices']['success'] ) ): ?>
+        <?php foreach ( $_SESSION['wm_woo_notices']['success'] as $message ) : ?>
+            <div class="woocommerce-message" role="alert">
+                <?php
+                    echo wc_kses_notice( $message );
+                ?>
+            </div>
+        <?php endforeach; ?>
+    <?php endif;
+    if ( isset( $_SESSION['wm_woo_notices']['notice'] ) ): ?>
+        <?php foreach ( $_SESSION['wm_woo_notices']['notice'] as $message ) : ?>
+            <div class="woocommerce-info">
+                <?php
+                    echo wc_kses_notice( $message );
+                ?>
+            </div>
+        <?php endforeach; ?>
+    <?php endif;
+    if ( isset( $_SESSION['wm_woo_notices']['error'] ) ): ?>
+        <?php foreach ( $_SESSION['wm_woo_notices']['error'] as $message ) : ?>
+            <?php foreach ( $messages as $message ) : ?>
+                <li>
+                    <?php
+                        echo wc_kses_notice( $message );
+                    ?>
+                </li>
+            <?php endforeach; ?>
+        <?php endforeach; ?>
+    <?php endif;
+}
+
+function clean_session(){
+    session_start();
+    session_unset();
+}
+
+add_action("wp_ajax_the_clean_session", "clean_session");
+add_action("wp_ajax_nopriv_the_clean_session", "clean_session");
+
+// function is_product_in_cart($prod_id){
+
+// }
+
+function splitInHalf($string, $is_img)
+{
+    if ($is_img) {
+        $first_part_len = strlen($string) / 2200 - 1;
+        $middle = mb_strrpos(mb_substr($string, 0, floor( strlen($string) - 2200 * $first_part_len), 'UTF-8'), ' ', null, 'UTF-8') + 1;
+    } else {
+        $middle = mb_strrpos(mb_substr($string, 0, floor(strlen($string) / 2), 'UTF-8'), ' ', null, 'UTF-8') + 1;
+    }
+    return [
+        mb_substr($string, 0, $middle - 1, 'UTF-8'),
+        mb_substr($string, $middle, null, 'UTF-8')
+    ];
+}

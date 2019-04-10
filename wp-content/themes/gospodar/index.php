@@ -67,18 +67,22 @@ Template Name: index
 								</div>
 								<div class="best-offers__inside-items__item-info__buy-inCart">
 									<?php if ($product->stock_status == 'outofstock'): ?>
-										<a href="javascript:void(0)" class="out-of-stock">Нет в наличие</a>
-										<?php else: ?>
-											<a 
+										<a href="javascript:void(0)" class="out-of-stock">На складе</a>
+									<?php else: ?>
+										<a 
 											href="/shop/?add-to-cart=<?php echo $product->id; ?>" 
 											data-quantity="1" 
 											class="button product_type_simple add_to_cart_button ajax_add_to_cart" 
 											data-product_id="<?php echo $product->id; ?>" 
 											data-product_sku="" 
 											rel="nofollow"
-											>
-											<img src="<?php echo get_template_directory_uri() ?>/assets/images/mbasket.png" alt="">
-											В корзину
+										>
+											<?php if ($product->stock_status != 'outofstock'): ?>
+												<img src="<?php echo get_template_directory_uri() ?>/assets/images/mbasket.png" alt="">
+			                                    В корзину
+			                                <?php else: ?>
+			                                    На складе
+											<?php endif ?>
 										</a>
 									<?php endif ?>
 								</div>
