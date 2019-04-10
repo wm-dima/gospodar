@@ -1,0 +1,53 @@
+2019-04-04T08:35:51+00:00 CRITICAL Uncaught Error: Call to a member function get_sku() on string in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\content-single-product.php:80
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-includes\template.php(706): require()
+#1 C:\OSPanel\domains\gospodar\wp-content\plugins\woocommerce\includes\wc-core-functions.php(181): load_template('C:\\OSPanel\\doma...', false)
+#2 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php(37): wc_get_template_part('content', 'single-product')
+#3 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include('C:\\OSPanel\\doma...')
+#4 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#6 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\content-single-product.php на строке 80
+
+2019-04-04T09:42:00+00:00 CRITICAL Uncaught Error: Call to a member function get_image_id() on string in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php:26
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include()
+#1 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php на строке 26
+
+2019-04-04T09:42:20+00:00 CRITICAL Uncaught Error: Call to a member function get_image_id() on string in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php:26
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include()
+#1 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php на строке 26
+
+2019-04-04T13:10:21+00:00 CRITICAL Uncaught Error: Call to undefined method WooCommerce::get_attribute_taxonomy_names() in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php:31
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include()
+#1 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php на строке 31
+
+2019-04-04T13:12:33+00:00 CRITICAL Uncaught Error: Call to undefined method WooCommerce::get_attribute_taxonomy_name() in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php:31
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include()
+#1 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php на строке 31
+
+2019-04-04T13:45:47+00:00 CRITICAL syntax error, unexpected 'var_dump' (T_STRING) в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php на строке 44
+
+2019-04-04T14:10:50+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Term as array in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php:52
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include()
+#1 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\gospodar\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\single-product.php на строке 52
+

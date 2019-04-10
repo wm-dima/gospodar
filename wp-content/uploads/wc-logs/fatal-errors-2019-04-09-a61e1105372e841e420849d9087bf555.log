@@ -1,0 +1,35 @@
+2019-04-09T07:35:03+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Simple::price() in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\content-product.php:68
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-includes\template.php(706): require()
+#1 C:\OSPanel\domains\gospodar\wp-content\plugins\woocommerce\includes\wc-core-functions.php(181): load_template('C:\\OSPanel\\doma...', false)
+#2 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\archive-product.php(89): wc_get_template_part('content', 'product')
+#3 C:\OSPanel\domains\gospodar\wp-content\plugins\woocommerce\includes\wc-core-functions.php(211): include('C:\\OSPanel\\doma...')
+#4 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\taxonomy-product_cat.php(22): wc_get_template('archive-product...')
+#5 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include('C:\\OSPanel\\doma...')
+#6 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#7 C:\OSPanel\domains\gospodar\inde в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\content-product.php на строке 68
+
+2019-04-09T07:35:56+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Variable::price() in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\content-product.php:68
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-includes\template.php(706): require()
+#1 C:\OSPanel\domains\gospodar\wp-content\plugins\woocommerce\includes\wc-core-functions.php(181): load_template('C:\\OSPanel\\doma...', false)
+#2 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\archive-product.php(89): wc_get_template_part('content', 'product')
+#3 C:\OSPanel\domains\gospodar\wp-content\plugins\woocommerce\includes\wc-core-functions.php(211): include('C:\\OSPanel\\doma...')
+#4 C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\taxonomy-product_cat.php(22): wc_get_template('archive-product...')
+#5 C:\OSPanel\domains\gospodar\wp-includes\template-loader.php(77): include('C:\\OSPanel\\doma...')
+#6 C:\OSPanel\domains\gospodar\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#7 C:\OSPanel\domains\gospodar\in в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\content-product.php на строке 68
+
+2019-04-09T08:15:41+00:00 CRITICAL Uncaught Error: Call to a member function get_sku() on null in C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\cart\cart.php:97
+Stack trace:
+#0 C:\OSPanel\domains\gospodar\wp-content\plugins\woocommerce\includes\wc-core-functions.php(211): include()
+#1 C:\OSPanel\domains\gospodar\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-cart.php(93): wc_get_template('cart/cart.php')
+#2 C:\OSPanel\domains\gospodar\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(72): WC_Shortcode_Cart::output(Array)
+#3 C:\OSPanel\domains\gospodar\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(85): WC_Shortcodes::shortcode_wrapper(Array)
+#4 C:\OSPanel\domains\gospodar\wp-includes\shortcodes.php(325): WC_Shortcodes::cart('', '', 'woocommerce_car...')
+#5 [internal function]: do_shortcode_tag(Array)
+#6 C:\OSPanel\domains\gospodar\wp-includes\shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(woocom...', 'do_shortcode_ta...', '[woocommerce_ca...')
+#7 C:\OSPanel\doma в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\cart\cart.php на строке 97
+
+2019-04-09T08:41:14+00:00 CRITICAL syntax error, unexpected '?>' в C:\OSPanel\domains\gospodar\wp-content\themes\gospodar\woocommerce\cart\cart.php на строке 202
+
