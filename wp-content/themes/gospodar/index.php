@@ -94,8 +94,6 @@ Template Name: index
 						</div>	
 					</div>
 				<?php endforeach ?>
-				<div class="best-offers__inside-items__item item-sale" class="fake-prod"></div>
-				<div class="best-offers__inside-items__item item-sale" class="fake-prod"></div>
 			</div>
 		</div>
 	</div>
