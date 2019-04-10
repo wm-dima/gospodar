@@ -166,3 +166,7 @@ a.button.added{
     align-items: center;
     flex-direction: column;
 }*/
+
+.last-news-header{
+	text-decoration: none;
+}
