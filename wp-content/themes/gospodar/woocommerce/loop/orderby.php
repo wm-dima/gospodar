@@ -63,5 +63,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 		document.querySelector('#select-ordering').value = e.target.getAttribute('value');
 		document.querySelector('form [data-order-apply]').classList.remove('wm-hid');
 		ddResult.innerText = e.target.innerText;
+		document.querySelector('form [data-order-apply]').click();
 	})
 </script>
