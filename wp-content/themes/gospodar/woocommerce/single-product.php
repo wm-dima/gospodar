@@ -81,7 +81,7 @@ wc_display_product_attributes($product) - просто список всех а�
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/plus.png" alt="">
                                     </button>
                                 </div>
-                                <span>(Оптовая цена от 3 шт.)</span>
+                                <span><?php echo get_post_meta( get_the_ID(), '_bulkdiscount_text_info', true ); ?></span>
                             </div>
                             <div class="product-info__properties-price">
                             	<?php if ($product->get_type() == 'simple'): ?>
