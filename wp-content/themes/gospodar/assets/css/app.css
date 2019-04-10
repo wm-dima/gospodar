@@ -3297,6 +3297,9 @@ input[type=radio]:checked+label div {
 		-ms-flex-align: center;
 		align-items: center
 	}
+	#product-gallery {
+		width: 450px;
+	}
 }
 
 @media (max-width:640px) {
@@ -3540,10 +3543,13 @@ input[type=radio]:checked+label div {
 		height: 395px !important;
 	}
 	.swiper-wrapper img {
+		width: 100%;
+		object-fit: contain;
 	}
 	header , .header-inside {
 		min-height: 100px !important;
 	}
+
 }
 @media (max-width:465px) {
 	.catalog-block__inside-info__sort {
@@ -3797,7 +3803,7 @@ body {
 }
 
 main {
-	display: flex;
+	/* display: flex; */
 	flex-direction: column;
 	min-height: 87vh;
 }
