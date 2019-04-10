@@ -7,6 +7,9 @@
 	</a>	
 	<div class="catalog-min">
 		<ul>
+			<li>
+				<a href="<?php echo get_permalink( wc_get_page_id( 'shop' ) ); ?>">Все товары</a>
+			</li>
 			<?php 
 			$args = array(
 			'taxonomy' => 'product_cat',

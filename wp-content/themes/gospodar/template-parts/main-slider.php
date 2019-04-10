@@ -11,9 +11,10 @@
 			<div class="swiper-slide">
 				<div class="swiper-pic" style="background-image: url('<?php echo $value['left_part_bg'] ?>')"></div>
 				<div class="swiper-content">
-					<div class="swiper-content__inside" style="background-image: url('<?php echo $value['right_part_bg'] ?>')">
+					<div class="swiper-content__inside" style="background-image: url('<?php echo $value['right_part_bg'] ?>')">		
 						<h2><?php echo $value['the_title'] ?></h2>
 						<p><?php echo $value['the_text'] ?></p>
+						<div class="bgblack"></div>
 					</div>	
 				</div>
 			</div>

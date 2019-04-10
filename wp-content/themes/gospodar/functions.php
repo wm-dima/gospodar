@@ -25,6 +25,7 @@ function my_them_load_css_and_js() {
         'log_in' => is_user_logged_in() 
       ) 
     );
+    wp_enqueue_script( 'my-global_js', get_template_directory_uri() . '/assets/js/global_js.js', array(), null, true );
 
 
     if (get_post_type() == 'product') {
@@ -425,4 +426,119 @@ function custom_override_checkout_fields( $fields ) {
     unset($fields['billing']['billing_country']);
     unset($fields['billing']['billing_state']);
     return $fields;
+}
+
+function get_msgs(){
+    if ( isset( $_SESSION['wm_woo_notices']['success'] ) ): ?>
+        <?php foreach ( $_SESSION['wm_woo_notices']['success'] as $message ) : ?>
+            <div class="woocommerce-message" role="alert">
+                <?php
+                    echo wc_kses_notice( $message );
+                ?>
+            </div>
+        <?php endforeach; ?>
+    <?php endif;
+    if ( isset( $_SESSION['wm_woo_notices']['notice'] ) ): ?>
+        <?php foreach ( $_SESSION['wm_woo_notices']['notice'] as $message ) : ?>
+            <div class="woocommerce-info">
+                <?php
+                    echo wc_kses_notice( $message );
+                ?>
+            </div>
+        <?php endforeach; ?>
+    <?php endif;
+    if ( isset( $_SESSION['wm_woo_notices']['error'] ) ): ?>
+        <?php foreach ( $_SESSION['wm_woo_notices']['error'] as $message ) : ?>
+            <?php foreach ( $messages as $message ) : ?>
+                <li>
+                    <?php
+                        echo wc_kses_notice( $message );
+                    ?>
+                </li>
+            <?php endforeach; ?>
+        <?php endforeach; ?>
+    <?php endif;
+}
+
+function clean_session(){
+    session_start();
+    session_unset();
+}
+
+add_action("wp_ajax_the_clean_session", "clean_session");
+add_action("wp_ajax_nopriv_the_clean_session", "clean_session");
+
+function splitInHalf($string, $is_img) {
+    if ($is_img) {
+        $str_l = strlen($string);
+        switch (1) {
+            case ($str_l < 2000):
+                $part_x = 1;
+                break;
+
+            case ($str_l < 4000):
+                $part_x = 1000;
+                break;
+
+            case ($str_l < 5000):
+                $part_x = 1500;
+                break;
+            
+            default:
+                $part_x = 2200;
+                break;
+        }
+        $first_part_len = strlen($string) / $part_x - 1;
+        $middle = mb_strrpos(mb_substr($string, 0, floor( strlen($string) - $part_x * $first_part_len), 'UTF-8'), ' ', null, 'UTF-8') + 1;
+    } else {
+        $middle = mb_strrpos(mb_substr($string, 0, floor(strlen($string) / 2), 'UTF-8'), ' ', null, 'UTF-8') + 1;
+    }
+    return [
+        mb_substr($string, 0, $middle - 1, 'UTF-8'),
+        mb_substr($string, $middle, null, 'UTF-8')
+    ];
+}
+
+function only_stock_prods() {
+    ob_start();
+    session_start();
+    if ( !isset ( $_SESSION['only_in_stock'] ) ) {
+        $_SESSION['only_in_stock'] = true;
+    } else {
+        $_SESSION['only_in_stock'] = !$_SESSION['only_in_stock'];
+    }
+    header_only_stock_link();
+    die;
+}
+add_action( 'admin_post_nopriv_only_stock', 'only_stock_prods' );
+add_action( 'admin_post_only_stock', 'only_stock_prods' );
+
+
+function wm_render_only_stock_form(){
+    session_start();
+    $html = '<form action="' . esc_url( admin_url('admin-post.php') ) . '" method="post" id="only_stock_form">';
+    $html .=   '<input type="hidden" name="action" value="only_stock">';
+    $html .='</form>';
+    return $html;
+}
+
+
+add_action( 'woocommerce_product_query', 'so_20990199_product_query' );
+
+function so_20990199_product_query( $q ){
+    session_start();
+    if ( isset($_SESSION['only_in_stock']) && $_SESSION['only_in_stock'] ) {
+        $product_ids_on_sale = wc_get_product_ids_on_sale();
+        $q->set( 'post__in', $product_ids_on_sale );
+    }
+
+}
+
+function header_only_stock_link(){
+    session_start();
+     if ( isset($_SESSION['only_in_stock']) ) {
+        header('Location: '.$_SERVER['HTTP_REFERER']);
+    } else {
+        header('Location: '.get_permalink( wc_get_page_id( 'shop' ) )); ;
+    }
 }

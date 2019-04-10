@@ -29,9 +29,15 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 // die;
 ?>
 <div class="best-offers__inside-items__item item-sale">
-	<?php if ($product->is_on_sale() && $product->get_type() !== 'variable'): ?>
+	<?php if ($product->is_on_sale()): ?>
 		<div class="item-saleBlock">
-			-<span><?php echo get_percent_sale($product); ?></span>%
+			<div class="item-saleBlock">
+				<?php if ($product->get_type() !== 'variable'): ?>
+					-<span><?php echo get_percent_sale($product); ?></span>%
+				<?php else: ?>
+					<span>SALE</span>
+				<?php endif ?>
+			</div>
 		</div>
 	<?php elseif(is_new_product($product->date_created)): ?>
 			<div class="item-new">
@@ -71,7 +77,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 			</div>
 			<div class="best-offers__inside-items__item-info__buy-inCart">
 				<?php if ($product->stock_status == 'outofstock'): ?>
-					<a href="javascript:void(0)" class="out-of-stock">Нет в наличие</a>
+					<a href="javascript:void(0)" class="out-of-stock">На складе</a>
 					<?php else: ?>
 						<a 
 						href="/shop/?add-to-cart=<?php echo $product->id; ?>" 
@@ -81,8 +87,12 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 						data-product_sku="" 
 						rel="nofollow"
 						>
-						<img src="<?php echo get_template_directory_uri() ?>/assets/images/mbasket.png" alt="">
-						В корзину
+						<?php if ($product->stock_status != 'outofstock'): ?>
+							<img src="<?php echo get_template_directory_uri() ?>/assets/images/mbasket.png" alt="">
+                            В корзину
+                        <?php else: ?>
+                            На складе
+						<?php endif ?>
 					</a>
 				<?php endif ?>
 			</div>

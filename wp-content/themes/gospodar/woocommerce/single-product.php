@@ -25,9 +25,6 @@ $product =  wc_get_product(get_the_ID());
 $main_img_id = $product->get_image_id();
 $attachment_ids = $product->get_gallery_image_ids();
 
-
-
-
 /*
 get_variation_attributes - только те ЗНАЧЕНИЯ атрибутов, которые использовались для вариации
 get_variation_default_attribute - Выводит выбор опций вариативного товара.
@@ -44,6 +41,7 @@ wc_display_product_attributes($product) - просто список всех а�
 <script>
 	let prodType = '<?php echo $product->get_type(); ?>';
 </script>
+		<?php get_msgs(); ?>
 		<?php wc_print_notices(); ?>
 		<?php woocommerce_breadcrumb(); ?>
         <div class="wrapper">
@@ -109,7 +107,12 @@ wc_display_product_attributes($product) - просто список всех а�
                             </div>
                             <div class="product-add">
                                 <button id="wm-add-to-cart">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/cart.png" alt=""> Добавить в корзину
+									<?php if ($product->stock_status != 'outofstock'): ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/cart.png" alt="">
+	                                    Добавить в корзину
+	                                <?php else: ?>
+	                                    На складе
+									<?php endif ?>
                                 </button>
                                 <button>
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/oneClick.png" alt=""> Купить в один клик
@@ -138,7 +141,11 @@ wc_display_product_attributes($product) - просто список всех а�
 								<div class="best-offers__inside-items__item item-sale">
 									<?php if ($product->is_on_sale()): ?>
 										<div class="item-saleBlock">
-											-<span><?php echo get_percent_sale($product); ?></span>%
+											<?php if ($product->get_type() !== 'variable'): ?>
+												-<span><?php echo get_percent_sale($product); ?></span>%
+											<?php else: ?>
+												<span>SALE</span>
+											<?php endif ?>
 										</div>
 									<?php elseif(is_new_product($product->date_created)): ?>
 											<div class="item-new">
@@ -178,7 +185,7 @@ wc_display_product_attributes($product) - просто список всех а�
 											</div>
 											<div class="best-offers__inside-items__item-info__buy-inCart">
 												<?php if ($product->stock_status == 'outofstock'): ?>
-													<a href="javascript:void(0)" class="out-of-stock">Нет в наличие</a>
+													<a href="javascript:void(0)" class="out-of-stock">На складе</a>
 													<?php else: ?>
 														<a 
 														href="/shop/?add-to-cart=<?php echo $product->id; ?>" 

@@ -124,6 +124,7 @@ a.button.added{
     font-size: 14px;
     font-weight: 300;
     border: 1px solid #ccc;
+    text-align: -webkit-center;
 }
 
 .select:hover .naebka {
@@ -146,4 +147,44 @@ a.button.added{
     align-items: center;
     justify-content: center;
     text-decoration: none;
+}
+.woocommerce {
+	max-width: 1295px;
+	margin: 0 auto;
+	padding:0px 20px;
+}
+
+.news-insideMain {
+	flex-wrap: wrap;
+}
+.wc-auth-login label {
+	margin-bottom: 10px;
+}
+/*
+.best-offers__inside-items__item-info__buy-price {
+	display: flex;
+    align-items: center;
+    flex-direction: column;
+}*/
+
+.last-news-header{
+	text-decoration: none;
+}
+
+body div div div div.search-catalog__inside-stock-inside a {
+	color: #b4b4b8;
+}
+
+body div div div div.only_in_stock--ative a {
+	color: #f70f2a !important;
+}
+body > header > div > div > div.header-inside__part2 > div.header-inside__part2-cart > div > a > ul > li:nth-child(1) > span > span {
+	margin-right: 0px !important;
+}
+
+.fake-prod {
+	height: 0px !important;
+    max-height: 0px !important;
+    min-height: 0px !important;
+    box-shadow: none !important;
 }
