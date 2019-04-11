@@ -41,9 +41,11 @@ if(empty($product)) return;
 					</span> грн 
 				</p>
 			<?php else: ?>
+			<p class="current-price-item">
 					<span class="current-price-value">
 						<?php echo $product->price; ?>
-					</span> грн 
+					</span> грн
+				</p>	 
 			<?php endif ?>
 			</div>
 			<div class="best-offers__inside-items__item-info__buy-inCart">

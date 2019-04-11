@@ -158,7 +158,7 @@ a.button.added{
 	flex-wrap: wrap;
 }
 .wc-auth-login label {
-	margin-bottom: 10px;
+	display:none
 }
 /*
 .best-offers__inside-items__item-info__buy-price {
