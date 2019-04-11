@@ -37,13 +37,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<span id="active-option"></span>
 		<div id="dd-variants">
 		<?php foreach ( $catalog_orderby_options as $id => $name ) : ?>
-			<label 
-				for="option-<?php echo esc_attr( $id ); ?>"
-				value="<?php echo esc_attr( $id ); ?>" 
-				<?php selected( $orderby, $id ); ?>
-			>
-				<?php echo esc_html( $name ); ?>
-			</label>
+				<label 
+					for="option-<?php echo esc_attr( $id ); ?>"
+					value="<?php echo esc_attr( $id ); ?>" 
+					<?php selected( $orderby, $id ); ?>
+				>
+					<?php echo esc_html( $name ); ?>
+				</label>
 		<?php endforeach; ?>
 		</div>
 	</div>
@@ -60,9 +60,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	ddResult.innerText = ddVariants.querySelector('[selected="selected"]').innerText;
 
 	ddVariants.addEventListener('click', function(e){
-		document.querySelector('#select-ordering').value = e.target.getAttribute('value');
-		document.querySelector('form [data-order-apply]').classList.remove('wm-hid');
-		ddResult.innerText = e.target.innerText;
-		document.querySelector('form [data-order-apply]').click();
+		if (window.location.href.search( e.target.getAttribute('value') ) !== -1) {
+			remove_get_param('orderby');
+		} else {
+			document.querySelector('#select-ordering').value = e.target.getAttribute('value');
+			document.querySelector('form [data-order-apply]').classList.remove('wm-hid');
+			ddResult.innerText = e.target.innerText;
+			document.querySelector('form [data-order-apply]').click();
+		}
 	})
 </script>
