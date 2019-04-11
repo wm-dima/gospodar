@@ -1337,9 +1337,8 @@ header .header-inside__part2-cart__text ul li:last-child>span {
 .catalog-block__inside-items__item {
 	width: 300px;
 	min-height: 400px;
-	-webkit-box-shadow: 0 1px 8px 1px #ccc;
-	box-shadow: 0 1px 8px 1px #ccc;
 	margin-bottom: 30px;
+	border: 1px solid #e2e2e2;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -1347,8 +1346,15 @@ header .header-inside__part2-cart__text ul li:last-child>span {
 	-webkit-box-direction: normal;
 	-ms-flex-direction: column;
 	flex-direction: column;
-	margin-left: 12px;
-	margin-right: 12px;
+	margin-left: 11px;
+	margin-right: 11px;
+}
+
+.best-offers__inside-items__item:hover,
+.catalog-block__inside-items__item:hover {
+	-webkit-box-shadow: 0px 1px 11px -1px #ccc;
+	box-shadow: 0px 1px 11px -1px #ccc;
+	border:1px solid transparent;
 }
 
 .best-offers__inside-items__item-img,
@@ -1819,7 +1825,8 @@ header .header-inside__part2-cart__text ul li:last-child>span {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	margin-right: 5px
+	margin-right: 5px;
+	font-size: 14px;
 }
 
 .page-nav__inside-nav ul li p {
@@ -2567,7 +2574,7 @@ input[type=radio]:checked+label div {
 }
 
 .cart-inside__scroll table tr td {
-	text-align: center
+	text-align: center;
 }
 
 .cart-inside__scroll table tr .number-item {
@@ -2595,15 +2602,19 @@ input[type=radio]:checked+label div {
 }
 
 .cart-inside__scroll table tr .photo-item {
-	width: 110px
+	width: 73px !important;
+	padding-right: 20px;
 }
 
 .cart-inside__scroll table tr .photo-item .padding-img {
-	width: 125px;
+	/* width: 77px; */
 	padding-top: 47%;
 	position: relative;
 	margin-top: 10px;
-	margin-bottom: 10px
+	margin-bottom: 10px;
+	/* display: flex; */
+	/* justify-content: center; */
+	align-items: center;
 }
 
 .cart-inside__scroll table tr .photo-item .padding-img img {
@@ -2613,7 +2624,7 @@ input[type=radio]:checked+label div {
 	width: 100%;
 	height: 100%;
 	-o-object-fit: contain;
-	object-fit: cover;
+	object-fit: contain;
 }
 
 .cart-inside__scroll table tr th {
@@ -2633,7 +2644,7 @@ input[type=radio]:checked+label div {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	padding-left: 43px;
-	text-align: left
+	text-align: left;
 }
 
 .cart-inside__scroll table tr:first-child .name-item {
@@ -2796,7 +2807,7 @@ input[type=radio]:checked+label div {
 }
 @media (max-width:1353px) {
 	.best-offers__inside-items , .catalog-block__inside-items {
-		max-width: 973px;
+		max-width: 979px;
 		margin: 0 auto;
 	}
 	.catalog-block__inside-info {
@@ -2808,7 +2819,7 @@ input[type=radio]:checked+label div {
 }
 @media (max-width:1030px) {
 	.catalog-block__inside-items , #best-offers__inside-items {
-		max-width: 651px;
+		max-width: 654px;
 		margin: 0 auto;
 	}
 }
@@ -2829,6 +2840,11 @@ input[type=radio]:checked+label div {
 	.catalog-block__inside-items__item {
 		margin-left: 12px;
 		margin-right: 12px;
+	}
+}
+@media (max-width:1275px) { 
+	.news-inside__article {
+		margin: 0px 5px;
 	}
 }
 @media (max-width:1290px) {
@@ -3134,7 +3150,7 @@ input[type=radio]:checked+label div {
 		margin-right: 7px;
 	}
 	.catalog-block__inside-items {
-		max-width: 630px;
+		max-width: 633px;
 	}
 }
 
@@ -3546,7 +3562,7 @@ input[type=radio]:checked+label div {
 		margin-bottom: 20px
 	}
 	.cart-inside__scroll table {
-		width: 180%
+		width: 340%;
 	}
 }
 @media (max-width:520px) {
@@ -3662,7 +3678,7 @@ input[type=radio]:checked+label div {
 		margin-top: 10px
 	}
 	.cart-inside__scroll table {
-		width: 240%
+		width: 360%;
 	}
 	.bgblack {
 		position: absolute;
@@ -3819,7 +3835,7 @@ input[type=radio]:checked+label div {
 		color: #2bc1ff
 	}
 	.cart-inside__scroll table {
-		width: 290%
+		width: 462%;
 	}
 	.swiper-container {
 		height: 350px !important;
@@ -4879,6 +4895,11 @@ button.swiper-pagination-bullet {
 }
 #dd-variants label {
 	cursor: pointer;
+	color: #2175cc;
+	text-decoration: underline;
+	cursor: pointer;
+	font-size: 14px;
+	margin-bottom: 7px;
 }
 .catalog-block__inside-info__sort-name .woocommerce-ordering {
 	display: flex;
@@ -4904,10 +4925,11 @@ button.swiper-pagination-bullet {
 	align-items: center;
 }
 #active-option {
-	font-size: 15px;
-	background: #ffffff;
-	border: 1px dashed #25afe8;
+	font-size: 14px;
 	padding: 2px 2px;
+	color: #2175cc;
+	text-decoration: underline;
+	cursor: pointer;
 }
 .per-page .order-apply {
 	font-size: 14px;
