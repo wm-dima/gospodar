@@ -5181,6 +5181,9 @@ button.swiper-pagination-bullet {
     text-decoration: underline;
     cursor: pointer;
 }
+#current-count {
+	padding-bottom:10px;
+}
 .amazingsliderimg {
 	width: 100% !important;
     height: 99.5% !important;
