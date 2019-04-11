@@ -18,9 +18,13 @@
 			);
 			$product_cat = get_terms( $args );
 			foreach ($product_cat as $parent_product_cat) : ?>
+				<?php 
+					$thumbnail_id = get_woocommerce_term_meta( $parent_product_cat->term_id, 'thumbnail_id', true );
+					$image = wp_get_attachment_url( $thumbnail_id ); 
+				?>
 				<li>
 					<a href="<?php echo get_term_link($parent_product_cat->term_id); ?>">
-					<img src="<?php echo get_template_directory_uri() ?>/assets/images/cat1.jpg" alt="">
+					<img src="<?php echo $image ? $image : get_template_directory_uri() . '/assets/images/cat1.jpg'; ?>" alt="">
 						<div class="cat-a1">
 							<?php echo $parent_product_cat->name; ?>
 							<?php 
