@@ -531,7 +531,6 @@ function so_20990199_product_query( $q ){
         $product_ids_on_sale = wc_get_product_ids_on_sale();
         $q->set( 'post__in', $product_ids_on_sale );
     }
-
 }
 
 function header_only_stock_link(){
@@ -541,4 +540,34 @@ function header_only_stock_link(){
     } else {
         header('Location: '.get_permalink( wc_get_page_id( 'shop' ) )); ;
     }
+}
+
+
+add_filter('woocommerce_catalog_orderby', 'wc_customize_product_sorting');
+
+function wc_customize_product_sorting($sorting_options){
+    $sorting_options = array(
+        'alphabetical' => __( 'Названию', 'woocommerce' ),
+        'price'      => __( 'Возрастанию цены', 'woocommerce' ),
+        'price-desc' => __( 'Убыванию цены', 'woocommerce' ),
+        'popularity' => __( 'Популярности', 'woocommerce' ),
+    );
+
+    return $sorting_options;
+}
+
+add_filter( 'woocommerce_get_catalog_ordering_args', 'custom_woocommerce_get_catalog_ordering_args' );
+
+function custom_woocommerce_get_catalog_ordering_args( $args ) {
+    $orderby_value = 
+    isset( $_GET['orderby'] ) 
+    ?
+    woocommerce_clean( $_GET['orderby'] ) 
+    :
+    apply_filters( 'woocommerce_default_catalog_orderby', get_option( 'woocommerce_default_catalog_orderby' ) );
+    if ( 'alphabetical' == $orderby_value ) {
+        $args['orderby'] = 'title';
+        $args['order'] = 'DESC';
+    }
+    return $args;
 }
