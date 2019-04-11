@@ -29,6 +29,7 @@ $args = array(
     'limit' => isset($_GET['per_page']) ? $_GET['per_page'] : 20,
     'page'  => $page,
     'paginate' => true,
+    'include' => wc_get_product_ids_on_sale(),
 );
 $results = wc_get_products( $args );
 

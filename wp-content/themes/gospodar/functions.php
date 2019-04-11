@@ -523,15 +523,13 @@ function wm_render_only_stock_form(){
 }
 
 
-add_action( 'woocommerce_product_query', 'so_20990199_product_query' );
+// add_action( 'woocommerce_product_query', 'so_20990199_product_query' );
 
-function so_20990199_product_query( $q ){
-    session_start();
-    if ( isset($_SESSION['only_in_stock']) && $_SESSION['only_in_stock'] ) {
-        $product_ids_on_sale = wc_get_product_ids_on_sale();
-        $q->set( 'post__in', $product_ids_on_sale );
-    }
-}
+// function so_20990199_product_query( $q ){
+//     if ( get_the_ID() == 380 ) {
+//         $q->set( 'post__in', wc_get_product_ids_on_sale() );
+//     }
+// }
 
 function header_only_stock_link(){
     session_start();
