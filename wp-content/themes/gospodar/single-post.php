@@ -70,7 +70,7 @@
 						</div>
 						<div class="news-inside__article-stat__seens">
 							<div class="news-inside__article-stat__seens-img"></div>
-							<span class="seens-quantity"></span>
+							<span class="seens-quantity"><?php echo get_post_meta( get_the_ID(), 'viewed' )[0]; ?></span>
 						</div>  
 				</div>
                 <div class="inside-article__left-name">
