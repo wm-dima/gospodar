@@ -5146,3 +5146,8 @@ button.swiper-pagination-bullet {
 #the-id-103 .news > .wrapper {
 	padding:0;
 }
+#current-count , .order-count--variant{
+	color: #2175cc;
+    text-decoration: underline;
+    cursor: pointer;
+}
