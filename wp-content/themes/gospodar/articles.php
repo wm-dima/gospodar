@@ -57,10 +57,6 @@ Template Name: статьи
 						</p>
 					</div>	
 					<div class="news-inside__article-stat">
-						<div class="news-inside__article-stat__comments">
-							<div class="news-inside__article-stat__comments-img"></div>
-							<span class="comments-quantity"><?php echo get_comments_number($post->id); ?></span>
-						</div>
 						<div class="news-inside__article-stat__seens">
 							<div class="news-inside__article-stat__seens-img"></div>
 							<span class="seens-quantity"><?php echo get_post_meta( get_the_ID(), 'viewed' )[0]; ?></span>
