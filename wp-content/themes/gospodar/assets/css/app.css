@@ -1614,6 +1614,7 @@ header .header-inside__part2-cart__text ul li:last-child>span {
 	font-size: 16px;
 	text-decoration: none;
 	background: #ffd304;
+	border: 1px solid transparent;
 	border-radius: 26px;
 	-webkit-border-radius: 26px;
 	-moz-border-radius: 26px;
@@ -1624,7 +1625,7 @@ header .header-inside__part2-cart__text ul li:last-child>span {
 	right: 15px;
 	bottom: 13px;
 	font-weight: 400;
-	letter-spacing: .3px
+	letter-spacing: .3px;
 }
 
 .news {
@@ -4992,12 +4993,18 @@ button.swiper-pagination-bullet {
 }
 
 /*hovers*/
+.search-catalog__inside-search form button , .stock-block__inside-more,
+.best-offers__inside-items__item-info__buy-inCart a , .subscribe-inside form input[type=submit] {
+	transition:all ease 0.3s;
+}
+
 .search-catalog__inside-search form button:hover , .stock-block__inside-more:hover,
 .best-offers__inside-items__item-info__buy-inCart a:hover , .subscribe-inside form input[type=submit]:hover
 {
     color: #fff;
 	background: #25afe8;
-	transition: 0.3s all;
+	
+	transition-property: all;
 }
 
 .mobile-menu {
@@ -5180,4 +5187,28 @@ button.swiper-pagination-bullet {
 .article .news-inside__article-stat {
     margin-top: -22px;
     height: 22px;
+}
+.best-offers__inside-items__item:first-child {
+	margin-left: 0;
+}
+
+.best-offers__inside-items__item:nth-child(4n) {
+	margin-right:0;
+}
+.best-offers__inside-items__item:nth-child(5n) {
+	margin-left:0;
+}
+.product-add button {
+	transition: 0.3s ease all;
+}
+.product-add button:hover{
+	background: #25afe8;
+	color:#fff;
+}
+#select-new-count {
+	width: 40px;
+    border: 1px solid #ccc;
+    right: -12px;
+    top: 20px;
+    padding: 5px 0;
 }

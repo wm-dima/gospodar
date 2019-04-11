@@ -193,6 +193,7 @@ body > header > div > div > div.header-inside__part2 > div.header-inside__part2-
     display: flex !important;
     flex-direction: column;
     position: absolute;
+    align-items:center;
 }
 
 #per-page{
