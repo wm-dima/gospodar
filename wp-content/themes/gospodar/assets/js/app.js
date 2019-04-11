@@ -5896,8 +5896,8 @@
                                             width: e.textoptions.textleftrightpercentforstatic + "%",
                                             height: "100%",
                                             position: "absolute",
-                                            left: "0px",
-                                            top: "0px",
+                                            left: "10px",
+                                            top: "10px",
                                             margin: e.textoptions.textpositionmarginstatic + "px"
                                         });
                                         break;
