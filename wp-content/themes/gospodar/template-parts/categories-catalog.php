@@ -20,20 +20,18 @@
 			foreach ($product_cat as $parent_product_cat) : ?>
 				<li>
 					<a href="<?php echo get_term_link($parent_product_cat->term_id); ?>">
-					<div class="cat-a1">
-						<?php echo $parent_product_cat->name; ?>
-						<?php 
-						$child_args = array(
-						'taxonomy' => 'product_cat',
-						'hide_empty' => false,
-						'parent'   => $parent_product_cat->term_id
-						);
-						$child_product_cats = get_terms( $child_args );
-						if ($child_product_cats) :?>
-					</div>
-					<div class="cat-a2">	
-						<img src="<?php echo get_template_directory_uri() ?>/assets/images/right-arrow.svg" alt="" class="catalog-arrow" width="7px">
-					</div>
+					<img src="<?php echo get_template_directory_uri() ?>/assets/images/cat1.jpg" alt="">
+						<div class="cat-a1">
+							<?php echo $parent_product_cat->name; ?>
+							<?php 
+							$child_args = array(
+							'taxonomy' => 'product_cat',
+							'hide_empty' => false,
+							'parent'   => $parent_product_cat->term_id
+							);
+							$child_product_cats = get_terms( $child_args );
+							if ($child_product_cats) :?>
+						</div>
 					</a>
 						<div class="catalog-additional">
 							<ul>
