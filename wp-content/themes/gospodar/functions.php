@@ -531,7 +531,6 @@ function so_20990199_product_query( $q ){
         $product_ids_on_sale = wc_get_product_ids_on_sale();
         $q->set( 'post__in', $product_ids_on_sale );
     }
-
 }
 
 function header_only_stock_link(){
