@@ -7396,23 +7396,6 @@
                             this.options.preloadprevnext && ((new Image).src = this.elemArray[this.prevElem][1], (new Image).src = this.elemArray[this.nextElem][1]), this.options.loop > 0 && this.curElem == this.elemArray.length - 1 && (this.loopCount++, this.options.loop <= this.loopCount && (this.isPaused = !0)), this.checkMK()
                         }
                     },
-                    checkMK: function() {
-                        if ("AMCom" != this.options.versionmark && !("AMLite" == this.options.versionmark && this.options.skin && t.inArray(this.options.skin, ["classic", "cube", "content"]) >= 0)) {
-                            var e = t(".amazingslider-box-" + this.id, this.container),
-                                i = t('a[href="' + this.options.watermarklink + '"]', e);
-                            if (e.text().indexOf(this.options.watermarktext) < 0 || i.length < 0) {
-                                var o = '<div style="display:none !important;position:absolute;top:6px;left:6px;visibility:hidden !important;z-index:-9999 !important;font:12px Arial,Tahoma,Helvetica,sans-serif;color:#666;padding:2px 4px;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;background-color:#fff;opacity:0.9;filter:alpha(opacity=90);cursor:pointer;"><a href="' + this.options.watermarklink + '" style="display:block!important;visibility:visible!important;text-decoration:none;font:12px Arial,Tahoma,Helvetica,sans-serif;color:#333;" title="Responsive jQuery Slider" target="_blank">' + this.options.watermarktext + "</a></div>";
-                                e.append(o)
-                            } else {
-                                var n = i.parent();
-                                ("none" == i.css("display") || "hidden" == i.css("visibility") || parseInt(i.css("font-size")) < 8 || "none" == n.css("display") || "hidden" == n.css("visibility") || parseInt(n.css("font-size")) < 8) && (i.attr({
-                                    style: (i.attr("style") || "") + "display:block!important;visibility:visible!important;font-size:12px!important;"
-                                }), n.attr({
-                                    style: n.attr("style") + "display:block!important;visibility:visible!important;font-size:12px!important;"
-                                }))
-                            }
-                        }
-                    },
                     showImage: function(e, i) {
                         var o = this,
                             s = new Image;

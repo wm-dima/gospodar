@@ -1026,7 +1026,7 @@ header .header-inside__part2-cart__text ul li:last-child>span {
 	box-sizing: border-box;
 	padding-left: 25px;
 	font-weight: 300;
-	color: #b5b5b5
+	color: #000000;
 }
 
 .search-catalog__inside-search form .search-field::-webkit-input-placeholder {
@@ -1285,13 +1285,13 @@ header .header-inside__part2-cart__text ul li:last-child>span {
 	top: 50%;
 	color: #a4a4a4;
 	width: 102%;
-	height: 0;
-	border-bottom: 2px solid #a4a4a4;
+	height: 0px;
+	border-bottom: 1.5px solid #a4a4a4;
 	transform: rotate(9deg);
-	-webkit-transform: rotate(9deg);
+	-webkit-transform: rotate(8deg);
 	-moz-transform: rotate(9deg);
 	-ms-transform: rotate(9deg);
-	-o-transform: rotate(9deg)
+	-o-transform: rotate(9deg);
 }
 
 .sale-banner__items>div:first-child {
@@ -1472,7 +1472,17 @@ header .header-inside__part2-cart__text ul li:last-child>span {
 	color: #aeaeae;
 	font-size: 16px;
 	margin-bottom: 3px;
-	margin-top: 0
+	margin-top: 0;
+	position:relative;
+}
+.best-offers__inside-items__item-info .last-price:after {
+	content:'';
+	width:103%;
+	height:1px;
+	background:#aeaeae;
+	position:absolute;
+	left:-3px;
+	top:9px
 }
 
 .current-price sup {
@@ -1548,7 +1558,8 @@ header .header-inside__part2-cart__text ul li:last-child>span {
 	font-weight: 500;
 	font-size: 17px;
 	color: #272727;
-	margin-top: 0
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 .stock-block__inside {
@@ -1624,7 +1635,8 @@ header .header-inside__part2-cart__text ul li:last-child>span {
 	font-size: 37px;
 	color: #1e1e1e;
 	font-weight: 700;
-	margin-bottom: 30px
+	margin-bottom: 30px;
+	margin-top: 25px;
 }
 
 .news-inside {
@@ -1694,17 +1706,18 @@ header .header-inside__part2-cart__text ul li:last-child>span {
 .news-inside__article-stat__comments {
 	display: -webkit-box;
 	display: -ms-flexbox;
-	display: flex
+	display: flex;
+	justify-content: flex-end;
 }
 
 .news-inside__article-stat__comments {
-	padding-left: 15px;
+	/* padding-left: 15px; */
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
 	font-size: 11px;
 	color: #bbb;
-	margin-right: 10px
+	margin-right: 10px;
 }
 
 .news-inside__article-stat__comments-img {
@@ -1786,12 +1799,12 @@ header .header-inside__part2-cart__text ul li:last-child>span {
 	background: #fff;
 	font-weight: 300;
 	font-size: 14px;
-	color: #b5b5b5;
+	color: #000000;
 	padding-left: 22px;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	border-bottom-left-radius: 24px;
-	border-top-left-radius: 24px
+	border-top-left-radius: 24px;
 }
 
 .subscribe-inside form input[type=submit] {
@@ -4965,7 +4978,6 @@ button.swiper-pagination-bullet {
 	justify-content: center;
 }
 .pagination a , span{
-	margin-right: 5px;
 }
 .pagination a {color:#25afe8;}
 
@@ -5098,9 +5110,61 @@ button.swiper-pagination-bullet {
 .cat-a1 {
 	margin-left:10px
 }
-#the-id-372 .inside-article__left-date {
-	float:left;
-}
 #the-id-372 .news-inside__article-stat {
 	float:left;
+	margin-top: -22px;
+}
+.login-socials p {
+	font-weight: 500;
+}
+.login-socials__block {
+	width: 144px;
+	display: flex;
+	justify-content: space-between;
+}
+.popup-inputs form input[type="submit"] {
+	width: 202px;
+	height: 50px;
+	font-weight: 500;
+	background:#ffd304;
+	color:#000;
+	border-radius: 0 !important;
+	border:0 !important;
+	cursor: pointer;
+	margin-top: 15px;
+	margin-bottom: 0;
+}
+.quantity-positions {
+	font-size: 16px;
+}
+.best-offers__inside-items__item-info__buy-price {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+#the-id-103 .stock-block > .wrapper , 
+#the-id-103 .news > .wrapper {
+	padding:0;
+}
+#current-count , .order-count--variant{
+	color: #2175cc;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.amazingsliderimg {
+	width: 100% !important;
+    height: 99.5% !important;
+    margin-left: 0 !important;
+    object-fit: contain !important;
+    border-top: 1px solid #e2e2e2;
+    border-bottom: 1px solid #e2e2e2;
+}
+.amazingslider-thumbnail-elem {
+	width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    margin-left: 0px !important;
+}
+.amazingslider-box-1 > div:nth-child(4) {
+	display: none;
 }
