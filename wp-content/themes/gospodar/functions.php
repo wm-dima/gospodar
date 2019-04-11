@@ -234,7 +234,7 @@ remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wr
 
 add_filter( 'loop_shop_per_page', create_function( 
     '$cols',
-    'return '. ( isset( $_GET['per_page'] ) ? $_GET['per_page'] : 24 ) .';' ),
+    'return '. ( isset( $_GET['per_page'] ) ? $_GET['per_page'] : 20 ) .';' ),
     20
 );
 
