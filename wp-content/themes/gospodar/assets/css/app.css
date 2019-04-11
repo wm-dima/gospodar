@@ -5178,5 +5178,6 @@ button.swiper-pagination-bullet {
 	display: none;
 }
 .article .news-inside__article-stat {
-	margin-top: -16px;
+    margin-top: -22px;
+    height: 22px;
 }
