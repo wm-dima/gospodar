@@ -5152,7 +5152,19 @@ button.swiper-pagination-bullet {
     cursor: pointer;
 }
 .amazingsliderimg {
-	width:100% !important;
-	height:100% !important;
-	margin-left: 0 !important;
+	width: 100% !important;
+    height: 99.5% !important;
+    margin-left: 0 !important;
+    object-fit: contain !important;
+    border-top: 1px solid #e2e2e2;
+    border-bottom: 1px solid #e2e2e2;
+}
+.amazingslider-thumbnail-elem {
+	width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    margin-left: 0px !important;
+}
+.amazingslider-box-1 > div:nth-child(4) {
+	display: none;
 }
