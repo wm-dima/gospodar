@@ -193,6 +193,8 @@ body > header > div > div > div.header-inside__part2 > div.header-inside__part2-
     display: flex !important;
     flex-direction: column;
     position: absolute;
+	background: #fff;
+    
 }
 
 #per-page{
@@ -201,4 +203,5 @@ body > header > div > div > div.header-inside__part2 > div.header-inside__part2-
 
 #per-page-div{
 	position: relative;
+	z-index: 101;
 }
