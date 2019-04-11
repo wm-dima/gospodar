@@ -63,7 +63,16 @@
                 ?>
 
                 </div>
-
+                <div class="news-inside__article-stat">
+						<div class="news-inside__article-stat__comments">
+							<div class="news-inside__article-stat__comments-img"></div>
+							<span class="comments-quantity">0</span>
+						</div>
+						<div class="news-inside__article-stat__seens">
+							<div class="news-inside__article-stat__seens-img"></div>
+							<span class="seens-quantity"></span>
+						</div>  
+				</div>
                 <div class="inside-article__left-name">
 
                     <h4><?php the_title(); ?></h4>
