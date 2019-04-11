@@ -5168,3 +5168,15 @@ button.swiper-pagination-bullet {
 .amazingslider-box-1 > div:nth-child(4) {
 	display: none;
 }
+#the-id-5 .news-inside__article-stat, #the-id-5 .news-inside__article-stat__comments {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: flex-start;
+}
+.article .news-inside__article-stat__comments {
+	display: none;
+}
+.article .news-inside__article-stat {
+	margin-top: -16px;
+}
