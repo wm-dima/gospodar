@@ -13,7 +13,7 @@ Template Name: статьи
 			'paged' => get_query_var( 'paged', 1 ),
 			'post_type' => 'post',
 			'post_status' => 'publish',
-			'posts_per_page' => 8,
+			'posts_per_page' => 4,
 		)); 
 		$_monthsList = [
 			".01." => "января",
@@ -69,7 +69,13 @@ Template Name: статьи
 			<?php endif; ?>
 		</div>
 		<div class="pagination">
-			<?php echo paginate_links( array ('total' => $the_query->max_num_pages ));?>
+			<?php 
+			$args = [
+				'total' => $the_query->max_num_pages,
+				'prev_text'    => __('<div></div>'),
+				'next_text'    => __('<div></div>'),
+			];
+			echo paginate_links( $args );?>
 		</div>
 	</div>
 </div>
