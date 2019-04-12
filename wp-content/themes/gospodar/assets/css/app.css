@@ -3643,6 +3643,12 @@ input[type=radio]:checked+label div {
 		-webkit-box-align: center;
 		-ms-flex-align: center;
 	}
+	.search-catalog__inside-search form select {
+		padding: 0px 0 0 21px;
+	}
+	.search-catalog__inside-search form .select:after {
+		display: none;
+	}
 	.product-add button:first-child {
 		margin-bottom: 20px
 	}
@@ -5362,4 +5368,11 @@ button.swiper-pagination-bullet {
 }
 .cart-inside__scroll table tr .name-item__name a:hover {
 	text-decoration: none;
+}
+.catalog-block__inside-downNav__found {
+	display: flex;
+	align-items: center;
+}
+.catalog-block__inside-downNav__found p {
+	margin:0;
 }
