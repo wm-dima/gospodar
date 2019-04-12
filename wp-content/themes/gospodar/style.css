@@ -105,6 +105,7 @@ a.button.loading{
 
 a.button.added{
 	background: #25afe8 !important;
+	color: #fff;
 }
 
 .delete-item a{
@@ -119,7 +120,7 @@ a.button.added{
     position: absolute;
     z-index: 9;
     height: 97%;
-    width: 100%;
+    width: 99%;
     background: #efefef;
     display: flex;
     align-items: center;
@@ -135,7 +136,7 @@ a.button.added{
 }
 
 #select {
-    padding-right: 30px;
+    /* padding-right: 30px; */
 }
 
 .checkout-link{
