@@ -127,7 +127,7 @@ session_start();
 						<a href="javascript:void(0);" onclick="only_in_stock()">
 							<div class="search-catalog__inside-stock-inside">
 								<div class="search-catalog__inside-stock-inside__img"></div>
-								<a href="javascript:void(0);" onclick="only_in_stock()">Акции</a>
+								<a href="<?php echo get_permalink( 402 ); ?>" >Акции</a>
 							</div>
 						</a>
 					</div>
