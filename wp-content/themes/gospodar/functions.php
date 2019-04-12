@@ -431,31 +431,33 @@ function custom_override_checkout_fields( $fields ) {
 function get_msgs(){
     if ( isset( $_SESSION['wm_woo_notices']['success'] ) ): ?>
         <?php foreach ( $_SESSION['wm_woo_notices']['success'] as $message ) : ?>
-            <div class="woocommerce-message" role="alert">
-                <?php
-                    echo wc_kses_notice( $message );
-                ?>
+            <div class="center-wrap wrapper wm-woo-session wm-session-alert">
+                <div class="woocommerce-message" role="alert">
+                    <?php echo wc_kses_notice( $message ); ?>
+                </div>
             </div>
         <?php endforeach; ?>
     <?php endif;
     if ( isset( $_SESSION['wm_woo_notices']['notice'] ) ): ?>
         <?php foreach ( $_SESSION['wm_woo_notices']['notice'] as $message ) : ?>
-            <div class="woocommerce-info">
-                <?php
-                    echo wc_kses_notice( $message );
-                ?>
+            <div class="center-wrap wrapper wm-woo-session wm-session-notice">
+                <div class="woocommerce-info">
+                    <?php echo wc_kses_notice( $message ); ?>
+                </div>
             </div>
         <?php endforeach; ?>
     <?php endif;
     if ( isset( $_SESSION['wm_woo_notices']['error'] ) ): ?>
         <?php foreach ( $_SESSION['wm_woo_notices']['error'] as $message ) : ?>
-            <?php foreach ( $messages as $message ) : ?>
-                <li>
-                    <?php
-                        echo wc_kses_notice( $message );
-                    ?>
-                </li>
-            <?php endforeach; ?>
+            <div class="center-wrap wrapper wm-woo-session wm-session-error">
+                <ul class="woocommerce-error" role="alert">
+                    <?php foreach ( $messages as $message ) : ?>
+                        <li>
+                            <?php echo wc_kses_notice( $message ); ?>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
         <?php endforeach; ?>
     <?php endif;
 }
