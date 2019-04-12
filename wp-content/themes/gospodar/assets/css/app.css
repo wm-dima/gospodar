@@ -5184,7 +5184,7 @@ button.swiper-pagination-bullet {
 .cat-a1 {
 	margin-left:10px;
 }
-#the-id-372 .news-inside__article-stat {
+#the-id-372 .inside-article__left .news-inside__article-stat {
 	float:left;
 	margin-top: -22px;
 }
@@ -5375,4 +5375,7 @@ button.swiper-pagination-bullet {
 }
 .catalog-block__inside-downNav__found p {
 	margin:0;
+}
+.news .news-inside__article-stat {
+	justify-content: flex-start !important;
 }

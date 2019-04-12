@@ -101,11 +101,11 @@ session_start();
 					<div class="menuLine"></div>
 					<div class="mobile-menu__login">
 						<div class="mobile-menu__login-img"></div>
-						<a href="">Вход </a>|<a href=""> Регистрация</a>
+						<a href="javascript:void(0);" onclick="document.querySelector('.popup-formLog').classList.toggle('popup-show');document.querySelector('.mobile-menu').classList.toggle('mobile-menuShow')">Вход </a>|<a onclick="document.querySelector('.popup-formReg').classList.toggle('popup-show');document.querySelector('.mobile-menu').classList.toggle('mobile-menuShow')"> Регистрация</a>
 					</div>
 					<div class="mobile-menu__cart">
 						<div class="mobile-menu__cart-img"></div>
-						<a href="">Корзина</a>
+						<a href="<?php echo wc_get_cart_url(); ?>">Корзина</a>
 					</div>
 				</div>	
 			</div>
