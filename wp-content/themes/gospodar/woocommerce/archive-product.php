@@ -134,7 +134,15 @@ if ( woocommerce_product_loop() ) {
                             </p>
                         </div>
                         <div class="catalog-block__inside-downNav__nav">
-
+							<div class="pagination">
+								<?php 
+								$args = [
+									'total' => $the_query->max_num_pages,
+									'prev_text'    => __('<div></div>'),
+									'next_text'    => __('<div></div>'),
+								];
+								echo paginate_links( $args );?>
+							</div>
                         </div>
                     </div>
                     <?php get_template_part('template-parts/stock', 'offer'); ?>
