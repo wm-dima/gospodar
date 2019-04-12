@@ -151,8 +151,12 @@ a.button.added{
     justify-content: center;
     text-decoration: none;
     color: #000;
+    transition: all ease 0.2s;
 }
-
+.checkout-link:hover {
+	color:#fff;
+	background:#25afe8;
+}
 
 .news-insideMain {
 	flex-wrap: wrap;

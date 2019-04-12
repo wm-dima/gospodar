@@ -48,20 +48,13 @@ $current = $page;
 $base    = isset( $base ) ? $base : esc_url_raw( str_replace( 999999999, '%#%', remove_query_arg( 'add-to-cart', get_pagenum_link( 999999999, false ) ) ) );
 ?>
 <nav class="pagination">
-	<?php
-		echo paginate_links( apply_filters( 'woocommerce_pagination_args', array( // WPCS: XSS ok.
-			'base'         => $base,
-			'format'       => $format,
-			'add_args'     => false,
-			'current'      => max( 1, $current ),
-			'total'        => $total,
-			'prev_text'    => '&larr;',
-			'next_text'    => '&rarr;',
-			'type'         => 'list',
-			'end_size'     => 5,
-			'mid_size'     => 5,
-		) ) );
-	?>
+<?php 
+			$args = [
+				'total' => $the_query->max_num_pages,
+				'prev_text'    => __('<div></div>'),
+				'next_text'    => __('<div></div>'),
+			];
+			echo paginate_links( $args );?>
 </nav>
 
 

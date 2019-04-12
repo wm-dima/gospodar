@@ -123,9 +123,7 @@ if ( woocommerce_product_loop() ) {
 
 ?>
                     </div>
-                    <di class="wm-pagination">
-                    	<?php woocommerce_pagination(); ?>
-                    </di>
+                    
                     <div class="catalog-block__inside-downNav">
                         <div class="catalog-block__inside-downNav__found">
                             <p>
@@ -134,6 +132,9 @@ if ( woocommerce_product_loop() ) {
                             </p>
                         </div>
                         <div class="catalog-block__inside-downNav__nav">
+							<div class="wm-pagination">
+								<?php woocommerce_pagination(); ?>
+							</div>
 							<div class="pagination">
 								<?php 
 								$args = [
