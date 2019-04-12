@@ -2115,7 +2115,7 @@ footer .footer-inside__right-contacts__watch-map a span {
 
 .catalog-min:hover,
 .search-catalog__inside-show_catalog:hover .catalog-min {
-	top: 72px;
+	top: 71px;
 	opacity: 1;
 }
 
@@ -2131,14 +2131,14 @@ footer .footer-inside__right-contacts__watch-map a span {
 }
 
 .catalog-min {
-	min-width: 298px;
+	min-width: 300px;
 	height: auto;
 	background: #ffffff;
 	position: absolute;
 	top: -9999px;
 	z-index: 400;
 	opacity: 0;
-	border: 1px solid #e2e2e2;
+	/* border: 1px solid #e2e2e2; */
 	transition: opacity .2s ease;
 	-webkit-transition: opacity .2s ease;
 	-moz-transition: opacity .2s ease;
