@@ -115,7 +115,7 @@ wc_display_product_attributes($product) - просто список всех а�
 									<?php endif ?>
                                 </button>
                                 <button>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/oneClick.png" alt=""> Купить в один клик
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/money.png" alt=""> Купить в один клик
                                 </button>
                             </div>
                         <!-- </form> -->
