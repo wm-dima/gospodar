@@ -451,7 +451,7 @@ function get_msgs(){
         <?php foreach ( $_SESSION['wm_woo_notices']['error'] as $message ) : ?>
             <div class="center-wrap wrapper wm-woo-session wm-session-error">
                 <ul class="woocommerce-error" role="alert">
-                    <?php foreach ( $messages as $message ) : ?>
+                    <?php foreach ( $_SESSION['wm_woo_notices']['error'] as $message ) : ?>
                         <li>
                             <?php echo wc_kses_notice( $message ); ?>
                         </li>

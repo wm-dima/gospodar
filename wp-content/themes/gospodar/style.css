@@ -210,3 +210,9 @@ body > header > div > div > div.header-inside__part2 > div.header-inside__part2-
 	position: relative;
 	z-index: 101;
 }
+
+.product-info__properties-price__current .before-price{
+	display: block;
+	margin-bottom: 15px;
+	color: #f70f2a;
+}

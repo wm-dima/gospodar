@@ -2,6 +2,7 @@ try{
 	if (prodType == 'variable') {
 		var variations = eval(document.querySelector('[data-product_variations]').getAttribute('data-product_variations'));
 		var priceReg = document.querySelector('#price_reg');
+		document.querySelector('#old-price').classList.add('wm-hid');
 	}
 let priceSale = document.querySelector('#price_sale');
 document.addEventListener('DOMContentLoaded', function(){
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function(){
 					}
 					priceReg.innerText = item.display_regular_price;
 					priceSale.innerText = item.display_price;
+					document.querySelector('.product-info__properties-price__current .before-price').classList.add('wm-hid');
 				}
 			})
 		}
