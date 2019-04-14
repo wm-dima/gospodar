@@ -3192,6 +3192,12 @@ input[type=radio]:checked+label div {
 		padding-right: 0;
 		box-shadow:none !important;
 	}
+	.scisc1 {
+		display: none;
+	}
+	.scisc2 {
+		display: block !important;
+	}
 	.catalog-min ul li:hover .catalog-additional {
 		opacity: 1;
 		position: static;
@@ -3423,6 +3429,7 @@ input[type=radio]:checked+label div {
 }
 #product-gallery .swiper-slide img {
 	object-fit: contain;
+	width: 100%;
 }
 @media (max-width:700px) {
 	.inside-article__left,
@@ -3681,7 +3688,7 @@ input[type=radio]:checked+label div {
 		height: 345px !important ;
 	}
 	.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
-		bottom: 0;
+		bottom: 0 !important;
 	}
 	.wrapper {
 		max-width: 350px;
@@ -3730,6 +3737,12 @@ input[type=radio]:checked+label div {
 	}
 	.news-inside__article {
 		width: 100%;
+	}
+	.swiper-button-next {
+		right: 0px !important;
+	}
+	.swiper-button-prev {
+		left: 0px !important;
 	}
 }
 @media (max-width:520px) {	
@@ -3928,10 +3941,7 @@ input[type=radio]:checked+label div {
 	.swiper-content {
 		height: 370px
 	}
-	.main-slider,
-	.swiper-container {
-		min-height: 370px!important
-	}
+	
 	.swiper-content__inside {
 		background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, .5)), to(rgba(0, 0, 0, .5))), url(../images/spoon.jpg);
 		background-image: -o-linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../images/spoon.jpg);
@@ -3944,7 +3954,7 @@ input[type=radio]:checked+label div {
 		width: 462%;
 	}
 	.swiper-container {
-		height: 350px !important;
+		height: 240px !important;
 	}
 	.swiper-wrapper img {
 	}
@@ -4164,7 +4174,7 @@ template {
 	list-style: none;
 	padding: 0;
 	z-index: 1;
-	height: 420px;
+	height: 570px;
 	width: 100% !important;
 }
 
@@ -4391,7 +4401,7 @@ template {
 .swiper-pagination-fraction {
 	bottom: 10px;
 	left: 0;
-	width: 100%
+	width: 100%;
 }
 
 .swiper-pagination-bullets-dynamic {
@@ -5406,4 +5416,7 @@ button.swiper-pagination-bullet {
 }
 .news .news-inside__article-stat {
 	justify-content: flex-start !important;
+}
+.scisc2 {
+	display: none;
 }
